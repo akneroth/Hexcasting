@@ -26,6 +26,7 @@ Schrödinger's Gambit
 
 
 // check if there are 4 params
+/*
 @str(property)
 Observation Purification
 Length Purification
@@ -69,7 +70,7 @@ Equality Distillation
     $check_akasha
 }
 Augur's Exaltation
-
+*/
 
 @str(property)
 Observation Purification
