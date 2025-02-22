@@ -1,0 +1,1 @@
+[ ] intellisense for defined variables
