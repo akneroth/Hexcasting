@@ -7,6 +7,7 @@
     Inequality Distillation
     {
         @str(Hex with this pattern already exists)
+        @str(bubble)
         Reveal
         Janus' Gambit
     }
@@ -18,6 +19,12 @@
 
 Flock's Reflection
 Flock's Gambit
+Retrograde Purification
+Flock's Disintegration
+@str(bubble)
+Length Purification
+Flock's Gambit
+Retrograde Purification
 
 // check if there are 4 params
 Gemini Decomposition
