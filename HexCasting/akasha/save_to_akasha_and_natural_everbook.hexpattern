@@ -19,21 +19,22 @@
 
 Flock's Reflection
 Flock's Gambit
-Retrograde Purification
-Flock's Disintegration
-@str(bubble)
-Flock's Reflection
-Flock's Gambit
-Retrograde Purification
+@str(property)
+Jester's Gambit
+Schrödinger's Gambit
+
+
 
 // check if there are 4 params
-Gemini Decomposition
+@str(property)
+Observation Purification
 Length Purification
 Numerical Reflection: 4
 Equality Distillation
 {
     // check if force is true
-    Gemini Decomposition
+    @str(property)
+    Observation Purification
     Flock's Disintegration
     Bookkeeper's Gambit: vvv-
     True Reflection
@@ -43,23 +44,35 @@ Equality Distillation
     }
     {
         // stop hex if pattern exists
+        @str(property)
+        Observation Purification
+        Flock's Disintegration
+        Bookkeeper's Gambit: --vv
         $check_akasha
     }
     Augur's Exaltation
     
+    // cleanup force param
+    @str(property)
+    Observation Purification
+    Flock's Disintegration
+    Bookkeeper's Gambit: ---v
+    Numerical Reflection: 4
+    Flock's Gambit
 }
 {
     // if no bool is passed for forcing overwrite, stop hex if pattern exists
+    @str(property)
+    Observation Purification
+    Flock's Disintegration
+    Bookkeeper's Gambit: --v
     $check_akasha
 }
 Augur's Exaltation
 
-// cleanup force param
-Flock's Disintegration
-Bookkeeper's Gambit: v
-Length Purification
-Flock's Gambit
 
+@str(property)
+Observation Purification
 
 // add to akasha
 Gemini Decomposition
