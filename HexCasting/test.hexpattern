@@ -1,6 +1,6 @@
 Flock's Reflection
 Flock's Gambit
-<{kuku}>
+{kuku}
 Jester's Gambit
 Schrödinger's Gambit
 <{kuku}>
@@ -26,7 +26,7 @@ Equality Distillation
         Nullary Reflection
         Inequality Distillation
         {
-            <{"Hex with this pattern already exists"}>
+            "Hex with this pattern already exists"
             Bubbles' Purification
             Reveal
             Janus' Gambit
