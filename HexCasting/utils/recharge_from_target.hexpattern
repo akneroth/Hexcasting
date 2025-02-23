@@ -1,0 +1,48 @@
+@git(/HexCasting/def.hexpattern)
+
+// s: num
+Numerical Reflection: 5
+Division Distillation
+Ceiling Purification
+
+$target_block_on_block_face
+Gemini Decomposition                     // s: num, vec, vec
+Numerical Reflection: -2
+Fisherman's Gambit                       // s: vec, num, vec
+
+
+
+@item_type("minecraft:amethyst_shard", true)         // s: vec, num, vec, itemtype
+Stocktake Purification          // s: vec, num, vec, [mote]
+Numerical Reflection: 0
+Selection Distillation                       // s: vec, num, vec, mote/null
+Nullary Reflection
+Equality Distillation
+{
+    Janus' Gambit
+}
+{
+}
+Augur's Exaltation                              // s: vec, num, vec, mote
+Reflecting Gambit
+Return Item                            // s: vec
+
+// get all amethyst
+Numerical Reflection: 1
+Zone Distillation: Item           // [items]
+
+{
+    @item_type("minecraft:amethyst_shard", true)
+    Equality Distillation
+    {
+        Recharge Item
+    }
+    {
+
+    }
+}
+Jester's Gambit
+Thoth's Gambit
+Bookkeeper's Gambit: v
+
+
