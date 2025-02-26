@@ -6,8 +6,9 @@
     Nullary Reflection
     Inequality Distillation
     {
-        @str(Hex with this pattern already exists)
-        @str(bubble)
+        {
+            @str(Hex with this pattern already exists)
+        }
         Reveal
         Janus' Gambit
     }
@@ -19,21 +20,21 @@
 
 Flock's Reflection
 Flock's Gambit
-@str(property)
+@str(bubbled property)
 Jester's Gambit
 Schrödinger's Gambit
 
 
 
 // check if there are 4 params
-@str(property)
+@str(bubbled property)
 Observation Purification
 Length Purification
 Numerical Reflection: 4
 Equality Distillation
 {
     // check if force is true
-    @str(property)
+    @str(bubbled property)
     Observation Purification
     Flock's Disintegration
     Bookkeeper's Gambit: vvv-
@@ -44,7 +45,7 @@ Equality Distillation
     }
     {
         // stop hex if pattern exists
-        @str(property)
+        @str(bubbled property)
         Observation Purification
         Flock's Disintegration
         Bookkeeper's Gambit: --vv
@@ -53,7 +54,7 @@ Equality Distillation
     Augur's Exaltation
     
     // cleanup force param
-    @str(property)
+    @str(bubbled property)
     Observation Purification
     Flock's Disintegration
     Bookkeeper's Gambit: ---v
@@ -62,7 +63,7 @@ Equality Distillation
 }
 {
     // if no bool is passed for forcing overwrite, stop hex if pattern exists
-    @str(property)
+    @str(bubbled property)
     Observation Purification
     Flock's Disintegration
     Bookkeeper's Gambit: --v
@@ -70,7 +71,7 @@ Equality Distillation
 }
 Augur's Exaltation
 
-@str(property)
+@str(bubbled property)
 Observation Purification
 
 // add to akasha
