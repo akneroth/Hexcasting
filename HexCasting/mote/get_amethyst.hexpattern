@@ -1,0 +1,10 @@
+{
+    @item_type("amethyst_shard")
+    @item_type("minecraft:amethyst_shard")
+    @item_type("amethyst_shard", isItem)
+    @item_type("minecraft:amethyst_shard", isItem)
+    @item_type("amethyst_shard", true)
+    @item_type("minecraft:amethyst_shard", true)
+    @item_type("amethyst_shard", false)
+    @item_type("minecraft:amethyst_shard", false)
+}
