@@ -17,7 +17,7 @@ Stocktake Purification
 Gemini Decomposition
 Augur's Purification
 {
-    Numerical Reflection: 1
+    Numerical Reflection: 0
     Selection Distillation
 }
 {
@@ -29,6 +29,7 @@ Augur's Purification
     Janus' Gambit
 }
 Augur's Exaltation
+Hermes' Gambit
 
 // get items from mote
 Reflecting Gambit
@@ -70,8 +71,7 @@ Return Item
 
     }
     Augur's Exaltation
-
-
+    Hermes' Gambit
 }
 
 // scan for items on ground
