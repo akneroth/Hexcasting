@@ -15,9 +15,11 @@ Compass' Purification II
 Flock's Disintegration
 Stocktake Purification
 Gemini Decomposition
-Length Purification
-Numerical Reflection: 0
-Equality Distillation
+Augur's Purification
+{
+    Numerical Reflection: 1
+    Selection Distillation
+}
 {
     {
         @str(No amethyst shards in binded mote nexus)
@@ -25,10 +27,6 @@ Equality Distillation
     Flock's Disintegration
     Reveal
     Janus' Gambit
-}
-{
-    Numerical Reflection: 1
-    Selection Distillation
 }
 Augur's Exaltation
 
