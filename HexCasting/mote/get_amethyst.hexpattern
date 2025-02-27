@@ -1,6 +1,0 @@
-{
-    @str(fuck this)
-    @vec(1,2,3)
-    @item_type(minecraft:amethyst_shard, true)
-    @item_type(minecraft:amethyst_shard,true)
-}

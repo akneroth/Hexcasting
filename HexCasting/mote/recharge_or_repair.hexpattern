@@ -1,0 +1,83 @@
+// get amount
+Numerical Reflection: 5
+Division Distillation
+Ceiling Purification
+
+
+// get caster foot pos
+Mind's Reflection
+Compass' Purification II
+
+// get mote
+@item_type(minecraft:amethyst_shard, true)
+Stocktake Purification
+Gemini Decomposition
+Length Purification
+Numerical Reflection: 0
+Equality Distillation
+Selection Distillation
+{
+    {
+        @str(No amethyst shards in binded mote nexus)
+    }
+    Flock's Disintegration
+    Reveal
+    Janus' Gambit
+}
+{
+
+}
+Augur's Exaltation
+
+// get items from mote
+Reflecting Gambit
+Return Item
+
+{
+    // check if it is amethyst shard
+    Gemini Decomposition
+    Sorter's Purification
+    @item_type(minecraft:amethyst_shard, true)
+    Equality Distillation
+    {
+        // recharge or repair
+        {
+            Recharge Item
+            {
+                @str(Recharged item with media)
+            }
+            Flock's Disintegration
+            Reveal
+        }
+        Athena's Gambit
+        Bookkeeper's Gambit: v
+        {
+            Induce Mending
+            {
+                @str(Repaired item's durability with media)
+            }
+            Flock's Disintegration
+            Reveal
+        }
+        Athena's Gambit
+        Bookkeeper's Gambit: v
+    }
+    {
+
+    }
+    Augur's Exaltation
+
+
+}
+
+// scan for items on ground
+Mind's Reflection
+Compass' Purification II
+Numerical Reflection: 1
+Zone Distillation: Item
+
+Thoth's Gambit
+
+
+
+
