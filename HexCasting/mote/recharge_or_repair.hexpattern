@@ -15,7 +15,6 @@ Gemini Decomposition
 Length Purification
 Numerical Reflection: 0
 Equality Distillation
-Selection Distillation
 {
     {
         @str(No amethyst shards in binded mote nexus)
@@ -25,7 +24,8 @@ Selection Distillation
     Janus' Gambit
 }
 {
-
+    Numerical Reflection: 1
+    Selection Distillation
 }
 Augur's Exaltation
 
