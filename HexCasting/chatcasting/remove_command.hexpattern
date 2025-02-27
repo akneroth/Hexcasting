@@ -46,13 +46,8 @@ Numerical Reflection: 2
 Flock's Gambit
 
 {
-    {
-        @str(property)
-    } 
-    Flock's Disintegration
-    Jester's Gambit
-    Schrödinger's Gambit
-}
-
-
-
+    @str(property)
+} 
+Flock's Disintegration
+Jester's Gambit
+Schrödinger's Gambit
