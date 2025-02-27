@@ -9,7 +9,10 @@ Mind's Reflection
 Compass' Purification II
 
 // get mote
-@item_type(minecraft:amethyst_shard, true)
+{
+    @item_type(minecraft:amethyst_shard, true)
+}
+Flock's Disintegration
 Stocktake Purification
 Gemini Decomposition
 Length Purification
@@ -37,7 +40,10 @@ Return Item
     // check if it is amethyst shard
     Gemini Decomposition
     Sorter's Purification
-    @item_type(minecraft:amethyst_shard, true)
+    {
+        @item_type(minecraft:amethyst_shard, true)
+    }
+    Flock's Disintegration
     Equality Distillation
     {
         // recharge or repair
