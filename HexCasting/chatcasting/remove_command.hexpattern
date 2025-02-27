@@ -1,0 +1,61 @@
+// check params
+{
+    Length Purification
+}
+Athena's Gambit
+Bookkeeper's Gambit: v
+Numerical Reflection: 1
+Equality Distillation
+{
+    Flock's Disintegration
+}
+{
+    {
+        @str(Usage: remove_command <name>)
+    }
+    Flock's Disintegration
+    Reveal
+    Janus' Gambit
+}
+Augur's Exaltation
+Hermes' Gambit                  // s: str
+Huginn's Gambit          // l: str
+
+
+{
+    @str(property)
+}
+Flock's Disintegration
+Observation Purification
+Flock's Disintegration
+// get names list to the top
+Jester's Gambit
+Gemini Decomposition
+Muninn's Reflection
+// check index of chosen command and save it to ravenmind
+Locator's Distillation
+Gemini Decomposition
+Huginn's Gambit         // l: index
+
+// remove command name
+Excisor's Distillation
+
+// remove command instructions
+Jester's Gambit
+Muninn's Reflection
+Excisor's Distillation
+
+Numerical Reflection: 2
+Flock's Gambit
+
+{
+    {
+        @str(property)
+    } 
+    Flock's Disintegration
+    Jester's Gambit
+    Schrödinger's Gambit
+}
+
+
+
