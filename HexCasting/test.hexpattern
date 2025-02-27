@@ -1,76 +1,34 @@
-Flock's Reflection
-Flock's Gambit
-{kuku}
-Jester's Gambit
-Schrödinger's Gambit
-<{kuku}>
-Observation Purification
-Length Purification
-Numerical Reflection: 4
-Equality Distillation
+// get amount
+Numerical Reflection: 5
+Division Distillation
+Ceiling Purification
+
+
+// get caster foot pos
+Mind's Reflection
+Compass' Purification II
+
+// get mote
 {
-    <{kuku}>
-    Observation Purification
-    Flock's Disintegration
-    Bookkeeper's Gambit: vvv-
-    True Reflection
-    Equality Distillation
-    {
-    }
-    {
-        <{kuku}>
-        Observation Purification
-        Flock's Disintegration
-        Bookkeeper's Gambit: --vv
-        Akasha's Distillation
-        Nullary Reflection
-        Inequality Distillation
-        {
-            "Hex with this pattern already exists"
-            Bubbles' Purification
-            Reveal
-            Janus' Gambit
-        }
-        {
-        }
-        Augur's Exaltation
-    }
-    Augur's Exaltation
-    <{kuku}>
-    Observation Purification
-    Flock's Disintegration
-    Bookkeeper's Gambit: ---v
-    Numerical Reflection: 4
-    Flock's Gambit
+    @item_type(minecraft:amethyst_shard, true)
+}
+Flock's Disintegration
+Stocktake Purification
+Gemini Decomposition
+Augur's Purification
+{
+    Numerical Reflection: 1
+    Selection Distillation
 }
 {
-    <{kuku}>
-    Observation Purification
+    {
+        @str(No amethyst shards in binded mote nexus)
+    }
     Flock's Disintegration
-    Bookkeeper's Gambit: --v
-    Akasha's Distillation
-    Nullary Reflection
-    Inequality Distillation
-    {
-        <"Hex with this pattern already exists">
-        Bubbles' Purification
-        Reveal
-        Janus' Gambit
-    }
-    {
-    }
-    Augur's Exaltation
+    Reveal
+    Janus' Gambit
 }
 Augur's Exaltation
-<{kuku}>
-Observation Purification
-Gemini Decomposition
-Flock's Disintegration
-Akasha's Gambit
-Gemini Decomposition
-Flock's Disintegration
-Bookkeeper's Gambit: --v
-Elysium's Gambit
-Flock's Disintegration
-Bookkeeper's Gambit: v-v
-Brigh's Gambit
+
+// get items from mote
+Reflecting Gambit
