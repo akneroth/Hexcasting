@@ -99,7 +99,7 @@
         $print(something)
         {@str(test)} >>
         Program Purification
-        Numerical Reflection: 50
+        Numerical Reflection: 400
         {@str(test)} >>
         Enqueue
     }
