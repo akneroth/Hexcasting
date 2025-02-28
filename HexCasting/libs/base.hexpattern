@@ -23,7 +23,7 @@
 )
 
 #def(print)(
-    {$str(<1>)} >>
+    {@str(<1>)} >>
     Reveal
     Bookkeeper's Gambit: v
 )
@@ -94,7 +94,7 @@
     {
         $print(something)
     }
-    <2>
+    Numerical Reflection: <2>
     {@str(<1>)} >>
     Enqueue
 
