@@ -75,6 +75,10 @@
     )( 
         Threading Reflection II
         Scrivener's Purification
+        {@str(.)}
+        Separation Distillation
+        Numerical Reflection: 0
+        Selection Distillation
         Spacing Reflection
         Additive Distillation
         {@str(free cassettes, proceeding...)} >>
@@ -93,6 +97,10 @@
 #def(start_thread)(
     {
         $print(something)
+        Program Purification
+        Numerical Reflection: <2>
+        {@str(<1>)} >>
+        Enqueue
     }
     Numerical Reflection: <2>
     {@str(<1>)} >>
