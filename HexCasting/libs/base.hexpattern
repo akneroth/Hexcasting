@@ -98,8 +98,8 @@
     {
         $print(something)
         Program Purification
-        Numerical Reflection: <2>
-        {@str(<1>)} >>
+        Numerical Reflection: 50
+        {@str(test)} >>
         Enqueue
     }
     Numerical Reflection: <2>
