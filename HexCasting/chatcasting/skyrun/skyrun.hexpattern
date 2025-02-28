@@ -1,3 +1,5 @@
 #git(/HexCasting/libs/base.hexpattern)
 
 $check_for_free_cassette
+
+$start_thread(test)(5)

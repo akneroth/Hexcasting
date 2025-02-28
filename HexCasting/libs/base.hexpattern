@@ -22,6 +22,12 @@
     Thoth's Gambit
 )
 
+#def(print)(
+    {$str(<1>)} >>
+    Reveal
+    Bookkeeper's Gambit: v
+)
+
 // return vector of the targeted block
 #def(target_block)(
     Mind's Reflection
@@ -56,7 +62,7 @@
     Scout's Distillation
 )
 
-
+// checks if there is a free cassette, if not, terminates the hex
 #def(check_for_free_cassette)(
     $if(
         Threading Reflection II
@@ -76,4 +82,20 @@
         Reveal
         Bookkeeper's Gambit: v
     )
+)
+
+// starts thread to cast every n ticks 
+// params - 
+//      <1> name: string, 
+//      <2> n: number, 
+//      <3> loop: bool, 
+//      <4> hex: many iotas
+#def(start_thread)(
+    {
+        $print(something)
+    }
+    <2>
+    {@str(<1>)} >>
+    Enqueue
+
 )
