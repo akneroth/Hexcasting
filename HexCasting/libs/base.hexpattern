@@ -1,0 +1,65 @@
+// if (bool) do (patterns) else (patterns)
+// Evaluates the second arg if true, evaluates the third if false
+#def(if)(
+    <1>
+    {
+        <2>
+    }
+    {
+        <3>
+    }
+    Augur's Exaltation
+    Hermes' Gambit
+)
+
+// for_each in (list) do (patterns)
+// Runs Thoth's on the given list and pattern list, returning a list containing all outputs
+#def(for_each)(
+    {
+        <2>
+    }
+    <1>
+    Thoth's Gambit
+)
+
+#def(target_block)(
+    Mind's Reflection
+    Compass' Purification
+    Mind's Reflection
+    Alidade's Purification
+    Archer's Distillation
+)
+
+#def(target_block_face)(
+    Mind's Reflection
+    Compass' Purification
+    Mind's Reflection
+    Alidade's Purification
+    Architect's Distillation
+)
+
+#def(target_block_on_block_face)(
+    $target_block
+    $target_block_face
+    Additive Distillation
+)
+
+#def(target_entity)(
+    Mind's Reflection
+    Compass' Purification
+    Mind's Reflection
+    Alidade's Purification
+    Scout's Distillation
+)
+
+#def(check_for_free_cassette)(
+    $if(
+        Threading Reflection II
+        Numerical Reflection: 0
+        Equality Distillation
+    )(
+        {@str(No free cassettes, terminating thread)} >>
+        Reveal
+        Janus' Gambit
+    )
+)
