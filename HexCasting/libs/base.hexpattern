@@ -22,6 +22,7 @@
     Thoth's Gambit
 )
 
+// return vector of the targeted block
 #def(target_block)(
     Mind's Reflection
     Compass' Purification
@@ -30,6 +31,7 @@
     Archer's Distillation
 )
 
+// return vector representing the side of targeted block
 #def(target_block_face)(
     Mind's Reflection
     Compass' Purification
@@ -38,12 +40,14 @@
     Architect's Distillation
 )
 
+// return vector of block that would be placed on the side of targeted block
 #def(target_block_on_block_face)(
     $target_block
     $target_block_face
     Additive Distillation
 )
 
+// return targeted entity iota
 #def(target_entity)(
     Mind's Reflection
     Compass' Purification
@@ -52,13 +56,14 @@
     Scout's Distillation
 )
 
+
 #def(check_for_free_cassette)(
     $if(
         Threading Reflection II
         Numerical Reflection: 0
         Equality Distillation
     )(
-        {@str(No free cassettes, terminating thread)} >>
+        {@str(No free cassettes, terminating thread!)} >>
         Reveal
         Janus' Gambit
     )( 
@@ -66,7 +71,7 @@
         Scrivener's Purification
         Spacing Reflection
         Additive Distillation
-        {@str(free cassettes, starting thread)} >>
+        {@str(free cassettes, proceeding...)} >>
         Additive Distillation
         Reveal
         Bookkeeper's Gambit: v
