@@ -97,6 +97,7 @@
 #def(start_thread)(
     {
         $print(something)
+        {@str(test)} >>
         Program Purification
         Numerical Reflection: 50
         {@str(test)} >>
