@@ -1,3 +1,3 @@
-#file(HexCasting/libs/base.hexpattern)
+#git(/HexCasting/libs/base.hexpattern)
 
 $check_for_free_cassette
