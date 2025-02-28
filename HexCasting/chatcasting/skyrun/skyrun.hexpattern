@@ -2,4 +2,4 @@
 
 $check_for_free_cassette
 
-$start_thread(test)(5)
+$start_thread(test)(50)
