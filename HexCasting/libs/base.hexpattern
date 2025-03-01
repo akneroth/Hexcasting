@@ -32,7 +32,7 @@
 
 // for_each in (list) do (patterns)
 // Runs Thoth's on the given list and pattern list, returning a list containing all outputs
-#def(for_each)(
+#def(foreach)(
     {
         <2>
     }
