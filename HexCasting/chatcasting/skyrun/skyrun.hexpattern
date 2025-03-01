@@ -8,14 +8,14 @@
     }
 )
 
-$stop_detect(Sky Running)
+// $stop_detect(Sky Running)
 
-$check_for_free_cassette
+// $check_for_free_cassette
 
-$start_thread(Sky Running)(2)($true)(
-    #foreach($vectors >>)(
+// $start_thread(Sky Running)(20)($true)(
+    #foreach($vectors)(
         Mind's Reflection
         Compass' Purification II
         Additive Distillation
     )
-)
+// )
