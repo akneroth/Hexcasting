@@ -96,12 +96,14 @@
 //      <4> hex: many iotas
 #def(start_thread)(
     {
-        $print(something)
-        {@str(<1>)} >>
-        Program Purification
-        Numerical Reflection: <2>
-        {@str(<1>)} >>
-        Enqueue
+        <4>
+        $if(<3>)(
+            {@str(<1>)} >>
+            Program Purification
+            Numerical Reflection: <2>
+            {@str(<1>)} >>
+            Enqueue
+        )()
     }
     Numerical Reflection: <2>
     {@str(<1>)} >>
