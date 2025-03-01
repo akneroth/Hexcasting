@@ -12,7 +12,7 @@ $stop_detect(Sky Running)
 
 $check_for_free_cassette
 
-$start_thread(Sky Running)(20)($true)(
+$start_thread(Sky Running)(5)($true)(
     $foreach($vectors)(
         Mind's Reflection
         Compass' Purification II
