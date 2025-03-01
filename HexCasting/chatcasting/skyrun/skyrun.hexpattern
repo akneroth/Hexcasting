@@ -21,6 +21,7 @@ $start_thread(Sky Running)(20)($true)(
         {Conjure Mage Block}
         $runif(
             Athena's Gambit
+            Negation Purification
         )(
             Numerical Reflection: 10
             Modify Block: Ephemeral
