@@ -13,7 +13,7 @@
 // $check_for_free_cassette
 
 // $start_thread(Sky Running)(20)($true)(
-    #foreach($vectors)(
+    $foreach($vectors)(
         Mind's Reflection
         Compass' Purification II
         Additive Distillation
