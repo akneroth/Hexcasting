@@ -1,35 +1,5 @@
-// get amount
-Numerical Reflection: 5
-Division Distillation
-Ceiling Purification
+#include "./libs/base.hexpattern"
 
+#git(HexCasting/libs/base.hexpattern)
 
-// get caster foot pos
-Mind's Reflection
-Compass' Purification II
-
-// get mote
-{
-    @item_type(minecraft:amethyst_shard, true)
-}
-Flock's Disintegration
-Stocktake Purification
-Gemini Decomposition
-Augur's Purification
-{
-    Numerical Reflection: 0
-    Selection Distillation
-}
-{
-    {
-        @str(No amethyst shards in binded mote nexus)
-    }
-    Flock's Disintegration
-    Reveal
-    Janus' Gambit
-}
-Augur's Exaltation
-Hermes' Gambit
-
-// get items from mote
-Reflecting Gambit
+Raycast Block

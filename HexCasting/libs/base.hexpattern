@@ -47,6 +47,8 @@
     Bookkeeper's Gambit: v
 )
 
+#define Raycast Block (EAST qaawdd)
+
 // return vector of the targeted block
 #def(target_block)(
     Mind's Reflection
@@ -91,16 +93,7 @@
         $print(No free cassettes, terminating thread!)
         Janus' Gambit
     )( 
-        Threading Reflection II
-        Scrivener's Purification
-        {@str(.)} >>
-        Separation Distillation
-        Numerical Reflection: 0
-        Selection Distillation
-        Spacing Reflection
-        Additive Distillation
-        {@str(free cassettes, proceeding...)} >>
-        Additive Distillation
+        {@str(Free cassette available, proceeding...)} >>
         Reveal
         Bookkeeper's Gambit: v
     )
