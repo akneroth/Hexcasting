@@ -152,7 +152,7 @@
                 // if it is cassette, dequeue
                 {@str(<1>)} >>
                 Dequeue
-                $print(Dequeued <1>)
+                $print(Killing thread <1>)
             )
             // stop it
             $print(Stopping <1>)
