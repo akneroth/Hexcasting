@@ -97,10 +97,10 @@
 #def(start_thread)(
     {
         $print(something)
-        {@str(test)} >>
+        {@str(<1>)} >>
         Program Purification
-        Numerical Reflection: 400
-        {@str(test)} >>
+        Numerical Reflection: <2>
+        {@str(<1>)} >>
         Enqueue
     }
     Numerical Reflection: <2>
