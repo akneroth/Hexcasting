@@ -143,19 +143,20 @@
             Numerical Reflection: -1
             Inequality Distillation
         )(
-            $if(
+            $runif(
                 {@str(<1>)} >>
                 Program Purification II
-                Augur's Purification
+                Nullary Reflection
+                Inequality Distillation
             )(
                 // if it is cassette, dequeue
                 {@str(<1>)} >>
                 Dequeue
                 $print(Dequeued <1>)
-            )(
-                // if it is hex, stop it
-                $print(Stopping <1>)
             )
+            // stop it
+            $print(Stopping <1>)
+            Janus' Gambit
         )
     )
 )
