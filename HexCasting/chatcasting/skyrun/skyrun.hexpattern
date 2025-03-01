@@ -19,7 +19,11 @@ $start_thread(Sky Running)(20)($true)(
         Additive Distillation
         Gemini Decomposition
         Conjure Mage Block
-        Numerical Reflection: 10
-        Modify Block: Ephemeral
+        $runif(
+            Athena's Gambit
+        )(
+            Numerical Reflection: 10
+            Modify Block: Ephemeral
+        )
     )
 )
