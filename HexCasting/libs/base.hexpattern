@@ -1,3 +1,11 @@
+#def(true)(
+    True Reflection
+)
+
+#def(false)(
+    False Reflection
+)
+
 // if (bool) do (patterns) else (patterns)
 // Evaluates the second arg if true, evaluates the third if false
 #def(if)(
@@ -12,6 +20,16 @@
     Hermes' Gambit
 )
 
+#def(runif)(
+    <1>
+    {
+        <2>
+    }
+    {}
+    Augur's Exaltation
+    Hermes' Gambit
+)
+
 // for_each in (list) do (patterns)
 // Runs Thoth's on the given list and pattern list, returning a list containing all outputs
 #def(for_each)(
@@ -22,6 +40,7 @@
     Thoth's Gambit
 )
 
+// prints passed string and removes it from stack
 #def(print)(
     {@str(<1>)} >>
     Reveal
@@ -69,8 +88,7 @@
         Numerical Reflection: 0
         Equality Distillation
     )(
-        {@str(No free cassettes, terminating thread!)} >>
-        Reveal
+        $print(No free cassettes, terminating thread!)
         Janus' Gambit
     )( 
         Threading Reflection II
@@ -109,4 +127,35 @@
     {@str(<1>)} >>
     Enqueue
 
+)
+
+// if one of the passed arguments is "stop" stops or dequeues the hex, prints message with passed name
+// params - 
+//      <1> name: string
+#def(stop_detect)(
+    $runif(
+        Flock's Reflection
+        Augur's Purification
+    )(
+        $runif(
+            {@str(stop)}>>
+            Locator's Distillation
+            Numerical Reflection: -1
+            Inequality Distillation
+        )(
+            $if(
+                {@str(<1>)} >>
+                Program Purification II
+                Augur's Purification
+            )(
+                // if it is cassette, dequeue
+                {@str(<1>)} >>
+                Dequeue
+                $print(Dequeued <1>)
+            )(
+                // if it is hex, stop it
+                $print(Stopping <1>)
+            )
+        )
+    )
 )

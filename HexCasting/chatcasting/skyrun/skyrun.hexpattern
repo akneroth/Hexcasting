@@ -1,9 +1,23 @@
 #git(/HexCasting/libs/base.hexpattern)
 
+#def(hexname)(Sky Running)
+
+#def(vectors)(
+    {
+        @vec(1,-1,1)   @vec(0,-1,1)   @vec(-1,-1,1)
+        @vec(1,-1,0)   @vec(0,-1,0)   @vec(-1,-1,0)
+        @vec(1,-1,-1)  @vec(0,-1,-1)  @vec(-1,-1,-1)
+    }
+)
+
+$stop_detect($hexname)
+
 $check_for_free_cassette
 
-$start_thread(test)(400)(
-    False Reflection
-)(
-    $print(hello there)
+$start_thread($hexname)(2)($true)(
+    #foreach($vectors)(
+        Mind's Reflection
+        Compass' Purification II
+        Additive Distillation
+    )
 )
