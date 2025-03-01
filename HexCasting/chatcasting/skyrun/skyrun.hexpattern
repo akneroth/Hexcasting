@@ -18,7 +18,7 @@ $start_thread(Sky Running)(20)($true)(
         Compass' Purification II
         Additive Distillation
         Gemini Decomposition
-        Conjure Mage Block
+        {Conjure Mage Block}
         $runif(
             Athena's Gambit
         )(
