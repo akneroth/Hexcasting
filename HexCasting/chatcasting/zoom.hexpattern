@@ -1,0 +1,17 @@
+#git(/HexCasting/libs/base.hexpattern)
+
+$if(
+    $target_block_on_block_face
+    Gemini Decomposition
+    Augur's Purification
+)( 
+    Mind's Reflection
+    Compass' Purification II
+    Subtractive Distillation
+)(
+    Mind's Reflection
+    Alidade's Purification
+    Numerical Reflection: 64
+    Multiplicative Distillation
+)
+Greater Blink
