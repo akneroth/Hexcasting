@@ -47,8 +47,6 @@
     Bookkeeper's Gambit: v
 )
 
-#define Raycast Block (EAST qaawdd)
-
 // return vector of the targeted block
 #def(target_block)(
     Mind's Reflection
@@ -145,7 +143,7 @@
                 // if it is cassette, dequeue
                 {@str(<1>)} >>
                 Dequeue
-                $print(Killing thread <1>)
+                $prgitint(Killing thread <1>)
             )
             // stop it
             $print(Stopping <1>)
