@@ -4,9 +4,24 @@
     Flock's Reflection
     Flock's Gambit
     Bookkeeper's Gambit: v
-    @str(property)
-    Observation Purification
-    Hermes' Gambit
+
+    $runif(
+        @str(property)
+        Observation Purification
+        Augur's Purification
+    )(
+        $runif(
+            @str(property)
+            Gemini Decomposition
+            Observation Purification
+            Jester's Gambit
+            Nullary Reflection
+            Schrödinger's Gambit
+            Athena's Gambit
+        )(
+            $print("Wisp mishaped")
+        )
+    )
 }
 $target_block_on_block_face
 Numerical Reflection: 100
