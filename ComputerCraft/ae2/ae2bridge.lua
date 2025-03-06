@@ -45,6 +45,8 @@ local runProgram = true
 local debug = true
 local debugLog = "DEBUG\n"
 
+local ctrlKey = 341
+
 local path = fs.getDir(shell.getRunningProgram())
 local watchesFile = path .. "/watchedIndexes.json"
 local watchesFileModified = 0
@@ -300,16 +302,35 @@ local function scanItemsToWatch()
             local json = f.readAll()
             json = textutils.unserialiseJSON(json)
             f.close()
-            data.watches = {}
+            -- data.watches = {}
 
+            local buffer = {}
             for _, v in ipairs(json) do
-                data.watches[v["id"]] = {
+                buffer[v["id"]] = {
                     displayName = v["displayName"],
                     type = v["type"],
                     buffer = v["buffer"],
                     batch = v["batch"],
                 }
             end
+            for k, v in pairs(buffer) do
+                if data.watches[k] == nil then
+                    data.watches[k] = buffer[k]
+                else
+                    data.watches[k].displayName = buffer.displayName
+                    data.watches[k].type = buffer.type
+                    data.watches[k].buffer = buffer.buffer
+                    data.watches[k].batch = buffer.batch
+                end
+            end
+            for k, v in pairs(data.watches) do
+                if buffer[k] == nil then
+                    data.watches[k] = nil
+                end
+            end
+
+
+
             if itemInInput then
                 -- get info and push item to ae2 system
                 local itemToAdd = itemIn.getItemDetail(1)
@@ -381,7 +402,6 @@ local function scanMonitorClicks()
     end
 end
 
-local ctrlKey = 341
 local function scanKeyPress()
     local function run(a) if type(a) == "function" then a() end end
     local pressed = {}
