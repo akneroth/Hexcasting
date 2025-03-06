@@ -22,11 +22,16 @@ local monWidth, monHeight = mon.getSize()
 write("Changed monitor scale, new resolution: " .. monWidth .. "x" .. monHeight .. "\n")
 
 local subWidth = math.floor(monWidth * 0.5)
+local jobsWindowColor = colors.blue
+local textColor = colors.black
+local watchesWindowColor = colors.cyan
 
 local jobsWindow = window.create(mon, 1, 1, subWidth, monHeight)
 local watchesWindow = window.create(mon, subWidth + 1, 1, monWidth - subWidth, monHeight)
-jobsWindow.setBackgroundColour(colors.blue)
-watchesWindow.setBackgroundColour(colors.cyan)
+jobsWindow.setTextColour(textColor)
+jobsWindow.setBackgroundColour(jobsWindowColor)
+watchesWindow.setTextColour(textColor)
+watchesWindow.setBackgroundColour(watchesWindowColor)
 jobsWindow.clear()
 watchesWindow.clear()
 local jobsWindowWidth, jobsWindowHeight = jobsWindow.getSize()
@@ -53,13 +58,14 @@ local data = {
     jobs = {},
     cpus = {},
     watches = {},
-    craftable = {},
+    crafting = {},
 }
 local priority = {
     high = 0,
     med = 0.2,
     low = 0.5,
     ultralow = 1,
+    periodical = 5
 }
 
 
@@ -131,30 +137,106 @@ local function redraw()
         jobsWindow.write(jobInfo)
     end
 
-    local function printWatches(watches, idx, headerOffset)
-
+    local function printWatches(watches, headerOffset)
+        local list = {}
+        for k, v in pairs(watches) do
+            table.insert(list, {
+                id = k,
+                item = v
+            })
+        end
+        for k, v in pairs(list) do
+            local craftable
+            local isLacking = (v.item.amount or 0) + (v.item.inCrafting or 0) < v.item.buffer
+            local backgroundColour = colors.green
+            if isLacking and (v.item.inCrafting or 0) > 0 then
+                backgroundColour = colors.orange
+            else
+                if isLacking then backgroundColour = colors.red end
+            end
+            if v.craftable then craftable = "[C]" else craftable = "" end
+            local text =
+                "" .. (v.item.displayName or "#Error#") ..
+                " " .. craftable ..
+                " - " .. (v.item.amount or 0) ..
+                "/" .. (v.item.buffer or 0) ..
+                "/" .. (v.item.batch or 0) ..
+                "/" .. (v.item.inCrafting or 0)
+            watchesWindow.setCursorPos(2, k + headerOffset)
+            watchesWindow.setBackgroundColour(backgroundColour)
+            watchesWindow.write(text)
+        end
     end
 
 
     -- redrawing loop
     while runProgram do
+        jobsWindow.setBackgroundColour(jobsWindowColor)
         jobsWindow.clear()
         jobsWindow.setCursorPos(1, 1)
         jobsWindow.write("CURRENT JOBS")
+        watchesWindow.setBackgroundColour(watchesWindowColor)
+        watchesWindow.clear()
+        watchesWindow.setCursorPos(2, 1)
+        watchesWindow.write("WATCHES - Amount/Buffer/BatchPerCraft/InCrafting")
 
         for k, job in pairs(data.jobs or {}) do printJob(job, k, 2) end
-        printWatches(data.watches or {}, k, 2) end
+        printWatches(data.watches or {}, 2)
         sleep(priority.high)
+    end
+end
+
+-- crafting
+
+
+local function craftingManager()
+    while true do
+        for id, item in pairs(data.watches) do
+            local amount, inCrafting = item.amount or 0, item.inCrafting or 0
+            if (amount) + (inCrafting) < item.buffer then
+                local missing = item.buffer - (amount + inCrafting)
+                local remainder = item.batch - math.fmod(missing, item.batch)
+                data.watches[id].inCrafting = missing + remainder
+                local craftJobId = ae2.scheduleCrafting(item.type or "item", id, missing + remainder)
+                data.crafting[craftJobId] = {
+                    id = id,
+                    amount = missing + remainder
+                }
+            end
+        end
+
+
+        sleep(priority.low)
     end
 end
 
 
 -- scanners
-local function scanAe2Events()
+local function eventHandler()
+    local events = {
+        ["ae2cc:crafting_cancelled"] = function(event, jobId, cancelReason)
+            vPrint(event .. " " .. jobId .. " " .. cancelReason .. "\n")
+        end,
+        ["ae2cc:crafting_done"] = function(event, jobId)
+            local craftingJob = data.crafting[jobId]
+            data.crafting[jobId] = nil
+            data.watches[craftingJob.id].amount = data.watches[craftingJob.id].amount + craftingJob.amount
+            data.watches[craftingJob.id].inCrafting = data.watches[craftingJob.id].inCrafting - craftingJob.amount
+            vPrint(event .. " " .. jobId .. " " .. craftingJob.id .. " " .. craftingJob.amount .. "\n")
+        end,
+        ["ae2cc:crafting_started"] = function(event, jobId)
+            vPrint(event .. " " .. jobId .. "\n")
+        end
+    }
+
     while true do
-        local event, jobId, cancelReason = os.pullEvent("ae2:*")
-        vPrint(event .. " " .. jobId)
-        sleep(priority.high)
+        local eventData = { os.pullEvent() }
+        local event, jobId, cancelReason = eventData[1], eventData[2], eventData[3]
+        -- if string.find(event, "ae2") ~= nil then vPrint(textutils.serialise(eventData).."\n") end
+
+        local eventFunc = events[event]
+        if eventFunc ~= nil then eventFunc(event, jobId, cancelReason) end
+        -- sleep(priority.high)
     end
 end
 
@@ -222,6 +304,7 @@ local function scanItemsToWatch()
             for _, v in ipairs(json) do
                 data.watches[v["id"]] = {
                     displayName = v["displayName"],
+                    type = v["type"],
                     buffer = v["buffer"],
                     batch = v["batch"],
                 }
@@ -233,6 +316,7 @@ local function scanItemsToWatch()
                 local idToAdd = itemToAdd["name"]
                 itemToAdd = {
                     displayName = itemToAdd["displayName"],
+                    type = itemToAdd["type"] or "item",
                     buffer = 0,
                     batch = 0,
                 }
@@ -245,6 +329,7 @@ local function scanItemsToWatch()
                     table.insert(toSerialise, {
                         ["id"] = key,
                         ["displayName"] = value.displayName,
+                        ["type"] = value.type or "item",
                         ["buffer"] = value.buffer,
                         ["batch"] = value.batch,
                     })
@@ -265,16 +350,22 @@ local function scanItemsToWatch()
     end
 end
 
-local function scanCraftings()
+local function scanCraftingsAndItems()
     while true do
         local aeCraftings = ae2.getCraftableObjects()
-        aeCraftings = textutils.unserialiseJSON(aeCraftings)
+        local aeItems = ae2.getAvailableObjects()
+        -- aeCraftings = textutils.unserialiseJSON(aeCraftings)
         for _, v in pairs(aeCraftings) do
-            local id = v["id"]
-            if data.watches[id] ~= nil then data.craftable[id] = true else data.craftable[id] = nil end
+            local id = v["id"] or "#Error#"
+            if data.watches[id] ~= nil then data.watches[id].craftable = true end
         end
 
-        sleep(priority.ultralow)
+        for _, v in pairs(aeItems) do
+            local id = v["id"] or "#Error#"
+            if data.watches[id] ~= nil then data.watches[id].amount = v["amount"] or 0 end
+        end
+
+        sleep(priority.periodical)
     end
 end
 
@@ -303,5 +394,6 @@ local function scanKeyPress()
     end
 end
 
-parallel.waitForAny(redraw, scanAe2Events, scanKeyPress, scanJobs, scanMonitorClicks, scanItemsToWatch, scanCraftings)
+parallel.waitForAny(redraw, eventHandler, scanKeyPress, scanJobs, scanMonitorClicks, scanItemsToWatch,
+    scanCraftingsAndItems, craftingManager)
 vPrint("Exiting...\n")
