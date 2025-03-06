@@ -149,7 +149,7 @@ local function redraw()
         end
         for k, v in pairs(list) do
             local craftable
-            local isLacking = (v.item.amount or 0) + (v.item.inCrafting or 0) < v.item.buffer
+            local isLacking = (v.item.amount or 0) + (v.item.inCrafting or 0) < (v.item.buffer or 0)
             local backgroundColour = colors.green
             if isLacking and (v.item.inCrafting or 0) > 0 then
                 backgroundColour = colors.orange
@@ -194,10 +194,10 @@ end
 local function craftingManager()
     while true do
         for id, item in pairs(data.watches) do
-            local amount, inCrafting = item.amount or 0, item.inCrafting or 0
-            if (amount) + (inCrafting) < item.buffer then
-                local missing = item.buffer - (amount + inCrafting)
-                local remainder = item.batch - math.fmod(missing, item.batch)
+            local amount, inCrafting, buffer, batch = item.amount or 0, item.inCrafting or 0, item.buffer or 0, item.batch or 0
+            if amount + inCrafting < buffer then
+                local missing = buffer - (amount + inCrafting)
+                local remainder = batch - math.fmod(missing, batch)
                 data.watches[id].inCrafting = missing + remainder
                 local craftJobId = ae2.scheduleCrafting(item.type or "item", id, missing + remainder)
                 data.crafting[craftJobId] = {
