@@ -215,17 +215,18 @@ end
 local function eventHandler()
     local events = {
         ["ae2cc:crafting_cancelled"] = function(event, jobId, cancelReason)
-            vPrint(event .. " " .. jobId .. " " .. cancelReason .. "\n")
+            vPrint(event .. " " .. cancelReason .. "\n")
         end,
         ["ae2cc:crafting_done"] = function(event, jobId)
             local craftingJob = data.crafting[jobId]
             data.crafting[jobId] = nil
             data.watches[craftingJob.id].amount = data.watches[craftingJob.id].amount + craftingJob.amount
             data.watches[craftingJob.id].inCrafting = data.watches[craftingJob.id].inCrafting - craftingJob.amount
-            vPrint(event .. " " .. jobId .. " " .. craftingJob.id .. " " .. craftingJob.amount .. "\n")
+            vPrint(event .. " " .. craftingJob.id .. " " .. craftingJob.amount .. "\n")
         end,
         ["ae2cc:crafting_started"] = function(event, jobId)
-            vPrint(event .. " " .. jobId .. "\n")
+            local craftingJob = data.crafting[jobId]
+            vPrint(event .. " " .. craftingJob.id .. " " .. craftingJob.amount .. "\n")
         end
     }
 
@@ -352,20 +353,21 @@ end
 
 local function scanCraftingsAndItems()
     while true do
-        local aeCraftings = ae2.getCraftableObjects()
-        local aeItems = ae2.getAvailableObjects()
-        -- aeCraftings = textutils.unserialiseJSON(aeCraftings)
-        for _, v in pairs(aeCraftings) do
-            local id = v["id"] or "#Error#"
-            if data.watches[id] ~= nil then data.watches[id].craftable = true end
+        local aeCraftings = {}
+        for _, v in pairs(ae2.getCraftableObjects()) do
+            aeCraftings[v["id"]] = true
+        end
+        local aeItems = {}
+        for _, v in pairs(ae2.getAvailableObjects()) do
+            aeItems[v["id"]] = v["amount"]
         end
 
-        for _, v in pairs(aeItems) do
-            local id = v["id"] or "#Error#"
-            if data.watches[id] ~= nil then data.watches[id].amount = v["amount"] or 0 end
+        for k, v in pairs(data.watches) do
+            data.watches[k].craftable = aeCraftings[k] or false
+            data.watches[k].amount = aeItems[k] or 0
         end
 
-        sleep(priority.periodical)
+        sleep(priority.ultralow)
     end
 end
 
