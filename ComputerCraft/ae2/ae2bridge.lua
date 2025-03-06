@@ -1,8 +1,10 @@
 -- Author: JustASnowflake
 
+local utils = require("ae2bridgeUtil")
+
 -- peripherals
-local mon = peripheral.find("monitor")
-if mon == nil then return else write("Found monitor\n") end
+local monitor = peripheral.find("monitor")
+if monitor == nil then return else write("Found monitor\n") end
 
 local ae2 = peripheral.find("ae2cc_adapter")
 if ae2 == nil then
@@ -13,12 +15,12 @@ else
     write("- Found " .. #cpus .. " CPU's\n")
 end
 
-local itemIn = peripheral.wrap("hexical:pedestal_3")
-local itemOut = peripheral.wrap("minecraft:barrel_17")
+local itemIn = peripheral.find("hexical:pedestal")
+local itemOut = peripheral.find("minecraft:barrel")
 
-mon.setTextScale(0.5)
-mon.clear()
-local monWidth, monHeight = mon.getSize()
+monitor.setTextScale(0.5)
+monitor.clear()
+local monWidth, monHeight = monitor.getSize()
 write("Changed monitor scale, new resolution: " .. monWidth .. "x" .. monHeight .. "\n")
 
 local subWidth = math.floor(monWidth * 0.5)
@@ -26,8 +28,8 @@ local jobsWindowColor = colors.blue
 local textColor = colors.black
 local watchesWindowColor = colors.cyan
 
-local jobsWindow = window.create(mon, 1, 1, subWidth, monHeight)
-local watchesWindow = window.create(mon, subWidth + 1, 1, monWidth - subWidth, monHeight)
+local jobsWindow = window.create(monitor, 1, 1, subWidth, monHeight)
+local watchesWindow = window.create(monitor, subWidth + 1, 1, monWidth - subWidth, monHeight)
 jobsWindow.setTextColour(textColor)
 jobsWindow.setBackgroundColour(jobsWindowColor)
 watchesWindow.setTextColour(textColor)
@@ -48,20 +50,30 @@ local debugLog = "DEBUG\n"
 local ctrlKey = 341
 
 local path = fs.getDir(shell.getRunningProgram())
-local watchesFile = path .. "/watchedIndexes.json"
-local watchesFileModified = 0
-local mode = {
-    craftable = "Craftable",
-    watched = "Watched",
-}
-local watchesMode = mode.watched
+local dbFile = path .. "/watchedIndexes.json"
 
 local data = {
-    jobs = {},
+    config = {
+        path = path,
+        dbFile = dbFile,
+        dbModified = 0,
+        peripherals = {
+            itemIn = itemIn,
+            itemOut = itemOut,
+            ae2 = ae2
+        }
+    },
     cpus = {},
+    jobs = {},
     watches = {},
     crafting = {},
+    events = {
+        ae2 = {}
+    }
 }
+
+-- write(textutils.serialise(data))
+
 local priority = {
     high = 0,
     med = 0.2,
@@ -107,72 +119,71 @@ end
 
 
 -- GUI
-local function redraw()
-    local function printJob(job, cpuIdx, headerOffset)
-        local jobInfo
-        local cpuInfo = data.cpus[cpuIdx]
-        local headerLine, infoLine = (2 * cpuIdx) - 1 + headerOffset, 2 * cpuIdx + headerOffset
-        if job == false then
-            jobInfo = ""
+local function printJob(job, cpuIdx, headerOffset)
+    local jobInfo
+    local cpuInfo = data.cpus[cpuIdx]
+    local headerLine, infoLine = (2 * cpuIdx) - 1 + headerOffset, 2 * cpuIdx + headerOffset
+    if job == false then
+        jobInfo = ""
+    else
+        if type(job) == "table" then
+            local rawSec = math.floor(job.elapsedNanos / 1000000000)
+            local min, sec = math.floor(rawSec / 60), math.fmod(rawSec, 60)
+            jobInfo =
+                (job.amount or "#Error#") .. "x " ..
+                (job.displayName or "#Error#") .. " " ..
+                (job.crafted or "#Error#") .. "/" ..
+                (job.total or "#Error#") .. " " ..
+                (min or "#Error#") .. "m " ..
+                (sec or "#Error#") .. "s "
+        end
+    end
+    jobsWindow.setCursorPos(1, headerLine)
+    jobsWindow.clearLine()
+    jobsWindow.write(
+        "CPU#" .. cpuIdx ..
+        " Co-Processors:" .. cpuInfo.availableCoProcessors ..
+        " Memory:" .. (cpuInfo.availableStorage / 1024) .. "K " ..
+        cpuInfo.state)
+    jobsWindow.setCursorPos(1, infoLine)
+    jobsWindow.clearLine()
+    jobsWindow.write(jobInfo)
+end
+
+local function printWatches(watches, headerOffset)
+    local list = {}
+    for k, v in pairs(watches) do
+        table.insert(list, {
+            id = k,
+            item = v
+        })
+    end
+    for k, v in pairs(list) do
+        local craftable
+        local isLacking = (v.item.amount or 0) + (v.item.inCrafting or 0) < (v.item.buffer or 0)
+        local backgroundColour = colors.green
+        if isLacking and (v.item.inCrafting or 0) > 0 then
+            backgroundColour = colors.orange
         else
-            if type(job) == "table" then
-                local rawSec = math.floor(job.elapsedNanos / 1000000000)
-                local min, sec = math.floor(rawSec / 60), math.fmod(rawSec, 60)
-                jobInfo =
-                    (job.amount or "#Error#") .. "x " ..
-                    (job.displayName or "#Error#") .. " " ..
-                    (job.crafted or "#Error#") .. "/" ..
-                    (job.total or "#Error#") .. " " ..
-                    (min or "#Error#") .. "m " ..
-                    (sec or "#Error#") .. "s "
-            end
+            if isLacking then backgroundColour = colors.red end
         end
-        jobsWindow.setCursorPos(1, headerLine)
-        jobsWindow.clearLine()
-        jobsWindow.write(
-            "CPU#" .. cpuIdx ..
-            " Co-Processors:" .. cpuInfo.availableCoProcessors ..
-            " Memory:" .. (cpuInfo.availableStorage / 1024) .. "K " ..
-            cpuInfo.state)
-        jobsWindow.setCursorPos(1, infoLine)
-        jobsWindow.clearLine()
-        jobsWindow.write(jobInfo)
+        if v.craftable then craftable = "[C]" else craftable = "" end
+        local text =
+            "" .. (v.item.displayName or "#Error#") ..
+            " " .. craftable ..
+            " - " .. (v.item.amount or 0) ..
+            "/" .. (v.item.buffer or 0) ..
+            "/" .. (v.item.batch or 0) ..
+            "/" .. (v.item.inCrafting or 0)
+        watchesWindow.setCursorPos(2, k + headerOffset)
+        watchesWindow.setBackgroundColour(backgroundColour)
+        watchesWindow.write(text)
     end
+end
 
-    local function printWatches(watches, headerOffset)
-        local list = {}
-        for k, v in pairs(watches) do
-            table.insert(list, {
-                id = k,
-                item = v
-            })
-        end
-        for k, v in pairs(list) do
-            local craftable
-            local isLacking = (v.item.amount or 0) + (v.item.inCrafting or 0) < (v.item.buffer or 0)
-            local backgroundColour = colors.green
-            if isLacking and (v.item.inCrafting or 0) > 0 then
-                backgroundColour = colors.orange
-            else
-                if isLacking then backgroundColour = colors.red end
-            end
-            if v.craftable then craftable = "[C]" else craftable = "" end
-            local text =
-                "" .. (v.item.displayName or "#Error#") ..
-                " " .. craftable ..
-                " - " .. (v.item.amount or 0) ..
-                "/" .. (v.item.buffer or 0) ..
-                "/" .. (v.item.batch or 0) ..
-                "/" .. (v.item.inCrafting or 0)
-            watchesWindow.setCursorPos(2, k + headerOffset)
-            watchesWindow.setBackgroundColour(backgroundColour)
-            watchesWindow.write(text)
-        end
-    end
-
-
-    -- redrawing loop
-    while runProgram do
+local function redraw()
+    while true do
+        -- redrawing loop
         jobsWindow.setBackgroundColour(jobsWindowColor)
         jobsWindow.clear()
         jobsWindow.setCursorPos(1, 1)
@@ -182,7 +193,9 @@ local function redraw()
         watchesWindow.setCursorPos(2, 1)
         watchesWindow.write("WATCHES - Amount/Buffer/BatchPerCraft/InCrafting")
 
-        for k, job in pairs(data.jobs or {}) do printJob(job, k, 2) end
+        for k, job in pairs(data.jobs or {}) do
+            printJob(job, k, 2)
+        end
         printWatches(data.watches or {}, 2)
         sleep(priority.high)
     end
@@ -194,7 +207,8 @@ end
 local function craftingManager()
     while true do
         for id, item in pairs(data.watches) do
-            local amount, inCrafting, buffer, batch = item.amount or 0, item.inCrafting or 0, item.buffer or 0, item.batch or 0
+            local amount, inCrafting, buffer, batch = item.amount or 0, item.inCrafting or 0, item.buffer or 0,
+                item.batch or 0
             if amount + inCrafting < buffer then
                 local missing = buffer - (amount + inCrafting)
                 local remainder = batch - math.fmod(missing, batch)
@@ -214,195 +228,74 @@ end
 
 
 -- scanners
-local function eventHandler()
+local function eventScanner()
     local events = {
         ["ae2cc:crafting_cancelled"] = function(event, jobId, cancelReason)
-            vPrint(event .. " " .. cancelReason .. "\n")
+            table.insert(data.events.ae2, 1, { event = event, jobId = jobId, cancelReason = cancelReason })
         end,
         ["ae2cc:crafting_done"] = function(event, jobId)
-            local craftingJob = data.crafting[jobId]
-            data.crafting[jobId] = nil
-            data.watches[craftingJob.id].amount = data.watches[craftingJob.id].amount + craftingJob.amount
-            data.watches[craftingJob.id].inCrafting = data.watches[craftingJob.id].inCrafting - craftingJob.amount
-            vPrint(event .. " " .. craftingJob.id .. " " .. craftingJob.amount .. "\n")
+            table.insert(data.events.ae2, 1, { event = event, jobId = jobId, })
         end,
         ["ae2cc:crafting_started"] = function(event, jobId)
-            local craftingJob = data.crafting[jobId]
-            vPrint(event .. " " .. craftingJob.id .. " " .. craftingJob.amount .. "\n")
+            table.insert(data.events.ae2, 1, { event = event, jobId = jobId, })
         end
     }
 
     while true do
         local eventData = { os.pullEvent() }
-        local event, jobId, cancelReason = eventData[1], eventData[2], eventData[3]
-        -- if string.find(event, "ae2") ~= nil then vPrint(textutils.serialise(eventData).."\n") end
 
-        local eventFunc = events[event]
-        if eventFunc ~= nil then eventFunc(event, jobId, cancelReason) end
+        local eventFunc = events[eventData[1]]
+        if eventFunc ~= nil then
+            eventFunc(eventData[1], eventData[2], eventData[3], eventData[4], eventData[5],
+                eventData[6])
+        end
         -- sleep(priority.high)
     end
 end
 
-local function scanJobs()
-    while true do
-        local cpus = ae2.getCraftingCPUs()
-        for k, v in pairs(cpus) do
-            local jobInfo
-            if type(v["jobStatus"]) == "table" and type(v["jobStatus"]["output"]) == "table" then
-                jobInfo = {
-                    all = v,
-                    cpu = k,
-                    amount = v["jobStatus"]["output"]["amount"],
-                    displayName = v["jobStatus"]["output"]["displayName"],
-                    crafted = v["jobStatus"]["craftedObjects"],
-                    total = v["jobStatus"]["totalObjects"],
-                    elapsedNanos = v["jobStatus"]["elapsedNanos"],
-                }
-            end
-            data.jobs[k] = jobInfo or false
-
-            local cpuState
-            if v["jobStatus"] ~= nil then cpuState = "Busy" else cpuState = "Idle" end
-            local cpuInfo = {
-                availableCoProcessors = v["availableCoProcessors"],
-                availableStorage = v["availableStorage"],
-                selectionMode = v["selectionMode"],
-                state = cpuState,
+local function jobScanner()
+    local cpus = ae2.getCraftingCPUs()
+    for k, v in pairs(cpus) do
+        local jobInfo
+        if type(v["jobStatus"]) == "table" and type(v["jobStatus"]["output"]) == "table" then
+            jobInfo = {
+                all = v,
+                cpu = k,
+                amount = v["jobStatus"]["output"]["amount"],
+                displayName = v["jobStatus"]["output"]["displayName"],
+                crafted = v["jobStatus"]["craftedObjects"],
+                total = v["jobStatus"]["totalObjects"],
+                elapsedNanos = v["jobStatus"]["elapsedNanos"],
             }
-            data.cpus[k] = cpuInfo
         end
+        data.jobs[k] = jobInfo or false
 
+        local cpuState
+        if v["jobStatus"] ~= nil then cpuState = "Busy" else cpuState = "Idle" end
+        local cpuInfo = {
+            availableCoProcessors = v["availableCoProcessors"],
+            availableStorage = v["availableStorage"],
+            selectionMode = v["selectionMode"],
+            state = cpuState,
+        }
+        data.cpus[k] = cpuInfo
+    end
+end
+
+local function main()
+    while true do
+        data = utils.itemScanner(data) or data
+        data = utils.handleCrafting(data) or data
+        jobScanner()
         sleep(priority.high)
-    end
-end
-
-
-local function scanItemsToWatch()
-    while true do
-        local f
-        local exists = fs.exists(watchesFile)
-        local itemInInput = itemIn.list()[1] ~= nil
-
-        -- if file doesn't exist, create it
-        if not exists then
-            f = fs.open(watchesFile, "w")
-            f.write("[\n]")
-            f.close()
-        end
-
-        local fileModificationDate = fs.attributes(watchesFile)["modified"]
-        local wasModified = fileModificationDate ~= watchesFileModified
-
-        -- if file does exist check if modified, add to monitoredIndexes if yes
-        if wasModified or itemInInput then
-            vPrint("DB file modified, scanning...\n")
-            watchesFileModified = fileModificationDate
-
-            local f = fs.open(watchesFile, "r")
-            local json = f.readAll()
-            json = textutils.unserialiseJSON(json)
-            f.close()
-            -- data.watches = {}
-
-            local buffer = {}
-            for _, v in ipairs(json) do
-                buffer[v["id"]] = {
-                    displayName = v["displayName"],
-                    type = v["type"],
-                    buffer = v["buffer"],
-                    batch = v["batch"],
-                }
-            end
-            for k, v in pairs(buffer) do
-                if data.watches[k] == nil then
-                    data.watches[k] = buffer[k]
-                else
-                    data.watches[k].displayName = buffer.displayName
-                    data.watches[k].type = buffer.type
-                    data.watches[k].buffer = buffer.buffer
-                    data.watches[k].batch = buffer.batch
-                end
-            end
-            for k, v in pairs(data.watches) do
-                if buffer[k] == nil then
-                    data.watches[k] = nil
-                end
-            end
-
-
-
-            if itemInInput then
-                -- get info and push item to ae2 system
-                local itemToAdd = itemIn.getItemDetail(1)
-                itemIn.pushItems(peripheral.getName(itemOut), 1)
-                local idToAdd = itemToAdd["name"]
-                itemToAdd = {
-                    displayName = itemToAdd["displayName"],
-                    type = itemToAdd["type"] or "item",
-                    buffer = 0,
-                    batch = 0,
-                }
-                -- add item to watches
-                data.watches[idToAdd] = itemToAdd
-
-                -- prepare watches to serialize and save them to json
-                local toSerialise = {}
-                for key, value in pairs(data.watches) do
-                    table.insert(toSerialise, {
-                        ["id"] = key,
-                        ["displayName"] = value.displayName,
-                        ["type"] = value.type or "item",
-                        ["buffer"] = value.buffer,
-                        ["batch"] = value.batch,
-                    })
-                end
-                json = textutils.serialiseJSON(toSerialise)
-                f = fs.open(watchesFile, "w+")
-                f.write(json)
-                f.close()
-
-                -- update modification date to avoid scanning the same data again
-                fileModificationDate = fs.attributes(watchesFile)["modified"]
-                watchesFileModified = fileModificationDate
-            end
-            vPrint(textutils.serialise(data.watches) .. "\n")
-        end
-
-        sleep(priority.low)
-    end
-end
-
-local function scanCraftingsAndItems()
-    while true do
-        local aeCraftings = {}
-        for _, v in pairs(ae2.getCraftableObjects()) do
-            aeCraftings[v["id"]] = true
-        end
-        local aeItems = {}
-        for _, v in pairs(ae2.getAvailableObjects()) do
-            aeItems[v["id"]] = v["amount"]
-        end
-
-        for k, v in pairs(data.watches) do
-            data.watches[k].craftable = aeCraftings[k] or false
-            data.watches[k].amount = aeItems[k] or 0
-        end
-
-        sleep(priority.ultralow)
     end
 end
 
 -- input scanners
 
-local function scanMonitorClicks()
-    while true do
-        local event, side, x, y = os.pullEvent("monitor_touch")
-        vPrint("# EVENT monitor_touch at (" .. x .. ", " .. y .. ")\n")
-        sleep(0)
-    end
-end
 
-local function scanKeyPress()
+
+local function keyScanner()
     local function run(a) if type(a) == "function" then a() end end
     local pressed = {}
     while runProgram do
@@ -416,6 +309,5 @@ local function scanKeyPress()
     end
 end
 
-parallel.waitForAny(redraw, eventHandler, scanKeyPress, scanJobs, scanMonitorClicks, scanItemsToWatch,
-    scanCraftingsAndItems, craftingManager)
+parallel.waitForAny(redraw, eventScanner, main, keyScanner, craftingManager)
 vPrint("Exiting...\n")
