@@ -1,5 +1,53 @@
 local function writeLn(str) write(str .. "\n") end
 
+local function getAeItems(ae2)
+    local aeItems = {}
+    for _, v in pairs(ae2.getAvailableObjects()) do
+        aeItems[v.id] = {
+            type = v.type,
+            displayName = v.displayName,
+            amount = v.amount,
+        }
+    end
+    return aeItems
+end
+
+local function getAeCraftings(ae2)
+    local aeCraftings = {}
+    for _, v in pairs(ae2.getCraftableObjects()) do
+        aeCraftings[v.id] = true
+    end
+    return aeCraftings
+end
+
+local function updateItemsMeta(data, aeItems, aeCraftings)
+    for k, v in pairs(data.watches) do
+        local aeDisplayName
+        local aeType
+        local aeAmount
+        if (aeItems[k] ~= nil) then
+            aeDisplayName = aeItems[k].displayName
+            aeType = aeItems[k].type
+            aeAmount = aeItems[k].amount
+        else
+            aeDisplayName = nil
+            aeType = nil
+            aeAmount = nil
+        end
+        local aeCraftable = aeCraftings[k] or false
+
+        data.watches[k].displayName = v.displayName or aeDisplayName
+        data.watches[k].type = aeType or v.type or "item"
+        data.watches[k].buffer = v.buffer
+        data.watches[k].batch = v.batch
+        data.watches[k].amount = aeAmount or 0
+        data.watches[k].inCrafting = v.inCrafting
+        data.watches[k].craftable = aeCraftable
+    end
+    return data
+end
+
+
 -- Scans for items from all sources: dbFile, itemIn peripheral and ae2.
 -- Takes the data object and returnes it updated
 local function itemScanner(data)
@@ -10,19 +58,11 @@ local function itemScanner(data)
     local exists = fs.exists(data.config.dbFile)
     local itemInInput = #itemIn.list() > 0
     local saveToDb = itemInInput
+
     -- get all items and available crafting recipies from AE2
-    local aeItems = {}
-    for _, v in pairs(ae2.getAvailableObjects()) do
-        aeItems[v.id] = {
-            type = v.type,
-            displayName = v.displayName,
-            amount = v.amount,
-        }
-    end
-    local aeCraftings = {}
-    for _, v in pairs(ae2.getCraftableObjects()) do
-        aeCraftings[v.id] = true
-    end
+    local aeItems = getAeItems(ae2)
+    local aeCraftings = getAeCraftings(ae2)
+
 
     -- if file doesn't exist, create it with empty json array
     if not exists then
@@ -92,19 +132,12 @@ local function itemScanner(data)
                 data.watches[k] = nil
             end
         end
+    end
 
-        -- add additional meta to watches
-        for k, v in pairs(data.watches) do
-            data.watches[k].displayName = v.displayName or aeItems[k].displayName
-            data.watches[k].type = aeItems[k].type or v.type or "item"
-            data.watches[k].buffer = v.buffer
-            data.watches[k].batch = v.batch
-            data.watches[k].amount = aeItems[k].amount or 0
-            data.watches[k].inCrafting = v.inCrafting
-            data.watches[k].craftable = aeCraftings[k] or false
-        end
+    -- add additional meta to watches
+    data = updateItemsMeta(data, aeItems, aeCraftings)
 
-
+    if wasModified or itemInInput then
         if saveToDb then
             -- prepare watches to serialize and save them to json
             local toSerialise = {}
@@ -129,6 +162,7 @@ local function itemScanner(data)
         write("Done\n")
         -- writeLn(textutils.serialise(data.watches))
     end
+
     return data
 end
 
@@ -140,7 +174,7 @@ local function handleCrafting(data)
         ["ae2cc:crafting_done"] = function(event, jobId)
             writeLn("ae2cc:crafting_done")
             local itemId = data.crafting[jobId].id
-            local craftedAmount = data.crafting[jobId].id
+            local craftedAmount = data.crafting[jobId].amount
             data.watches[itemId].amount = data.watches[itemId].amount + craftedAmount
             data.watches[itemId].inCrafting = data.watches[itemId].inCrafting - craftedAmount
         end,
@@ -160,7 +194,7 @@ local function handleCrafting(data)
 
         if amount + inCrafting < buffer then
             -- get amount of missing items (below buffer), add remainder to ceil multiplicative batch
-            -- and scheduleCrafting 
+            -- and scheduleCrafting
             local missing = buffer - (amount + inCrafting)
             local remainder = batch - math.fmod(missing, batch)
             data.watches[id].inCrafting = missing + remainder

@@ -287,6 +287,7 @@ local function main()
         data = utils.itemScanner(data) or data
         data = utils.handleCrafting(data) or data
         jobScanner()
+        
         sleep(priority.high)
     end
 end
