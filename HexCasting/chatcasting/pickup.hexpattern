@@ -1,0 +1,24 @@
+#git(/HexCasting/libs/base.hexpattern)
+
+$if(
+    Numerical Reflection: 0
+    Selection Distillation
+    Gemini Decomposition
+    Augur's Purification
+)(
+    Mind's Reflection
+    Compass' Purification II
+    Jester's Gambit
+    Zone Distillation: Item
+    {
+        {@str(gate)} >>
+        Jester's Gambit
+        Gate's Opening
+    }
+    Jester's Gambit
+    Thoth's Gambit
+    {@str(gate)} >>
+    Gate's Closing
+)(
+    $print(Usage: pickup <range>)
+)
