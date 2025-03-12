@@ -1,0 +1,39 @@
+local add, remove = false, false
+local gateName
+
+local port = peripheral.find("focal_port")
+
+if arg[1] ~= nil then
+    if arg[1] == "add" then add = true end
+    if arg[1] == "remove" then remove = true end
+else
+    print("Usage: gateManager add/remove <gate name>")
+end
+
+if type(arg[2]) == "string" then
+    gateName = arg[2]
+else
+    print("Usage: gateManager add/remove <gate name>")
+end
+
+
+
+
+local path = fs.getDir(shell.getRunningProgram())
+local file = path .. "gates.txt"
+
+
+local function addGate(name, id)
+    local f = fs.open(file, "a")
+    f.writeLine(name .. ";" .. id)
+    f.close()
+end
+
+
+local gateId = port.readIota()
+if gateId ~= nil then
+    gateId = gateId.gate
+    if add then
+        addGate(gateName, gateId)
+    end
+end
