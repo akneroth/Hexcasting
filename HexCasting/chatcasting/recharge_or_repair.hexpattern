@@ -80,9 +80,9 @@ Return Item
     {
         // recharge or repair
         {
-            Recharge Item
+            Induce Mending
             {
-                @str(Recharged item with media)
+                @str(Repaired item's durability with media)
             }
             Flock's Disintegration
             Reveal
@@ -90,9 +90,9 @@ Return Item
         Athena's Gambit
         Bookkeeper's Gambit: v
         {
-            Induce Mending
+            Recharge Item
             {
-                @str(Repaired item's durability with media)
+                @str(Recharged item with media)
             }
             Flock's Disintegration
             Reveal
