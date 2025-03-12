@@ -21,6 +21,10 @@ end
 
 local path = fs.getDir(shell.getRunningProgram())
 local file = path .. "gates.txt"
+if not fs.exists(file) then
+    local f = fs.open(file, "w")
+    f.close()
+end
 
 
 local function addGate(name, id)
