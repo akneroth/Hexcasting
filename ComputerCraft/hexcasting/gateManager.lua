@@ -33,11 +33,18 @@ local function addGate(name, id)
     f.close()
 end
 
+local function removeGate(name)
+    print("TBD")
+end
 
 local gateId = port.readIota()
 if gateId ~= nil then
     gateId = gateId.gate
     if add then
         addGate(gateName, gateId)
+    else
+        if remove then
+            removeGate(gateName)
+        end
     end
 end
