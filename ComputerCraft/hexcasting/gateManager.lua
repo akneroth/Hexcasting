@@ -3,7 +3,7 @@ local gateName
 
 local port = peripheral.find("focal_port")
 
-if #arg = 0 then
+if #arg == 0 then
     print("Usage: gateManager add/remove <gate name>")
 end
 
