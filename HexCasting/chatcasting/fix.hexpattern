@@ -1,0 +1,139 @@
+#git(/HexCasting/libs/base.hexpattern)
+
+// check if there is one param
+$if(
+    Gemini Decomposition
+    Length Purification
+    Numerical Reflection: 1
+    Equality Distillation
+)(
+
+    $if(
+        Flock's Disintegration
+        Input Purification
+        Gemini Decomposition
+        // check if it is a proper number
+        Augur's Purification
+    )()(
+        $print(Passed argument is not a number, using 640)
+        Numerical Reflection: 640
+    )
+)(
+    $if(
+        Mind's Reflection
+        Duelist's Purification
+        Length Purification
+        Augur's Purification
+    )(
+        // main hand is not empty
+        Mind's Reflection
+        Tool Purification
+        Fragility Purification
+        $if(
+            Gemini Decomposition
+            Augur's Purification
+        )(
+            // main hand max duability is non 0
+        )(
+            // main hand max duability is 0
+            Bookkeeper's Gambit: v
+            Numerical Reflection: 640
+        )
+    )(
+        // main hand is empty
+        $if(
+            Mind's Reflection
+            Shieldbearer's Purification
+            Length Purification
+            Augur's Purification
+        )(
+            // off hand is not empty
+            Mind's Reflection
+            Accessory Purification
+            Fragility Purification
+            $if(
+                Gemini Decomposition
+                Augur's Purification
+            )(
+                // off hand max duability is non 0
+            )(
+                // off hand max duability is 0
+                Bookkeeper's Gambit: v
+                Numerical Reflection: 640
+            )
+        )(
+            // off hand is empty
+            Numerical Reflection: 640
+        )
+    )
+)
+
+
+// get amount
+Numerical Reflection: 5
+Division Distillation
+Ceiling Purification
+
+
+// get caster foot pos
+Mind's Reflection
+Compass' Purification II
+
+// get mote
+$if(
+    {@item_type(minecraft:amethyst_shard, true)} >>
+    Stocktake Purification
+    Gemini Decomposition
+    Augur's Purification
+)(
+    Numerical Reflection: 0
+    Selection Distillation
+)(
+    $print(No amethyst shards in binded mote nexus)
+    Janus' Gambit
+)
+
+// get items from mote
+Reflecting Gambit
+Return Item
+
+// repair using amethyst on the ground
+$foreach(
+    // scan for items on ground
+    Mind's Reflection
+    Compass' Purification II
+    Numerical Reflection: 1
+    Zone Distillation: Item
+)(
+    $if(
+        Gemini Decomposition
+        Sorter's Purification
+        {@item_type(minecraft:amethyst_shard, true)} >>
+        Equality Distillation
+    )(
+        // repair if is amethyst shard
+        Induce Mending
+        $print(Repaired item's durability with media)
+    )()
+)
+Bookkeeper's Gambit: v
+
+
+// return left amethyst
+$foreach(
+    // scan for items on ground
+    Mind's Reflection
+    Compass' Purification II
+    Numerical Reflection: 1
+    Zone Distillation: Item
+)(
+    $if(
+        Gemini Decomposition
+        Sorter's Purification
+        {@item_type(minecraft:amethyst_shard, true)} >>
+        Equality Distillation
+    )(
+        Mediafy Item
+    )()
+)
+Bookkeeper's Gambit: v
