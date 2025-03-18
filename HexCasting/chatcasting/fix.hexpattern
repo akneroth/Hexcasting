@@ -1,23 +1,37 @@
 #git(/HexCasting/libs/base.hexpattern)
 
-// check if there is one param
-$if(
-    Gemini Decomposition
-    Length Purification
-    Numerical Reflection: 1
-    Equality Distillation
+// get amount from param
+$runif(
+    Flock's Reflection
+    Augur's Purification
 )(
-
     $if(
-        Flock's Disintegration
-        Input Purification
         Gemini Decomposition
-        // check if it is a proper number
-        Augur's Purification
-    )()(
-        $print(Passed argument is not a number, using 640)
-        Numerical Reflection: 640
+        Length Purification
+        Numerical Reflection: 1
+        Equality Distillation
+    )(
+        // if exactly 1 parameter was passed
+        $if(
+            Flock's Disintegration
+            Input Purification
+            Gemini Decomposition
+            // check if it is a proper number
+            Augur's Purification
+        )(
+            // use passed number
+        )(
+            Bookkeeper's Gambit: v
+        )
+    )(
+        Bookkeeper's Gambit: v
     )
+)
+
+// main hand
+$runif(
+    Flock's Reflection
+    Augur's Purification
 )(
     $if(
         Mind's Reflection
@@ -26,47 +40,62 @@ $if(
         Augur's Purification
     )(
         // main hand is not empty
-        Mind's Reflection
-        Tool Purification
-        Fragility Purification
-        $if(
+        $runif(
+            Mind's Reflection
+            Tool Purification
+            Fragility Purification
+
             Gemini Decomposition
             Augur's Purification
         )(
             // main hand max duability is non 0
+            $print(Using main hand durability)
         )(
             // main hand max duability is 0
             Bookkeeper's Gambit: v
-            Numerical Reflection: 640
         )
+    )()
+)
+
+// off hand
+$runif(
+    Flock's Reflection
+    Augur's Purification
+)(
+    $if(
+        Mind's Reflection
+        Shieldbearer's Purification
+        Length Purification
+        Augur's Purification
     )(
-        // main hand is empty
-        $if(
-            Mind's Reflection
-            Shieldbearer's Purification
-            Length Purification
-            Augur's Purification
-        )(
-            // off hand is not empty
+        // off hand is not empty
+        $runif(
             Mind's Reflection
             Accessory Purification
             Fragility Purification
-            $if(
-                Gemini Decomposition
-                Augur's Purification
-            )(
-                // off hand max duability is non 0
-            )(
-                // off hand max duability is 0
-                Bookkeeper's Gambit: v
-                Numerical Reflection: 640
-            )
+
+            Gemini Decomposition
+            Augur's Purification
         )(
-            // off hand is empty
-            Numerical Reflection: 640
+            // off hand max duability is non 0
+            $print(Using off hand durability)
+        )(
+            // off hand max duability is 0
+            Bookkeeper's Gambit: v
         )
-    )
+    )()
 )
+
+// no durability items
+$runif(
+    Flock's Reflection
+    Augur's Purification
+)(
+    $print(Using default amount of media)
+    Numerical Reflection: 640
+)
+
+// print amount of media
 Reveal
 
 
@@ -114,9 +143,16 @@ $foreach(
         Equality Distillation
     )(
         {
-            // repair if is amethyst shard
+            // handle repair if is amethyst shard
             Induce Mending
             $print(Repaired item's durability with media)
+        }
+        Athena's Gambit
+        Bookkeeper's Gambit: v
+        {
+            // handle refill if is amethyst shard
+            Recharge Item
+            $print(Recharged item with media)
         }
         Athena's Gambit
         Bookkeeper's Gambit: v

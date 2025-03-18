@@ -20,6 +20,19 @@
     Hermes' Gambit
 )
 
+// do (patterns) else (patterns) based on bool before
+// Evaluates the second arg if true, evaluates the third if false
+#def(fastif)(
+    {
+        <1>
+    }
+    {
+        <2>
+    }
+    Augur's Exaltation
+    Hermes' Gambit
+)
+
 #def(runif)(
     <1>
     {
