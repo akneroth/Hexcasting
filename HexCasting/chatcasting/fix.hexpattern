@@ -113,9 +113,13 @@ $foreach(
         {@item_type(minecraft:amethyst_shard, true)} >>
         Equality Distillation
     )(
-        // repair if is amethyst shard
-        Induce Mending
-        $print(Repaired item's durability with media)
+        {
+            // repair if is amethyst shard
+            Induce Mending
+            $print(Repaired item's durability with media)
+        }
+        Athena's Gambit
+        Bookkeeper's Gambit: v
     )()
 )
 Bookkeeper's Gambit: v
