@@ -29,10 +29,10 @@ $runif(
 )
 
 // main hand
-$runif(
+$if(
     Flock's Reflection
     Augur's Purification
-)(
+)()(
     $if(
         Mind's Reflection
         Duelist's Purification
@@ -58,10 +58,10 @@ $runif(
 )
 
 // off hand
-$runif(
+$if(
     Flock's Reflection
     Augur's Purification
-)(
+)()(
     $if(
         Mind's Reflection
         Shieldbearer's Purification
@@ -87,10 +87,10 @@ $runif(
 )
 
 // no durability items
-$runif(
+$if(
     Flock's Reflection
     Augur's Purification
-)(
+)()(
     $print(Using default amount of media)
     Numerical Reflection: 640
 )
