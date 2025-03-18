@@ -40,7 +40,7 @@ $if(
         Augur's Purification
     )(
         // main hand is not empty
-        $runif(
+        $if(
             Mind's Reflection
             Tool Purification
             Fragility Purification
@@ -69,7 +69,7 @@ $if(
         Augur's Purification
     )(
         // off hand is not empty
-        $runif(
+        $if(
             Mind's Reflection
             Accessory Purification
             Fragility Purification
