@@ -22,7 +22,6 @@ $fastif()(
 // stack: [spell]
 Muninn's Reflection
 Speaker's Distillation
-Single's Purification
 // stack: [[[params], spell]]
 {
     $rightclick
@@ -36,8 +35,6 @@ Single's Purification
 Numerical Reflection: 3
 Rotation Gambit
 Surgeon's Exaltation
-
-Single's Purification
 
 {
     Telepathic Reflection
