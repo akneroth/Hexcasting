@@ -43,9 +43,11 @@ Speaker's Distillation
         }
         // Nullary Reflection
         {}
+        $dump(before if)
         Augur's Exaltation
-        $dump
+        $dump(before eval)
         Hermes' Gambit
+        $dump(eval)
     }
     {}
     Augur's Exaltation

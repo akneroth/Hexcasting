@@ -17,6 +17,7 @@
 #def(dump)(
     Flock's Reflection
     Flock's Gambit
+    $print(<1>)
     Reveal
     Flock's Disintegration
 )
