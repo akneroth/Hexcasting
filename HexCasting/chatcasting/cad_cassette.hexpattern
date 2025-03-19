@@ -22,52 +22,40 @@ $fastif()(
 // stack: [spell]
 Muninn's Reflection
 Speaker's Distillation
-// stack: [[[params], spell]]
+// stack: [[params], spell]
 {
-    $rightclick
-    Numerical Reflection: 1
-    Equality Distillation
-    Nullary Reflection
+    Telepathic Reflection
+    Numerical Reflection: -1
+    Inequality Distillation
     {
-        {@str(right click)}>>
-        Send Thought
-    }
-    Augur's Exaltation
-    Hermes' Gambit
-}
-Numerical Reflection: 3
-Rotation Gambit
-Surgeon's Exaltation
-
-{
-    {
-        Telepathic Reflection
-        Numerical Reflection: -1
-        Inequality Distillation
+        $rightclick
+        Numerical Reflection: 1
+        Equality Distillation
         Nullary Reflection
         {
-            {@str(telepathy)}>>
-            Send Thought          
+            {@str(right click)}>>
+            Send Thought
         }
         Augur's Exaltation
         Hermes' Gambit
     }
-}
-Numerical Reflection: 3
-Rotation Gambit
-Surgeon's Exaltation
-// stack: [bool, [bool, [[params], spell], [], if, eval], [], if, eval]
+    {
+        {@str(telepathy)}>>
+        Send Thought          
+    }
+    Augur's Exaltation
+    Hermes' Gambit
 
-{    
-    {@str(Running)}>>
-    Send Thought
     {@str(Akasha CAD)} >>
     Program Purification
     Numerical Reflection: 1
     {@str(Akasha CAD)} >>
     Enqueue
 }
-Additive Distillation
+Numerical Reflection: 8
+Rotation Gambit
+Surgeon's Exaltation
+
 Numerical Reflection: 1
 {@str(Akasha CAD)} >>
 Enqueue
