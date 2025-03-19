@@ -17,8 +17,11 @@
 #def(dump)(
     Flock's Reflection
     Flock's Gambit
-    $print(<1>)
+    @str(<1>)
+    Speaker's Distillation
     Reveal
+    Speaker's Decomposition
+    Bookkeeper's Gambit: v
     Flock's Disintegration
 )
 
