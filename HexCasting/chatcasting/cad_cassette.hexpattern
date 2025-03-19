@@ -33,13 +33,15 @@ Speaker's Distillation
         Equality Distillation
         {
             Nullary Reflection
-            Flock's Disintegration
         }
         {
-            {@str(right click)}>>
-            Send Thought
+            {
+                {@str(right click)}>>
+                Send Thought
+            }
         }
         Augur's Exaltation
+        Flock's Disintegration
         Hermes' Gambit
     }
     {
