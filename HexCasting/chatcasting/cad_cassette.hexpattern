@@ -41,8 +41,8 @@ Additive Distillation
     Inequality Distillation
     {
         $rightclick
-        Numerical Reflection: 1
-        Equality Distillation
+        Numerical Reflection: 5
+        Minimus Distillation II
         {
             {
                 Nullary Reflection
@@ -64,7 +64,7 @@ Additive Distillation
 
     {@str(Akasha CAD)} >>
     Program Purification
-    Numerical Reflection: 1
+    Numerical Reflection: 5
     {@str(Akasha CAD)} >>
     Enqueue
 }
@@ -72,6 +72,6 @@ Numerical Reflection: 9
 Rotation Gambit
 Surgeon's Exaltation
 
-Numerical Reflection: 1
+Numerical Reflection: 5
 {@str(Akasha CAD)} >>
 Enqueue
