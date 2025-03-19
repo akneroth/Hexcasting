@@ -31,7 +31,10 @@ Speaker's Distillation
         $rightclick
         Numerical Reflection: 1
         Equality Distillation
-        Nullary Reflection
+        {
+            Nullary Reflection
+            Flock's Disintegration
+        }
         {
             {@str(right click)}>>
             Send Thought
@@ -52,7 +55,7 @@ Speaker's Distillation
     {@str(Akasha CAD)} >>
     Enqueue
 }
-Numerical Reflection: 7
+Numerical Reflection: 8
 Rotation Gambit
 Surgeon's Exaltation
 
