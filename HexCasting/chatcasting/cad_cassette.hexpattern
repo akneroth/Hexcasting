@@ -32,9 +32,14 @@ Speaker's Distillation
         $rightclick
         Numerical Reflection: 1
         Equality Distillation
-        {
-            Nullary Reflection
-        }
+        // somehow this kinda works with surgeon on 9
+        // {
+        //     {
+        //         Nullary Reflection
+        //     }
+        //     Flock's Disintegration
+        // }
+        Nullary Reflection
         {}
         Augur's Exaltation
         $dump
@@ -50,7 +55,7 @@ Speaker's Distillation
     {@str(Akasha CAD)} >>
     Enqueue
 }
-Numerical Reflection: 8
+Numerical Reflection: 7
 Rotation Gambit
 Surgeon's Exaltation
 
