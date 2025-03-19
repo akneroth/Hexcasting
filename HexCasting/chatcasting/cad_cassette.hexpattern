@@ -20,9 +20,18 @@ $fastif()(
     Janus' Gambit
 )
 // stack: [spell]
+{
+    {
+        Nullary Reflection
+    }
+    Flock's Disintegration
+}
+Numerical Reflection: 1
 Muninn's Reflection
-Speaker's Distillation
-// stack: [[params], spell]
+Surgeon's Exaltation
+Jester's Gambit
+Additive Distillation
+// stack: [{[params]}>>, spell]
 
 {
     Telepathic Reflection
