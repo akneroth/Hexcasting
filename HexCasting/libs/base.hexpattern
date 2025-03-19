@@ -122,7 +122,9 @@
         {@str(<1>)} >>
         Program Purification
         Augur's Purification
-    )()(
+    )(
+        $print(Restarting cassette...)
+    )(
         $if(
             Threading Reflection II
             Numerical Reflection: 0

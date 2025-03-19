@@ -6,11 +6,11 @@ $check_for_free_cassette(Akasha CAD)
 
 $stop_detect(Akasha CAD)
 
+Reveal
 Speaker's Decomposition
 Jester's Gambit
 Huginn's Gambit
 @str(to hexicon)
-Reveal
 
 {@vec(375, 53, 2484)} >>
 Jester's Gambit
@@ -41,7 +41,7 @@ Additive Distillation
     Inequality Distillation
     {
         $rightclick
-        Numerical Reflection: 5
+        Numerical Reflection: 10
         Minimus Distillation II
         $rightclick
         Numerical Reflection: 1
@@ -56,11 +56,8 @@ Additive Distillation
             Athena's Revelation
         }
         {}
-        // $dump(before if)
         Augur's Exaltation
-        // $dump(before eval)
         Hermes' Gambit
-        // $dump(eval)
     }
     {}
     Augur's Exaltation
@@ -68,7 +65,7 @@ Additive Distillation
 
     {@str(Akasha CAD)} >>
     Program Purification
-    Numerical Reflection: 5
+    Numerical Reflection: 10
     {@str(Akasha CAD)} >>
     Enqueue
 }
@@ -76,6 +73,6 @@ Numerical Reflection: 9
 Rotation Gambit
 Surgeon's Exaltation
 
-Numerical Reflection: 5
+Numerical Reflection: 10
 {@str(Akasha CAD)} >>
 Enqueue
