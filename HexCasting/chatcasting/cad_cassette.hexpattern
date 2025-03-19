@@ -28,7 +28,10 @@ Speaker's Distillation
     Numerical Reflection: 1
     Equality Distillation
     Nullary Reflection
-    {}
+    {
+        {@str(right click)}>>
+        Send Thought
+    }
     Augur's Exaltation
     Hermes' Gambit
 }
@@ -42,7 +45,11 @@ Surgeon's Exaltation
         Numerical Reflection: -1
         Inequality Distillation
         Nullary Reflection
-        {}
+        {
+            {@str(telepathy)}>>
+            Send Thought
+            
+        }
         Augur's Exaltation
         Hermes' Gambit
     }
