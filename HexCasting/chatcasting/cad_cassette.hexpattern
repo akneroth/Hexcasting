@@ -1,0 +1,64 @@
+#git(/HexCasting/libs/base.hexpattern)
+
+// stack: [params], first in list is spell name which i want to cad
+
+$check_for_free_cassette(Akasha CAD)
+
+$stop_detect(Akasha CAD)
+
+Speaker's Decomposition
+{@vec(375.50, 53.50, 2484.50)} >>
+Akasha's Distillation
+Gemini Decomposition
+Augur's Purification
+$fastif()(
+    // quit if no pattern for passed name
+    Janus' Gambit
+)
+// stack: [params], [spell]
+Jester's Gambit
+Speaker's Distillation
+
+Single's Purification
+// stack: [[[params], spell]]
+{
+    $rightclick
+    Numerical Reflection: 1
+    Equality Distillation
+}
+Jester's Gambit
+Additive Distillation
+{
+    {}
+    Augur's Exaltation
+    Hermes' Gambit
+}
+Additive Distillation
+
+Single's Purification
+{
+    Telepathic Reflection
+    Numerical Reflection: -1
+    Inequality Distillation
+}
+Jester's Gambit
+Additive Distillation
+{
+    {}
+    Augur's Exaltation
+    Hermes' Gambit
+}
+Additive Distillation
+// stack: [bool, [bool, [[params], spell], [], if, eval], [], if, eval]
+
+{    
+    {@str(Akasha CAD)} >>
+    Program Purification
+    Numerical Reflection: 1
+    {@str(Akasha CAD)} >>
+    Enqueue
+}
+Additive Distillation
+Numerical Reflection: 1
+{@str(Akasha CAD)} >>
+Enqueue

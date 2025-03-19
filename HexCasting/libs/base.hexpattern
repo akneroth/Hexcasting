@@ -6,6 +6,14 @@
     False Reflection
 )
 
+#def(leftclick)(
+    @pattern(NORTHEAST, qadee)
+)
+
+#def(rightclick)(
+    @pattern(NORTHWEST, edaqq)
+)
+
 // if (bool) do (patterns) else (patterns)
 // Evaluates the second arg if true, evaluates the third if false
 #def(if)(
@@ -94,19 +102,23 @@
     Scout's Distillation
 )
 
-// checks if there is a free cassette, if not, terminates the hex
+// checks if there is a free cassette or if cassette under the same name is running, if not, terminates the hex
 #def(check_for_free_cassette)(
     $if(
-        Threading Reflection II
-        Numerical Reflection: 0
-        Equality Distillation
-    )(
-        $print(No free cassettes, terminating thread!)
-        Janus' Gambit
-    )( 
-        {@str(Free cassette available, proceeding...)} >>
-        Reveal
-        Bookkeeper's Gambit: v
+        {@str(<1>)} >>
+        Program Purification
+        Augur's Purification
+    )()(
+        $if(
+            Threading Reflection II
+            Numerical Reflection: 0
+            Equality Distillation
+        )(
+            $print(No free cassettes, terminating thread!)
+            Janus' Gambit
+        )( 
+            $print(Free cassette available, proceeding...)
+        )
     )
 )
 
