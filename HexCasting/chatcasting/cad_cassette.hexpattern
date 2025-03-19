@@ -5,10 +5,9 @@
 // $check_for_free_cassette(Akasha CAD)
 
 Speaker's Decomposition
-{
-    @str(to hexicon)
-}
-Hermes' Gambit
+Jester's Gambit
+Huginn's Gambit
+@str(to hexicon)
 Reveal
 
 {@vec(375.50, 53.50, 2484.50)} >>
@@ -20,10 +19,9 @@ $fastif()(
     // quit if no pattern for passed name
     Janus' Gambit
 )
-// stack: [params], [spell]
-Jester's Gambit
+// stack: [spell]
+Muninn's Reflection
 Speaker's Distillation
-
 Single's Purification
 // stack: [[[params], spell]]
 {
