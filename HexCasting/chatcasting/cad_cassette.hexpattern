@@ -4,10 +4,16 @@
 
 $check_for_free_cassette(Akasha CAD)
 
-$stop_detect(Akasha CAD)
-
 Speaker's Decomposition
+{
+    @str(to hexicon)
+}
+Hermes' Gambit
+Reveal
+
+
 {@vec(375.50, 53.50, 2484.50)} >>
+Jester's Gambit
 Akasha's Distillation
 Gemini Decomposition
 Augur's Purification
