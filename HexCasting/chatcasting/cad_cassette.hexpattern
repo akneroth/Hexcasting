@@ -24,26 +24,30 @@ Muninn's Reflection
 Speaker's Distillation
 // stack: [[[params], spell]]
 {
-    $rightclick
-    Numerical Reflection: 1
-    Equality Distillation
-    Nullary Reflection
-    {}
-    Augur's Exaltation
-    Hermes' Gambit
+    {
+        $rightclick
+        Numerical Reflection: 1
+        Equality Distillation
+        Nullary Reflection
+        {}
+        Augur's Exaltation
+        Hermes' Gambit
+    }
 }
 Numerical Reflection: 3
 Rotation Gambit
 Surgeon's Exaltation
 
 {
-    Telepathic Reflection
-    Numerical Reflection: -1
-    Inequality Distillation
-    Nullary Reflection
-    {}
-    Augur's Exaltation
-    Hermes' Gambit
+    {
+        Telepathic Reflection
+        Numerical Reflection: -1
+        Inequality Distillation
+        Nullary Reflection
+        {}
+        Augur's Exaltation
+        Hermes' Gambit
+    }
 }
 Numerical Reflection: 3
 Rotation Gambit
