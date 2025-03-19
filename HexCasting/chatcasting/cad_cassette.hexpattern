@@ -47,8 +47,7 @@ Surgeon's Exaltation
         Nullary Reflection
         {
             {@str(telepathy)}>>
-            Send Thought
-            
+            Send Thought          
         }
         Augur's Exaltation
         Hermes' Gambit
@@ -60,6 +59,8 @@ Surgeon's Exaltation
 // stack: [bool, [bool, [[params], spell], [], if, eval], [], if, eval]
 
 {    
+    {@str(Running)}>>
+    Send Thought
     {@str(Akasha CAD)} >>
     Program Purification
     Numerical Reflection: 1
