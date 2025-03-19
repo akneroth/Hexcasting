@@ -7,11 +7,11 @@
 )
 
 #def(leftclick)(
-    @pattern(NORTHEAST, qadee)
+    @pattern(NORTH_EAST, qadee)
 )
 
 #def(rightclick)(
-    @pattern(NORTHWEST, edaqq)
+    @pattern(NORTH_WEST, edaqq)
 )
 
 // if (bool) do (patterns) else (patterns)
