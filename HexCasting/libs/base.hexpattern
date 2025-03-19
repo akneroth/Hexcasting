@@ -17,7 +17,7 @@
 #def(dump)(
     Flock's Reflection
     Flock's Gambit
-    @str(<1>)
+    {@str(<1>)}>>
     Speaker's Distillation
     Reveal
     Speaker's Decomposition
