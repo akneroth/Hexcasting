@@ -39,6 +39,7 @@ Speaker's Distillation
                 Flock's Disintegration
             }
             Flock's Disintegration
+            Flock's Disintegration
             Hermes' Gambit
         }
         // Nullary Reflection
@@ -46,7 +47,6 @@ Speaker's Distillation
         $dump(before if)
         Augur's Exaltation
         $dump(before eval)
-        Hermes' Gambit
         Hermes' Gambit
         $dump(eval)
     }
