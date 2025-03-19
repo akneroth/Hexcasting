@@ -2,7 +2,7 @@
 
 // stack: [params], first in list is spell name which i want to cad
 
-$check_for_free_cassette(Akasha CAD)
+// $check_for_free_cassette(Akasha CAD)
 
 Speaker's Decomposition
 {
@@ -10,7 +10,6 @@ Speaker's Decomposition
 }
 Hermes' Gambit
 Reveal
-
 
 {@vec(375.50, 53.50, 2484.50)} >>
 Jester's Gambit
