@@ -2,10 +2,6 @@
 
 // stack: [params], first in list is spell name which i want to cad
 
-$check_for_free_cassette(Akasha CAD)
-
-$stop_detect(Akasha CAD)
-
 Reveal
 Speaker's Decomposition
 Jester's Gambit
@@ -41,12 +37,8 @@ Additive Distillation
     Inequality Distillation
     {
         $rightclick
-        Numerical Reflection: 10
-        Minimus Distillation II
-        $rightclick
         Numerical Reflection: 1
-        Maximus Distillation II
-        Conjunction Distillation
+        Equality Distillation
         {
             {
                 Nullary Reflection
@@ -73,6 +65,6 @@ Numerical Reflection: 9
 Rotation Gambit
 Surgeon's Exaltation
 
-Numerical Reflection: 10
+Numerical Reflection: 1
 {@str(Akasha CAD)} >>
 Enqueue
