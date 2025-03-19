@@ -4,6 +4,8 @@
 
 $check_for_free_cassette(Akasha CAD)
 
+$stop_detect(Akasha CAD)
+
 Speaker's Decomposition
 Jester's Gambit
 Huginn's Gambit

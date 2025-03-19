@@ -25,6 +25,7 @@
     Flock's Disintegration
 )
 
+// 6 + var patterns
 // if (bool) do (patterns) else (patterns)
 // Evaluates the second arg if true, evaluates the third if false
 #def(if)(
@@ -39,6 +40,7 @@
     Hermes' Gambit
 )
 
+// 6 + var patterns
 // do (patterns) else (patterns) based on bool before
 // Evaluates the second arg if true, evaluates the third if false
 #def(fastif)(
@@ -52,6 +54,7 @@
     Hermes' Gambit
 )
 
+// 6 + var patterns
 #def(runif)(
     <1>
     {
@@ -160,30 +163,30 @@
 // params - 
 //      <1> name: string
 #def(stop_detect)(
-    $runif(
+    $runif( // 6base + 47 = 53
         Flock's Reflection
         Augur's Purification
     )(
-        $runif(
+        $runif( // 6base + 39 = 45
             Gemini Decomposition
-            {@str(stop)}>>
+            {@str(stop)}>> // 4
             Locator's Distillation
             Numerical Reflection: -1
             Inequality Distillation
         )(
-            $runif(
-                {@str(<1>)} >>
+            $runif( // 6base + 18 = 24
+                {@str(<1>)} >> // 4
                 Program Purification II
                 Nullary Reflection
                 Inequality Distillation
             )(
                 // if it is cassette, dequeue
-                {@str(<1>)} >>
+                {@str(<1>)} >> // 4
                 Dequeue
-                $prgitint(Killing thread <1>)
+                $print(Killing thread <1>) //6
             )
             // stop it
-            $print(Stopping <1>)
+            $print(Stopping <1>) // 6
             Janus' Gambit
         )
     )
