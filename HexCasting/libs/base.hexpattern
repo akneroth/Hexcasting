@@ -14,6 +14,13 @@
     @pattern(NORTH_WEST,edaqq)
 )
 
+#def(dump)(
+    Flock's Reflection
+    Flock's Gambit
+    Reveal
+    Flock's Disintegration
+)
+
 // if (bool) do (patterns) else (patterns)
 // Evaluates the second arg if true, evaluates the third if false
 #def(if)(
