@@ -10,7 +10,7 @@ Huginn's Gambit
 @str(to hexicon)
 Reveal
 
-{@vec(375.50, 53.50, 2484.50)} >>
+{@vec(375, 53, 2484)} >>
 Jester's Gambit
 Akasha's Distillation
 Gemini Decomposition
@@ -28,30 +28,29 @@ Single's Purification
     $rightclick
     Numerical Reflection: 1
     Equality Distillation
-}
-Jester's Gambit
-Additive Distillation
-{
+    Nullary Reflection
     {}
     Augur's Exaltation
     Hermes' Gambit
 }
-Additive Distillation
+Numerical Reflection: 3
+Rotation Gambit
+Surgeon's Exaltation
 
 Single's Purification
+
 {
     Telepathic Reflection
     Numerical Reflection: -1
     Inequality Distillation
-}
-Jester's Gambit
-Additive Distillation
-{
+    Nullary Reflection
     {}
     Augur's Exaltation
     Hermes' Gambit
 }
-Additive Distillation
+Numerical Reflection: 3
+Rotation Gambit
+Surgeon's Exaltation
 // stack: [bool, [bool, [[params], spell], [], if, eval], [], if, eval]
 
 {    
