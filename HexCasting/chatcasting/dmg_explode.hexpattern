@@ -1,0 +1,44 @@
+#git(/HexCasting/libs/base.hexpattern)
+Gemini Decomposition
+Augur's Purification
+$fastif()(
+    $print(Usage: dmg_explode <strength>)
+    Janus' Gambit
+)
+Speaker's Decomposition
+
+$target_entity
+Compass' Purification
+Mind's Reflection
+Compass' Purification
+Subtractive Distillation
+Length Purification
+
+
+$target_block_on_block_face
+Mind's Reflection
+Compass' Purification
+Subtractive Distillation
+Length Purification
+
+Minimus Distillation II
+$fastif(
+    $target_entity
+    Compass' Purification
+)(
+    $target_block_on_block_face
+)
+
+// stack: [], expl_str, vector
+
+Gemini Decomposition
+Create Water
+
+Gemini Decomposition
+Reflecting Gambit
+Explosion
+Gemini Decomposition
+Conjure Block
+Break Block
+
+
