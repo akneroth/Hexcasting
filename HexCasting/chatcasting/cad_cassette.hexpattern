@@ -2,10 +2,10 @@
 
 // stack: [params], first in list is spell name which i want to cad
 
-Reveal
-Speaker's Decomposition
-Jester's Gambit
+Gemini Decomposition
 Huginn's Gambit
+Numerical Reflection: 0
+Selection Distillation
 @str(to hexicon)
 
 {@vec(375, 53, 2484)} >>
@@ -26,10 +26,13 @@ $fastif()(
 }
 Numerical Reflection: 1
 Muninn's Reflection
+Speaker's Decomposition
+Huginn's Gambit
 Surgeon's Exaltation
 Jester's Gambit
 Additive Distillation
 // stack: [{[params]}>>, spell]
+$dump(b4)
 
 {
     Telepathic Reflection
@@ -55,12 +58,25 @@ Additive Distillation
     Augur's Exaltation
     Hermes' Gambit
 
+    // Nullary Reflection
+    // {@str( | )}>>
+    // Additive Distillation
+    Mind's Reflection
+    Media Purification
+    Scrivener's Purification
+    // Additive Distillation
+    Send Thought
+    
+
     {@str(Akasha CAD)} >>
     Program Purification
-    Numerical Reflection: 10
+    Numerical Reflection: 1
     {@str(Akasha CAD)} >>
     Enqueue
 }
+// Numerical Reflection: 25
+// Muninn's Reflection
+// Surgeon's Exaltation
 Numerical Reflection: 9
 Rotation Gambit
 Surgeon's Exaltation
