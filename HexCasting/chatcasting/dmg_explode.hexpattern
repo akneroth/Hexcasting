@@ -8,6 +8,14 @@ $fastif()(
     Janus' Gambit
 )
 Speaker's Decomposition
+Input Purification
+Gemini Decomposition
+Augur's Purification
+$fastif()(
+    $print(Explode strenght must be a number)
+    Janus' Gambit
+)
+
 
 $target_entity
 Gemini Decomposition
