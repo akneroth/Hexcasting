@@ -1,7 +1,5 @@
 #git(/HexCasting/libs/base.hexpattern)
-// get caster foot pos
-Mind's Reflection
-Compass' Purification II
+
 
 // get mote
 $if(
@@ -12,8 +10,14 @@ $if(
 )(
     Numerical Reflection: 0
     Selection Distillation
+
+    // get caster foot pos
+    Mind's Reflection
+    Compass' Purification II
+
+    Numerical Reflection: 1
+
     // get items from mote
-    Reflecting Gambit
     Return Item
 )(
     $print(No bottles in mote)
@@ -32,11 +36,6 @@ $fastif(
     Bookkeeper's Gambit: v
 )
 
-
-// get caster foot pos
-Mind's Reflection
-Compass' Purification II
-
 // get mote
 $if(
     {@item_type(hexcasting:charged_amethyst, true)} >>
@@ -47,7 +46,13 @@ $if(
     Numerical Reflection: 0
     Selection Distillation
     // get items from mote
-    Reflecting Gambit
+
+    // get caster foot pos
+    Mind's Reflection
+    Compass' Purification II
+
+    Numerical Reflection: 64
+
     Return Item
 )(
     $print(No amethyst shards in binded mote nexus)
