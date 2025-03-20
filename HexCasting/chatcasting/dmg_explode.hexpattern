@@ -1,6 +1,8 @@
 #git(/HexCasting/libs/base.hexpattern)
 Gemini Decomposition
-Augur's Purification
+Length Purification
+Numerical Reflection: 2
+Maximus Distillation II
 $fastif()(
     $print(Usage: dmg_explode <strength>)
     Janus' Gambit
@@ -17,24 +19,51 @@ $fastif(
     Subtractive Distillation
     Length Purification
 )(
+    Bookkeeper's Gambit: v
     Numerical Reflection: 100
 )
 
 
-$target_block_on_block_face
-Mind's Reflection
-Compass' Purification
-Subtractive Distillation
-Length Purification
-
-Minimus Distillation II
+$target_block_face
+$target_block
+Gemini Decomposition
+Augur's Purification
 $fastif(
-    $target_entity
+    Additive Distillation
+    Mind's Reflection
     Compass' Purification
+    Subtractive Distillation
+    Length Purification
 )(
-    $target_block_on_block_face
+    Bookkeeper's Gambit: vv
+    Numerical Reflection: 100
 )
 
+// n,n
+Dioscuri Gambit
+Equality Distillation
+// n,n,b
+Jester's Gambit
+// n,b,n
+Gemini Decomposition
+Numerical Reflection: 100
+// n,b,n,n,100
+Equality Distillation
+// n,b,n,b
+Bubbling Gambit
+// n,n,b,b
+Conjunction Distillation
+$fastif(
+    $print(No target or target too far.)
+)(
+    Minimus Distillation II
+    $fastif(
+        $target_entity
+        Compass' Purification
+    )(
+        $target_block_on_block_face
+    )
+)
 // stack: [], expl_str, vector
 
 Gemini Decomposition
