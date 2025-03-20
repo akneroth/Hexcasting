@@ -8,11 +8,17 @@ $fastif()(
 Speaker's Decomposition
 
 $target_entity
-Compass' Purification
-Mind's Reflection
-Compass' Purification
-Subtractive Distillation
-Length Purification
+Gemini Decomposition
+Augur's Purification
+$fastif(
+    Compass' Purification
+    Mind's Reflection
+    Compass' Purification
+    Subtractive Distillation
+    Length Purification
+)(
+    Numerical Reflection: 100
+)
 
 
 $target_block_on_block_face
