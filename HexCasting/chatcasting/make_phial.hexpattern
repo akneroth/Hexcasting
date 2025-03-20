@@ -23,9 +23,9 @@ $if(
     $print(No bottles in mote)
     Janus' Gambit
 )
+{@item_type(minecraft:glass_bottle, true)} >>
 Mind's Reflection
 Compass' Purification II
-{@item_type(minecraft:glass_bottle, true)} >>
 Entity Distillation: Type
 Gemini Decomposition
 Augur's Purification
@@ -60,9 +60,9 @@ $if(
 )
 
 // create phial
+{@item_type(hexcasting:charged_amethyst, true)} >>
 Mind's Reflection
 Compass' Purification II
-{@item_type(hexcasting:charged_amethyst, true)} >>
 Entity Distillation: Type
 Gemini Decomposition
 Augur's Purification
