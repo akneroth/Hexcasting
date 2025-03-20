@@ -58,13 +58,15 @@ $dump(b4)
     Augur's Exaltation
     Hermes' Gambit
 
-    // Nullary Reflection
-    // {@str( | )}>>
-    // Additive Distillation
+    {
+        Nullary Reflection
+    } >>
+    {@str( | )}>>
+    Additive Distillation
     Mind's Reflection
     Media Purification
     Scrivener's Purification
-    // Additive Distillation
+    Additive Distillation
     Send Thought
     
 
@@ -74,9 +76,9 @@ $dump(b4)
     {@str(Akasha CAD)} >>
     Enqueue
 }
-// Numerical Reflection: 25
-// Muninn's Reflection
-// Surgeon's Exaltation
+Numerical Reflection: 26
+Muninn's Reflection
+Surgeon's Exaltation
 Numerical Reflection: 9
 Rotation Gambit
 Surgeon's Exaltation
