@@ -1,10 +1,10 @@
 #git(/HexCasting/libs/base.hexpattern)
 Gemini Decomposition
 Length Purification
-Numerical Reflection: 2
+Numerical Reflection: 1
 Maximus Distillation II
 $fastif()(
-    $print(Usage: dmg_explode <strength>)
+    $print(Usage: dmgexplode <strength>)
     Janus' Gambit
 )
 Speaker's Decomposition
@@ -71,8 +71,6 @@ Create Water
 
 Gemini Decomposition
 Reflecting Gambit
-Speaker's Decomposition
-Bookkeeper's Gambit: v-
 Explosion
 Gemini Decomposition
 Conjure Block
