@@ -1,0 +1,81 @@
+#git(/HexCasting/libs/base.hexpattern)
+// get caster foot pos
+Mind's Reflection
+Compass' Purification II
+
+// get mote
+$if(
+    {@item_type(minecraft:glass_bottle, true)} >>
+    Stocktake Purification
+    Gemini Decomposition
+    Augur's Purification
+)(
+    Numerical Reflection: 0
+    Selection Distillation
+    // get items from mote
+    Reflecting Gambit
+    Return Item
+)(
+    $print(No bottles in mote)
+    Janus' Gambit
+)
+Mind's Reflection
+Compass' Purification II
+{@item_type(minecraft:glass_bottle, true)} >>
+Entity Distillation: Type
+Gemini Decomposition
+Augur's Purification
+$fastif(
+    Sleight
+    Wristpocket
+)(
+    Bookkeeper's Gambit: v
+)
+
+
+// get caster foot pos
+Mind's Reflection
+Compass' Purification II
+
+// get mote
+$if(
+    {@item_type(hexcasting:charged_amethyst, true)} >>
+    Stocktake Purification
+    Gemini Decomposition
+    Augur's Purification
+)(
+    Numerical Reflection: 0
+    Selection Distillation
+    // get items from mote
+    Reflecting Gambit
+    Return Item
+)(
+    $print(No amethyst shards in binded mote nexus)
+    Janus' Gambit
+)
+
+// create phial
+Mind's Reflection
+Compass' Purification II
+{@item_type(hexcasting:charged_amethyst, true)} >>
+Entity Distillation: Type
+Gemini Decomposition
+Augur's Purification
+$fastif(
+    Gemini Decomposition
+    Storage Purification
+    Numerical Reflection: 64
+    Equality Distillation
+    $fastif(
+        Craft Phial
+    )(
+        $print(Not enough amethyst for full phial)
+        Janus' Gambit
+    )
+)(
+    Bookkeeper's Gambit: v
+)
+
+Wristpocket
+$target_block
+Mage Hand
