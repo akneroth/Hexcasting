@@ -35,6 +35,12 @@ Additive Distillation
 $dump(b4)
 
 {
+    {@str(Akasha CAD)} >>
+    Program Purification
+    Numerical Reflection: 1
+    {@str(Akasha CAD)} >>
+    Enqueue
+
     Telepathic Reflection
     Numerical Reflection: -1
     Inequality Distillation
@@ -68,18 +74,11 @@ $dump(b4)
     Scrivener's Purification
     Additive Distillation
     Send Thought
-    
-
-    {@str(Akasha CAD)} >>
-    Program Purification
-    Numerical Reflection: 1
-    {@str(Akasha CAD)} >>
-    Enqueue
 }
-Numerical Reflection: 26
+Numerical Reflection: 37
 Muninn's Reflection
 Surgeon's Exaltation
-Numerical Reflection: 9
+Numerical Reflection: 20
 Rotation Gambit
 Surgeon's Exaltation
 
