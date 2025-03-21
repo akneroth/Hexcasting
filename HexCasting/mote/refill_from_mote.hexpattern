@@ -1,0 +1,65 @@
+// get mote
+$if(
+    {@item_type(minecraft:amethyst_shard, true)} >>
+    Stocktake Purification
+    Gemini Decomposition
+    Augur's Purification
+)(
+    Numerical Reflection: 0
+    Selection Distillation
+)(
+    $print(No amethyst shards in binded mote nexus)
+    Janus' Gambit
+)
+
+// get caster foot pos
+Mind's Reflection
+Compass' Purification II
+
+Numerical Reflection: 512
+
+// get items from mote
+Return Item
+
+// repair using amethyst on the ground
+$foreach(
+    // scan for items on ground
+    Mind's Reflection
+    Compass' Purification II
+    Numerical Reflection: 1
+    Zone Distillation: Item
+)(
+    $if(
+        Gemini Decomposition
+        Sorter's Purification
+        {@item_type(minecraft:amethyst_shard, true)} >>
+        Equality Distillation
+    )(
+        Recharge Item
+    )()
+)
+Bookkeeper's Gambit: v
+
+
+// return left amethyst
+$foreach(
+    // scan for items on ground
+    Mind's Reflection
+    Compass' Purification II
+    Numerical Reflection: 1
+    Zone Distillation: Item
+)(
+    $if(
+        Gemini Decomposition
+        Sorter's Purification
+        {@item_type(minecraft:amethyst_shard, true)} >>
+        Equality Distillation
+    )(
+        Mediafy Item
+    )()
+)
+Bookkeeper's Gambit: v
+
+Wristpocket
+$target_block
+Mage Hand
