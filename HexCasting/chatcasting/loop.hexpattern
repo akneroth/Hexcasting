@@ -2,7 +2,16 @@
 
 // stack: [params], first in list is spell name which i want to cad
 
-$stop_detect(Loop)
+Gemini Decomposition
+Numerical Reflection: 0
+Selection Distillation
+{@str(stop)} >>
+Equality Distillation
+$fastif(
+    {$str(Loop)} >>
+    Dequeue
+    Janus' Gambit
+)()
 
 Gemini Decomposition
 Huginn's Gambit
