@@ -9,12 +9,14 @@ $if(
 )(
     Numerical Reflection: 0
     Selection Distillation
+    Gemini Decomposition
+    Huginn's Gambit
 
     // get caster foot pos
     Mind's Reflection
     Compass' Purification II
 
-    Numerical Reflection: 64
+    Numerical Reflection: 20000
 
     Return Item
 )(
@@ -57,6 +59,7 @@ $foreach(
         {@item_type(minecraft:amethyst_shard, true)} >>
         Equality Distillation
     )(
+        Muninn's Reflection
         Mediafy Item
     )()
 )
