@@ -1,3 +1,5 @@
+#git(/HexCasting/libs/base.hexpattern)
+
 // get mote
 $if(
     {@item_type(minecraft:amethyst_shard, true)} >>
@@ -12,7 +14,7 @@ $if(
     Mind's Reflection
     Compass' Purification II
 
-    Numerical Reflection: 512
+    Numerical Reflection: 64
 
     Return Item
 )(
