@@ -7,19 +7,19 @@ $if(
 )(
     Numerical Reflection: 0
     Selection Distillation
+
+    // get caster foot pos
+    Mind's Reflection
+    Compass' Purification II
+
+    Numerical Reflection: 512
+
+    Return Item
 )(
     $print(No amethyst shards in binded mote nexus)
     Janus' Gambit
 )
 
-// get caster foot pos
-Mind's Reflection
-Compass' Purification II
-
-Numerical Reflection: 512
-
-// get items from mote
-Return Item
 
 // repair using amethyst on the ground
 $foreach(
