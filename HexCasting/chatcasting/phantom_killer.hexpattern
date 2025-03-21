@@ -1,2 +1,2 @@
 @entity_type(minecraft:phantom)
-@iota_type(vector)
+@iota_type(hexcasting:vec3)
