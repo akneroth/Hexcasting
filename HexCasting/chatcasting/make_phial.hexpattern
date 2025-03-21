@@ -79,50 +79,6 @@ $fastif(
     Bookkeeper's Gambit: v
 )
 
-// // get mote
-// $if(
-//     {@item_type(minecraft:amethyst_shard, true)} >>
-//     Stocktake Purification
-//     Gemini Decomposition
-//     Augur's Purification
-// )(
-//     Numerical Reflection: 0
-//     Selection Distillation
-//     // get items from mote
-
-//     // get caster foot pos
-//     Mind's Reflection
-//     Compass' Purification II
-
-//     Numerical Reflection: 64
-
-//     Return Item
-// )(
-//     $print(No amethyst shards in binded mote nexus)
-//     Janus' Gambit
-// )
-
-// // refill
-// Mind's Reflection
-// Compass' Purification II
-// Entity Purification: Item
-// Gemini Decomposition
-// Gemini Decomposition
-// Augur's Purification
-// $fastif(
-//     Recharge Item
-// )(
-//     Bookkeeper's Gambit: vv
-// )
-
-// Wristpocket
-// $target_block
-// Mage Hand
-
-// Gemini Decomposition
-// Augur's Purification
-// $fastif(
-//     Mediafy Item
-// )(
-//     Bookkeeper's Gambit: vv
-// )
+Wristpocket
+$target_block
+Mage Hand
