@@ -63,6 +63,7 @@ Bubbling Gambit
 Conjunction Distillation
 $fastif(
     $print(No target or target too far.)
+    Janus' Gambit
 )(
     Minimus Distillation II
     $fastif(
