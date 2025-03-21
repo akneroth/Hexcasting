@@ -74,15 +74,19 @@ $fastif(
     )
 )
 // stack: [], expl_str, vector
-
 Gemini Decomposition
-Create Water
+$iotatype
+{@iota_type(hexcasting:vec3)}>>
+Equality Distillation
+$fastif(
+    Gemini Decomposition
+    Create Water
 
-Gemini Decomposition
-Reflecting Gambit
-Explosion
-Gemini Decomposition
-Conjure Block
-Break Block
-
+    Gemini Decomposition
+    Reflecting Gambit
+    Explosion
+    Gemini Decomposition
+    Conjure Block
+    Break Block
+)()
 
