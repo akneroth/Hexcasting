@@ -41,7 +41,11 @@ $foreach(
         {@item_type(minecraft:amethyst_shard, true)} >>
         Equality Distillation
     )(
-        Recharge Item
+        {
+            Recharge Item
+        }
+        Athena's Gambit
+        Bookkeeper's Gambit: v
     )()
 )
 Bookkeeper's Gambit: v
