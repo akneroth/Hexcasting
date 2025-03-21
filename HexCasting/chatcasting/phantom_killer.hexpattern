@@ -1,2 +1,40 @@
-@entity_type(minecraft:phantom)
-@iota_type(hexcasting:vec3)
+// stack [num]
+
+Numerical Reflection: 0
+Selection Distillation
+Gemini Decomposition
+Augur's Purification
+$fastif()(
+    Numerical Reflection: 32
+)
+{@entity_type(minecraft:phantom)}>>
+Mind's Reflection
+Compass' Purification II
+Rotation Gambit
+
+Zone Exaltation: Type
+
+{
+    Compass' Purification
+    Gemini Decomposition
+    $iotatype
+    {@iota_type(hexcasting:vec3)}>>
+    Equality Distillation
+    $fastif(
+        Gemini Decomposition
+        Create Water
+
+        Gemini Decomposition
+        Numerical Reflection: 1
+        Explosion
+        Gemini Decomposition
+        Conjure Block
+        Gemini Decomposition
+        Break Block
+        Vector Reflection Zero
+        Numerical Reflection: 1
+        Confetti
+    )()
+}
+Jester's Gambit
+Thoth's Gambit
