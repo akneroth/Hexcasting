@@ -1,1 +1,2 @@
 @entity_type(minecraft:phantom)
+@iota_type(vector)
