@@ -1,0 +1,170 @@
+{
+    "spells": [
+        {
+            "name": "test",
+            "params": "",
+            "desc": "testing 1, 2..."
+        },
+        {
+            "name": "fly",
+            "params": "<range>",
+            "desc": "creative flight in radius from casting position"
+        },
+        {
+            "name": "water",
+            "params": "",
+            "desc": "create water at cursor"
+        },
+        {
+            "name": "lava",
+            "params": "",
+            "desc": "create lava at cursor"
+        },
+        {
+            "name": "drain",
+            "params": "",
+            "desc": "drain liquid at cursor"
+        },
+        {
+            "name": "smelt",
+            "params": "",
+            "desc": "smelt everything 1 block around at cursor (change to: smelt <range> - smelts everyting withing range around cursor)"
+        },
+        {
+            "name": "size",
+            "params": "",.03125 - 8
+            "desc": "<0.0> - change your size"
+        },
+        {
+            "name": "eat",
+            "params": "",
+            "desc": "drinks health potion"
+        },
+        {
+            "name": "altiora",
+            "params": "",
+            "desc": "casts altiora on you"
+        },
+        {
+            "name": "altiora_cassette",
+            "params": "",
+            "desc": "enqueues cassette that grants you altiora if you hold [Call Telepathy] and [Space]"
+        },
+        {
+            "name": "lightning",
+            "params": "",
+            "desc": "summon lightning at cursor"
+        },
+        {
+            "name": "explode",
+            "params": "<strength>",
+            "desc": "summon explosion of set strenght an cursor"
+        },
+        {
+            "name": "light",
+            "params": "",
+            "desc": "conjure light on cursor"
+        },
+        {
+            "name": "extinguish",
+            "params": "",
+            "desc": "extinguishes area near cursor"
+        },
+        {
+            "name": "hextito",
+            "params": "<command>",
+            "desc": " [<params>] - creates hextito containing command"
+        },
+        {
+            "name": "fix",
+            "params": "",
+            "desc": "[<amount of media>] - fixes or fills item with media. If no argument is passed, uses, in order: main hand durability, offhand durability, default of 640 media. Ignores durability for items that doesn't have it. Does not check for Mending. Returns unused amethyst to mote."
+        },
+        {
+            "name": "impulse",
+            "params": "",
+            "desc": "boost self in looked direction with strenght 2"
+        },
+        {
+            "name": "bonemeal",
+            "params": "",
+            "desc": "bonemeal on top of looked at block"
+        },
+        {
+            "name": "save",
+            "params": "<name>",
+            "desc": "save spell in focus to targeted shelf with provided name"
+        },
+        {
+            "name": "read",
+            "params": "",
+            "desc": "print name of spell in targeted shelf"
+        },
+        {
+            "name": "read_loud",
+            "params": "",
+            "desc": "show the name of the spell in targeted shelf in bold letters in the middle of your screen"
+        },
+        {
+            "name": "rename",
+            "params": "<naem>",
+            "desc": "change name of item on cursor to provided one (can be with spaces)"
+        },
+        {
+            "name": "tp",
+            "params": "",
+            "desc": "teleport to gate in hand"
+        },
+        {
+            "name": "noetic",
+            "params": "<over|noosphere|nether|dd|end>",
+            "desc": "teleport to dimension. WARNING: DD TELEPORTS YOU ON TOP OF BEDROCK SO IT IS WIP"
+        },
+        {
+            "name": "acad",
+            "params": "<spell>",
+            "desc": "Akashic CAD, starts a cassette that casts chosen spell when you hold [Telepathy] and press [RMB]. Shows name of CAD'ed spell and amount of media you have over your hotbar."
+        },
+        {
+            "name": "start",
+            "params": "<spell>",
+            "desc": "starts casting the spell every 10 ticks via cassette."
+        },
+        {
+            "name": "stop",
+            "params": "",
+            "desc": "stops casting spell started by 'start'"
+        },
+        {
+            "name": "fuck_phantoms",
+            "params": "<radius>",
+            "desc": "targets all phantoms in radius and explodes them once"
+        },
+    ],
+    "requested": [
+        {
+            "name": "scaffold",
+            "desc": "conjure volatile block (when one block is destroyed, all conected blocks are destroyed)"
+        },
+        {
+            "name": "edify",
+            "desc": "edify sapling on top of targeted block face"
+        },
+        {
+            "name": "tp",
+            "params": "<gate>",
+            "desc": "teleport to gate with selected name"
+        },
+        {
+            "name": "list",
+            "params": "<name>",
+            "desc": "lists values of dictionaries (pigments, gates etc.)"
+        },
+    ],
+    "todo": {
+        {
+            "done": false,
+            "desc": "akashic scarab detection"
+        }
+    }
+}
