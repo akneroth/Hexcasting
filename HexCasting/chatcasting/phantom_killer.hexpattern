@@ -3,10 +3,11 @@
 
 Numerical Reflection: 0
 Selection Distillation
+Input Purification
 Gemini Decomposition
 Augur's Purification
 $fastif()(
-    Numerical Reflection: 32
+    Numerical Reflection: 28
 )
 {@entity_type(minecraft:phantom)}>>
 Mind's Reflection
