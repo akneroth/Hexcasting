@@ -2,4 +2,6 @@
     @str(()
     @str())
     @str(())
+    @str(test of other str)
+    @str(123)
 ]
