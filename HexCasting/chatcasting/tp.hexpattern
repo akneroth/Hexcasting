@@ -1,0 +1,16 @@
+#git(/HexCasting/libs/base.hexpattern)
+
+Stealthy Reflection
+Numerical Reflection: 0
+Maximus Distillation
+$fastif(
+    Scribe's Reflection
+    $target_entity
+    Gate's Opening
+)(
+    Scribe's Reflection
+    Gemini Decomposition
+    Mind's Reflection
+    Gate's Opening
+    Gate's Closing
+)
