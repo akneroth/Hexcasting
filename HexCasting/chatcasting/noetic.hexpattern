@@ -13,10 +13,16 @@ $fastif()(
     [
         @str(over)
         @str(noosphere)
+        @str(nether)
+        @str(dd)
+        @str(end)
     ]
     [
-        Homeland Reflection
-        @str(noosphere)
+        @str(dim over)
+        @str(dim noosphere)
+        @str(dim nether)
+        @str(dim dd)
+        @str(dim end)
     ]
 }>>
 Reflecting Gambit
