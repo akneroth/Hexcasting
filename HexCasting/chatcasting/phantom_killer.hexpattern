@@ -3,10 +3,17 @@
 
 Numerical Reflection: 0
 Selection Distillation
-Input Purification
 Gemini Decomposition
 Augur's Purification
-$fastif()(
+$fastif(
+    Input Purification
+    Gemini Decomposition
+    Augur's Purification
+    $fastif()(
+        $print(Passed param is not a number)
+        Janus' Gambit
+    )
+)(
     Numerical Reflection: 28
 )
 {@entity_type(minecraft:phantom)}>>
