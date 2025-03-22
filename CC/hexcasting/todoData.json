@@ -1,170 +1,153 @@
 {
+    "todo": [
+        {
+            "desc": "akashic scarab detection",
+            "done": false
+        }
+    ],
     "spells": [
         {
-            "name": "test",
-            "params": "",
-            "desc": "testing 1, 2..."
+            "desc": "testing 1, 2...",
+            "name": "test"
         },
         {
             "name": "fly",
-            "params": "<range>",
-            "desc": "creative flight in radius from casting position"
+            "desc": "creative flight in radius from casting position",
+            "params": "<range>"
         },
         {
-            "name": "water",
-            "params": "",
-            "desc": "create water at cursor"
+            "desc": "create water at cursor",
+            "name": "water"
         },
         {
-            "name": "lava",
-            "params": "",
-            "desc": "create lava at cursor"
+            "desc": "create lava at cursor",
+            "name": "lava"
         },
         {
-            "name": "drain",
-            "params": "",
-            "desc": "drain liquid at cursor"
+            "desc": "drain liquid at cursor",
+            "name": "drain"
         },
         {
-            "name": "smelt",
-            "params": "",
-            "desc": "smelt everything 1 block around at cursor (change to: smelt <range> - smelts everyting withing range around cursor)"
+            "desc": "smelt everything 1 block around at cursor (change to: smelt <range> - smelts everyting withing range around cursor)",
+            "name": "smelt"
         },
         {
             "name": "size",
-            "params": "",.03125 - 8
-            "desc": "<0.0> - change your size"
+            "desc": "change your size",
+            "params": "<0.03125 - 8.0>"
         },
         {
-            "name": "eat",
-            "params": "",
-            "desc": "drinks health potion"
+            "desc": "drinks health potion",
+            "name": "eat"
         },
         {
-            "name": "altiora",
-            "params": "",
-            "desc": "casts altiora on you"
+            "desc": "casts altiora on you",
+            "name": "altiora"
         },
         {
-            "name": "altiora_cassette",
-            "params": "",
-            "desc": "enqueues cassette that grants you altiora if you hold [Call Telepathy] and [Space]"
+            "desc": "enqueues cassette that grants you altiora if you hold [Call Telepathy] and [Space]",
+            "name": "altiora_cassette"
         },
         {
-            "name": "lightning",
-            "params": "",
-            "desc": "summon lightning at cursor"
+            "desc": "summon lightning at cursor",
+            "name": "lightning"
         },
         {
             "name": "explode",
-            "params": "<strength>",
-            "desc": "summon explosion of set strenght an cursor"
+            "desc": "summon explosion of set strenght an cursor",
+            "params": "<strength>"
         },
         {
-            "name": "light",
-            "params": "",
-            "desc": "conjure light on cursor"
+            "desc": "conjure light on cursor",
+            "name": "light"
         },
         {
-            "name": "extinguish",
-            "params": "",
-            "desc": "extinguishes area near cursor"
+            "desc": "extinguishes area near cursor",
+            "name": "extinguish"
         },
         {
             "name": "hextito",
-            "params": "<command>",
-            "desc": " [<params>] - creates hextito containing command"
+            "desc": "creates hextito containing command",
+            "params": "<command> [<params>]"
         },
         {
             "name": "fix",
-            "params": "",
-            "desc": "[<amount of media>] - fixes or fills item with media. If no argument is passed, uses, in order: main hand durability, offhand durability, default of 640 media. Ignores durability for items that doesn't have it. Does not check for Mending. Returns unused amethyst to mote."
+            "desc": "fixes or fills item with media. If no argument is passed, uses, in order: main hand durability, offhand durability, default of 640 media. Ignores durability for items that doesn't have it. Does not check for Mending. Returns unused amethyst to mote.",
+            "params": "[<amount of media>]"
         },
         {
-            "name": "impulse",
-            "params": "",
-            "desc": "boost self in looked direction with strenght 2"
+            "desc": "boost self in looked direction with strenght 2",
+            "name": "impulse"
         },
         {
-            "name": "bonemeal",
-            "params": "",
-            "desc": "bonemeal on top of looked at block"
+            "desc": "bonemeal on top of looked at block",
+            "name": "bonemeal"
         },
         {
             "name": "save",
-            "params": "<name>",
-            "desc": "save spell in focus to targeted shelf with provided name"
+            "desc": "save spell in focus to targeted shelf with provided name",
+            "params": "<name>"
         },
         {
-            "name": "read",
-            "params": "",
-            "desc": "print name of spell in targeted shelf"
+            "desc": "print name of spell in targeted shelf",
+            "name": "read"
         },
         {
-            "name": "read_loud",
-            "params": "",
-            "desc": "show the name of the spell in targeted shelf in bold letters in the middle of your screen"
+            "desc": "show the name of the spell in targeted shelf in bold letters in the middle of your screen",
+            "name": "read_loud"
         },
         {
             "name": "rename",
-            "params": "<naem>",
-            "desc": "change name of item on cursor to provided one (can be with spaces)"
+            "desc": "change name of item on cursor to provided one (can be with spaces)",
+            "params": "<naem>"
         },
         {
-            "name": "tp",
-            "params": "",
-            "desc": "teleport to gate in hand"
+            "desc": "teleport to gate in hand",
+            "name": "tp"
         },
         {
             "name": "noetic",
-            "params": "<over|noosphere|nether|dd|end>",
-            "desc": "teleport to dimension. WARNING: DD TELEPORTS YOU ON TOP OF BEDROCK SO IT IS WIP"
+            "desc": "teleport to dimension. WARNING: DD TELEPORTS YOU ON TOP OF BEDROCK SO IT IS WIP",
+            "params": "<over|noosphere|nether|dd|end>"
         },
         {
             "name": "acad",
-            "params": "<spell>",
-            "desc": "Akashic CAD, starts a cassette that casts chosen spell when you hold [Telepathy] and press [RMB]. Shows name of CAD'ed spell and amount of media you have over your hotbar."
+            "desc": "Akashic CAD, starts a cassette that casts chosen spell when you hold [Telepathy] and press [RMB]. Shows name of CAD'ed spell and amount of media you have over your hotbar.",
+            "params": "<spell>"
         },
         {
             "name": "start",
-            "params": "<spell>",
-            "desc": "starts casting the spell every 10 ticks via cassette."
+            "desc": "starts casting the spell every 10 ticks via cassette.",
+            "params": "<spell>"
         },
         {
-            "name": "stop",
-            "params": "",
-            "desc": "stops casting spell started by 'start'"
+            "desc": "stops casting spell started by 'start'",
+            "name": "stop"
         },
         {
             "name": "fuck_phantoms",
-            "params": "<radius>",
-            "desc": "targets all phantoms in radius and explodes them once"
-        },
+            "desc": "targets all phantoms in radius and explodes them once",
+            "params": "<radius>"
+        }
     ],
     "requested": [
         {
-            "name": "scaffold",
-            "desc": "conjure volatile block (when one block is destroyed, all conected blocks are destroyed)"
+            "desc": "conjure volatile block (when one block is destroyed, all conected blocks are destroyed)",
+            "name": "scaffold"
         },
         {
-            "name": "edify",
-            "desc": "edify sapling on top of targeted block face"
+            "desc": "edify sapling on top of targeted block face",
+            "name": "edify"
         },
         {
             "name": "tp",
-            "params": "<gate>",
-            "desc": "teleport to gate with selected name"
+            "desc": "teleport to gate with selected name",
+            "params": "<gate>"
         },
         {
             "name": "list",
-            "params": "<name>",
-            "desc": "lists values of dictionaries (pigments, gates etc.)"
-        },
-    ],
-    "todo": {
-        {
-            "done": false,
-            "desc": "akashic scarab detection"
+            "desc": "lists values of dictionaries (pigments, gates etc.)",
+            "params": "<name>"
         }
-    }
+    ]
 }

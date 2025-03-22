@@ -1,21 +1,21 @@
-local ui = require("ccui")
+local path = fs.getDir(shell.getRunningProgram())
 
+local ccui = require("ccui")
 local monitor = peripheral.find("monitor")
 monitor.setTextScale(0.5)
 monitor.clear()
 local monW, monH = monitor.getSize()
-ui.setMonitor(monitor)
+local ui = ccui.setMonitor(monitor)
 
 -- Variables
 
-local path = fs.getDir(shell.getRunningProgram())
 local dataFile = path .. "/todoData.json"
 local data = {}
 local tab = "spells"
 local tabs = {
-    spells = function () tab = "spells" end,
-    requested = function () tab = "requested" end,
-    todo = function () tab = "todo" end,
+    spells = function() tab = "spells" end,
+    requested = function() tab = "requested" end,
+    todo = function() tab = "todo" end,
 }
 local page = 1
 local pages = {
@@ -26,15 +26,17 @@ local pages = {
 
 local function getData()
     local f = fs.open(dataFile, "r")
-    local out = textutils.unserialiseJSON(f.readAll())
+    local toSave = f.readAll()
+    local out = textutils.unserialiseJSON(toSave)
     f.close()
     return out
 end
 
-local function saveData(data)
+local function saveData(toSave)
     local f = fs.open(dataFile, "w")
-    local out = textutils.serialiseJSON(data)
+    local out = textutils.serialiseJSON(toSave)
     f.write(out)
+    f.close()
 end
 
 
@@ -45,21 +47,24 @@ data = getData()
 
 -- Functions
 
-
 local headerSize = 2
 local footerSize = 2
 local margins = headerSize + footerSize
+local space = monH - margins
 local function render()
-    ui.clear()
-    ui.addPager(page, pages[tab], function (n) page = n end)
+    ui.canvas.clear()
+    ui:addPager(page, pages[tab], function(n) page = n end)
 
-    for i = 1, (monH - margins), 1 do
-        monitor.setCursorPos()
+    for i = 1, space, 1 do
+        monitor.setCursorPos(1, i + headerSize)
         monitor.clearLine()
-        monitor.write()
+        local line = data.spells[space * (page - 1) + i]
+        local toPrint = (line.name or "null") .. " - " .. (line.desc or "")
+        if type(line.params) == "string" and string.len(line.params) ~= 0 then
+            toPrint = string.gsub(toPrint, " - ", (" " .. line.params .. " "), 1)
+        end
+        monitor.write(toPrint)
     end
-
-
 end
 
 
@@ -69,11 +74,19 @@ end
 
 local function dataThread()
     while true do
-        data = getData()
+        local buffer = getData()
 
+        for tableType, spellTable in pairs(buffer) do
+            for idx, spell in ipairs(spellTable) do
+                if spell.params == "" then
+                    buffer[tableType][idx].params = nil
+                end
+            end
+        end
         -- handle events like clicks and such
 
-        saveData(data)
+        data = buffer
+        saveData(buffer)
         ui.priority.high()
     end
 end
