@@ -1,7 +1,5 @@
 -- Variables
-local CCpretty = require "cc.pretty"
-local CCexpect = require "cc.expect"
-local CCcompletion = require "cc.completion"
+require "ae2base"
 
 local data = {
     items = {},
@@ -45,46 +43,19 @@ local data = {
 }
 
 local ae2 = peripheral.find("fulleng:crafting_terminal")
-local modem = peripheral.find("modem")
 local monitor = peripheral.find("monitor")
 if monitor ~= nil then
     monitor.clear()
     monitor.setTextScale(0.5)
 end
-local lastLine = 1
-
-local function print(...)
-    local args = {}
-    for _, value in ipairs(table.pack(...)) do
-        table.insert(args, tostring(value))
-    end
-
-    if monitor == nil then
-        _G.print(args)
-    else
-        local text = table.concat(args, " ")
-        monitor.setCursorPos(1, lastLine)
-        monitor.clearLine(text)
-        monitor.write(text)
-        local monW, monH = monitor.getSize()
-        if lastLine == monH then
-            monitor.scroll(1)
-        else
-            lastLine = lastLine + 1
-        end
-    end
-end
 
 
 
 
+local watchedItemsFile = _path .. "/watchedItems.json"
 
-local path = fs.getDir(shell.getRunningProgram())
-local watchedItemsFile = path .. "/watchedItems.json"
-
-local programName = fs.getName(shell.getRunningProgram())
 if arg[1] == "help" then
-    print("Usage: " .. programName .. " <systemName> [verbose]")
+    mprint("Usage: " .. _programName .. " <systemName> [verbose]")
     return
 else
     data.systemName = arg[1] or data.systemName
@@ -94,31 +65,11 @@ else
     data.verbose = arg[2] or false
 end
 
-
-
-
-
 -- INIT
 
-rednet.open(peripheral.getName(modem))
-
-if not rednet.isOpen() then
-    print("Rednet connection is not open. Please check if wireless modem is attached to the computer")
-    print("Terminating...")
-    return
-else
-    print("Rednet connection is open")
-end
-
-if ae2 == nil then
-    print("No AE2 connection attached. Please attach one of the blocks:")
-    print("  AE2 1K Crafting Storage")
-    print("  AE2 Energy Cell")
-    print("  Fullblock Crafting Terminal")
-    return
-else
-    print("AE2 connection established...")
-end
+initRednet()
+ae2 = initAE2(true)
+if ae2 == nil then return end
 
 
 
@@ -126,7 +77,7 @@ end
 -- Data
 
 function data:getItemInfo(key)
-    print(self.items[key], self.craftings[key])
+    mprint(self.items[key], self.craftings[key])
     local a, b = CCpretty.pretty(self.items[key]), CCpretty.pretty(self.craftings[key])
     textutils.pagedPrint(a .. "\n\n\n" .. b)
 
@@ -134,37 +85,33 @@ function data:getItemInfo(key)
 end
 
 function data:getData()
-    local itemsRaw = ae2.items()
-    while #itemsRaw == 0 do
-        print("AE2 Item data empty!!! Reseting connection...")
-        redstone.setOutput("bottom", true)
-        sleep(15)
-        redstone.setOutput("bottom", false)
-        sleep(10)
-        print("Connection reset, requesting item data...")
-        itemsRaw = ae2.items()
-        if #itemsRaw > 0 then
-            print("AE2 Item data correct, proceeding.")
+    local itemsRaw = ae2.items() or {}
+    local craftingsRaw = ae2.getCraftableItems() or {}
+    local activeCraftingRaw = ae2.getActiveCraftings() or {}
+    while #itemsRaw == 0 and #craftingsRaw == 0 and #activeCraftingRaw == 0 do
+        ae2 = resetAE2("bottom")
+        if ae2 ~= nil then
+            itemsRaw = ae2.items() or {}
+            craftingsRaw = ae2.getCraftableItems() or {}
+            activeCraftingRaw = ae2.getActiveCraftings() or {}
         end
+        if #itemsRaw > 0 then mprint("AE2 data correct, proceeding.") end
     end
 
-    local craftingsRaw = ae2.getCraftableItems()
-    local activeCraftingRaw = ae2.getActiveCraftings()
-
     if not self.init.data then
-        print("Loaded", #itemsRaw, "items")
-        print("Loaded", #craftingsRaw, "craftings")
-        print("Loaded", #activeCraftingRaw, "active craftings")
+        mprint("Loaded", #itemsRaw, "items")
+        mprint("Loaded", #craftingsRaw, "craftings")
+        mprint("Loaded", #activeCraftingRaw, "active craftings")
         self.init.data = true
     end
 
-    local craftingsBufferRaw = {}
     local craftingsBuffer = {}
     for i, value in ipairs(craftingsRaw) do
-        local key = table.concat(table.pack(string.match(value.name, "^%g+%.(%g+)%.(%g+)$")), ":") -- item.mod.fullname -> mod:fullname
+        local key = toTechnicalName(value.name)
         if key ~= nil then
             craftingsBuffer[key] = {
                 rawName = value.name,
+                type = rawNameType(value.name),
                 displayName = value.displayName,
             }
         end
@@ -172,11 +119,12 @@ function data:getData()
 
     local itemsBuffer = {}
     for i, value in ipairs(itemsRaw) do
-        local key = value.name or nil -- mod:fullname
+        local key = value.name -- mod:fullname
         if key ~= nil then
             local item = {
                 amount = value.count,
                 displayName = value.displayName,
+                type = rawNameType(value.rawName),
                 rawName = value.rawName -- item.mod.fullname
             }
             itemsBuffer[key] = item
@@ -204,6 +152,8 @@ function data:getData()
     local completionsModBuffer = {}
     local completionsKeyNameBuffer = {}
 
+
+    -- TODO cleanup?, it works for now
     for key, _ in pairs(craftingsBuffer) do table.insert(completionsRaw, key) end
     local rawStr = table.concat(completionsRaw, " ")
     for m, n in string.gmatch(rawStr, "(%g+):(%g+)") do
@@ -232,13 +182,15 @@ function data:updateWatches()
         local modified = fs.attributes(watchedItemsFile).modified
         if modified > self.watchedLastModified then
             self.watchedLastModified = modified
-            print("Watched items file modified, updating...")
+            mprint("Watched items file modified, updating...")
             local f = fs.open(watchedItemsFile, "r")
             local watchesRaw = {}
-            if f ~= nil then watchesRaw = textutils.unserialiseJSON(f.readAll()) end
-            f.close()
+            if f ~= nil then
+                watchesRaw = textutils.unserialiseJSON(f.readAll())
+                f.close()
+            end
             self.watched = watchesRaw
-            print("Watches updated.")
+            mprint("Watches updated.")
         end
     end
 end
@@ -293,7 +245,7 @@ function data:saveWatches()
     local exists = fs.exists(watchedItemsFile)
     local amountToEdit = #data.watchedToEdit
     if exists and amountToEdit > 0 then
-        print("Editing watches...")
+        mprint("Editing watches...")
         local watchesRaw = self.watched
         while #self.watchedToEdit > 0 do
             local value = table.remove(self.watchedToEdit, 1)
@@ -308,9 +260,11 @@ function data:saveWatches()
         end
 
         local f = fs.open(watchedItemsFile, "w")
-        if f ~= nil then f.write(textutils.serialiseJSON(watchesRaw)) end
-        f.close()
-        print("Watches edited.")
+        if f ~= nil then
+            f.write(textutils.serialiseJSON(watchesRaw))
+            f.close()
+        end
+        mprint("Watches edited.")
     end
 end
 
@@ -319,12 +273,13 @@ local function dataThread()
         data:getData()
         data:saveWatches()
         data:updateWatches()
-        data.priority.high()
+        priority.high()
     end
 end
 
 -- Crafting
-local failed = {}
+local craftingModule = require "ae2crafting"
+
 function data:handleCraftings()
     for key, craftConfig in pairs(self.watched) do
         local hasCrafting = self.craftings[key] ~= nil
@@ -336,27 +291,16 @@ function data:handleCraftings()
             local type = self.itemTypes[string.match(rawName, "(%w+)%.")]
             -- print(CCpretty.pretty(craftConfig), currentAmount, minAmount, rawName, type)
             if currentAmount < minAmount and type ~= "none" then
-                local success, response = ae2.scheduleCrafting(type, key, craftConfig.batchAmount)
-                if success then
-                    failed[key] = nil
-                    self.active[key] = "Scheduled"
-                    print("Scheduled", craftConfig.batchAmount, self.craftings[key].displayName)
-                end
-                if not success and not failed[key] then
-                    print("Failed to schedule", self.craftings[key].displayName)
-                    print("  Error:", response)
-                    failed[key] = true
-                end
+                ae2.scheduleCrafting(type, key, craftConfig.batchAmount)
+                self.active[key] = "Scheduled"
+                mprint("Scheduled", craftConfig.batchAmount, self.craftings[key].displayName)
             end
         end
     end
 end
 
 local function craftingThread()
-    while true do
-        data:handleCraftings()
-        data.priority.med()
-    end
+    craftingModule:start(function() return ae2, data.items, data.watched, data.craftings end)
 end
 
 -- Sender
@@ -366,10 +310,10 @@ function data:sendActiveCraftings()
 end
 
 local function senderThread()
-    print("-- Sending to protocol:" .. data.protocols.sendItems)
-    print("-- Sending to protocol:" .. data.protocols.sendActiveCrafting)
+    mprint("-- Sending to protocol:" .. data.protocols.sendItems)
+    mprint("-- Sending to protocol:" .. data.protocols.sendActiveCrafting)
     while true do
-        data.priority.low()
+        priority.low()
     end
 end
 
@@ -411,7 +355,7 @@ local commands = {
     end,
     default = function(...)
         if ... == nil then return nil end
-        print(...)
+        mprint(...)
         return true, table.concat(table.pack(...), " ")
     end
 }
@@ -439,7 +383,7 @@ function data:recieveCommands()
     end
     local command = table.remove(parts, 1)
     local params = parts
-    print("Recieved command:", command, "| params:", table.concat(params, " "))
+    mprint("Recieved command:", command, "| params:", table.concat(params, " "))
 
     local func = commands.default
     if commands[command] ~= nil then func = commands[command] end
@@ -450,10 +394,10 @@ end
 
 local function recieverThread()
     rednet.host(data.protocols.recieve, data.systemName)
-    print("-- Receiving from protocol:" .. data.protocols.recieve)
+    mprint("-- Receiving from protocol:" .. data.protocols.recieve)
     while true do
         -- data:recieveCommands()
-        data.priority.tick()
+        priority.tick()
     end
 end
 
@@ -467,7 +411,7 @@ function data.completion:keyNameCompletionMatcher(stringParts, step)
     local modName = string.match(s[step], "^%w+%:")
     local itemName = string.match(s[step], "%:(%w+)%s?$")
     if data.verbose then
-        print('"' .. tostring(modName) .. '"', '"' .. tostring(itemName) .. '"')
+        mprint('"' .. tostring(modName) .. '"', '"' .. tostring(itemName) .. '"')
     end
 
     if modName ~= nil then
@@ -502,9 +446,9 @@ function data:recieveFromTerminal()
             end
             if #s == 0 or #s > 3 then return CCcompletion.choice(text, {}) end
             if data.verbose then
-                print(" ")
-                print(#s, textutils.serialise(s))
-                print(s[#s], textutils.serialise(({ completions[#s]() })[2]))
+                mprint(" ")
+                mprint(#s, textutils.serialise(s))
+                mprint(s[#s], textutils.serialise(({ completions[#s]() })[2]))
             end
             local addSpace, list = completions[#s]()
             return CCcompletion.choice(s[#s], list, addSpace)
@@ -535,7 +479,7 @@ end
 local function terminalThread()
     while true do
         data:recieveFromTerminal()
-        data.priority.tick()
+        priority.tick()
     end
 end
 
