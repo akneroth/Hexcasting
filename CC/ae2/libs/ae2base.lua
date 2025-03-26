@@ -3,9 +3,7 @@ CCexpect = require "cc.expect"
 CCcompletion = require "cc.completion"
 require "base"
 
-_path = fs.getDir(shell.getRunningProgram())
-_programName = fs.getName(shell.getRunningProgram())
-local _config = _path .. "/config.json"
+local _config = __path .. "/config.json"
 
 base = {
     monitor = nil

@@ -52,10 +52,10 @@ end
 
 
 
-local watchedItemsFile = _path .. "/watchedItems.json"
+local watchedItemsFile = __path .. "/watchedItems.json"
 
 if arg[1] == "help" then
-    mprint("Usage: " .. _programName .. " <systemName> [verbose]")
+    mprint("Usage: " .. __programName .. " <systemName> [verbose]")
     return
 else
     data.systemName = arg[1] or data.systemName
@@ -65,7 +65,9 @@ else
     data.verbose = arg[2] or false
 end
 
--- INIT
+-- ============================================================================
+-- ============================         INIT         ==========================
+-- ============================================================================
 
 initRednet()
 ae2 = initAE2(true)
@@ -73,8 +75,15 @@ if ae2 == nil then return end
 
 
 
--- Threads
--- Data
+-- ============================================================================
+-- ============================================================================
+-- ============================       THREADS        ==========================
+-- ============================================================================
+-- ============================================================================
+
+-- ============================================================================
+-- ============================         DATA         ==========================
+-- ============================================================================
 
 function data:getItemInfo(key)
     mprint(self.items[key], self.craftings[key])
@@ -277,33 +286,25 @@ local function dataThread()
     end
 end
 
--- Crafting
-local craftingModule = require "ae2crafting"
 
-function data:handleCraftings()
-    for key, craftConfig in pairs(self.watched) do
-        local hasCrafting = self.craftings[key] ~= nil
-        local isCrafting = self.active[key] ~= nil
-        if hasCrafting and not isCrafting then
-            local currentAmount = (self.items[key] or { amount = 0 }).amount
-            local minAmount = craftConfig.minAmount
-            local rawName = self.craftings[key].rawName
-            local type = self.itemTypes[string.match(rawName, "(%w+)%.")]
-            -- print(CCpretty.pretty(craftConfig), currentAmount, minAmount, rawName, type)
-            if currentAmount < minAmount and type ~= "none" then
-                ae2.scheduleCrafting(type, key, craftConfig.batchAmount)
-                self.active[key] = "Scheduled"
-                mprint("Scheduled", craftConfig.batchAmount, self.craftings[key].displayName)
-            end
-        end
-    end
-end
-
+-- ============================================================================
+-- ============================       CRAFTING       ==========================
+-- ============================================================================
 local function craftingThread()
-    craftingModule:start(function() return ae2, data.items, data.watched, data.craftings end)
+    local craftingModule = require "ae2crafting"
+    if craftingModule == nil then
+        mprint("Can't initialise crafting module")
+        return
+    end
+
+    local function getDataForCraftingModule() return ae2, data.items, data.watched, data.craftings end
+
+    craftingModule:start(getDataForCraftingModule)
 end
 
--- Sender
+-- ============================================================================
+-- ============================        SENDER        ==========================
+-- ============================================================================
 
 function data:sendActiveCraftings()
 
@@ -318,7 +319,9 @@ local function senderThread()
 end
 
 
--- Reciever
+-- ============================================================================
+-- ============================       RECEIVER       ==========================
+-- ============================================================================
 
 -- returns: boolean, string, [table]
 local commands = {
@@ -355,6 +358,25 @@ local commands = {
     end,
     default = function(...)
         if ... == nil then return nil end
+        mprint(...)
+        return true, table.concat(table.pack(...), " ")
+    end
+}
+
+---@++
+local commands_v2 = {
+    watch = {
+            add = function(...) return data:editWatch(...) end,
+            edit = function(...) return data:editWatch(...) end,
+            remove = function(...) return data:editWatch(...) end,
+            list = function(...) return true, data.watched end,
+            __default = {}
+        },
+    items = {
+            info = function(...) return data:getItemInfo(table.unpack({ table.unpack(..., 2, #... - 1) })) end
+        },
+    __default = function(...)
+        if ... == nil then return false, "no passed args", {} end
         mprint(...)
         return true, table.concat(table.pack(...), " ")
     end
@@ -401,7 +423,10 @@ local function recieverThread()
     end
 end
 
--- Terminal
+-- ============================================================================
+-- ============================       TERMINAL       ==========================
+-- ============================================================================
+
 -- autocomplete item key names (minecraft:dirt)
 function data.completion:keyNameCompletionMatcher(stringParts, step)
     CCexpect.expect(1, stringParts, "table")

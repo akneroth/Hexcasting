@@ -1,3 +1,8 @@
+
+
+__path = fs.getDir(shell.getRunningProgram())
+__programName = fs.getName(shell.getRunningProgram())
+
 --- true if empty
 ---@param any table|string
 ---@return boolean
