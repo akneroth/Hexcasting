@@ -1,0 +1,51 @@
+getActiveCraftings()
+{
+  target = {
+    tags = {
+      [ "balm:ingots" ] = true,
+      [ "minecraft:trim_materials" ] = true,
+      [ "c:gold_ingots" ] = true,
+      [ "mcpitanlib:gold_tool_materials" ] = true,
+      [ "minecraft:beacon_payment_items" ] = true,
+      [ "minecraft:piglin_loved" ] = true,
+      [ "createdeco:internal/ingots/gold_ingots" ] = true,
+      [ "c:ingots" ] = true,
+      [ "ae2:metal_ingots" ] = true,
+    },
+    type = "item",
+    name = "minecraft:gold_ingot",
+    itemGroups = {},
+    rawName = "item.minecraft.gold_ingot",
+    count = 100000,
+    maxCount = 64,
+    displayName = "Gold Ingot",
+  },
+  progress = 1896820224,
+  amount = 2147483647,
+}
+
+items()
+{
+  tags = {},
+  name = "hexcasting:pride_colorizer_plural",
+  itemGroups = {},
+  rawName = "item.hexcasting.pride_colorizer_plural",
+  count = 1,
+  maxCount = 1,
+  displayName = "Plural Pigment",
+}
+
+getCraftableItems()
+{
+  name = "item.ae2.purple_smart_dense_cable",
+  displayName = "Purple ME Dense Smart Cable",
+}
+
+scheduleCrafting("item|fluid", "name (minecraft:iron_ingot)", amount)
+returns: 
+  if started
+    true 
+  if no crafting pattern
+    false
+    string (error message?)
+    table (crafting request info)
