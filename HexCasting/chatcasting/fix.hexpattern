@@ -49,6 +49,11 @@ $if(
             Augur's Purification
         )(
             // main hand max duability is non 0
+            Menderbug's Reflection
+            Subtractive Distillation
+            Numerical Reflection: 20
+            Division Distillation
+            Ceiling Purification
             $print(Using main hand durability)
         )(
             // main hand max duability is 0
@@ -78,6 +83,11 @@ $if(
             Augur's Purification
         )(
             // off hand max duability is non 0
+            Menderbug's Reflection II
+            Subtractive Distillation
+            Numerical Reflection: 20
+            Division Distillation
+            Ceiling Purification
             $print(Using off hand durability)
         )(
             // off hand max duability is 0
@@ -145,14 +155,12 @@ $foreach(
         {
             // handle repair if is amethyst shard
             Induce Mending
-            $print(Repaired item's durability with media)
         }
         Athena's Gambit
         Bookkeeper's Gambit: v
         {
             // handle refill if is amethyst shard
             Recharge Item
-            $print(Recharged item with media)
         }
         Athena's Gambit
         Bookkeeper's Gambit: v
