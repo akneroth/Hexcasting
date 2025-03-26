@@ -213,7 +213,7 @@ WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 -- ============================  GITHUB DOWNLOADER   ==========================
 -- ============================================================================
 
-local path = fs.getDir(shell.getRunningProgram())
+local path = fs.getDir(shell.getRunningProgram()).."/"
 local programName = fs.getName(shell.getRunningProgram())
 local github = {
 	cache = {}
