@@ -1,0 +1,23 @@
+#git(/HexCasting/libs/base.hexpattern)
+
+// request list [[hashed soulprint,...][gate name, ...]]
+// request list with recieved gate [[hashed soulprint,...][gate, ...]]
+
+// gate list [[gate name, ...][group name, dimension, gate], ...]]
+// group list [[hashed soulprint, ...][group name], ...]
+// group hierarchy [group name, group name, ...]
+
+
+{
+    // read request list property
+    // check if any has gate name string
+    // get gate name group
+    // get soulprint group
+    // change group names to position in group hierarchy
+    // if soulprint group is not less than gate group save dimension and gate to request list
+}
+
+
+$target_block_on_block_face
+Numerical Reflection: 100
+Summon Cyclic Wisp
