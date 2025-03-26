@@ -10,8 +10,10 @@ base = {
 }
 
 base.monitor = peripheral.find("monitor")
-base.monitor.clear()
-base.monitor.setCursorPos(1, 1)
+if base.monitor then
+    base.monitor.clear()
+    base.monitor.setCursorPos(1, 1)
+end
 
 priority = {
     tick = function() sleep(0.05) end,
@@ -55,13 +57,14 @@ end
 ---Opens rednet connection or terminates if requirements are not met.
 function initRednet()
     local modem = peripheral.find("modem")
-    rednet.open(peripheral.getName(modem))
 
     if modem == nil then
         mprint("No wireless modem attached to the computer. Please attach wireless or ender modem.")
         mprint("Terminating...")
         return
     end
+
+    rednet.open(peripheral.getName(modem))
 
     if not rednet.isOpen() then
         mprint("Rednet connection is not open. Please check if wireless modem is attached to the computer")

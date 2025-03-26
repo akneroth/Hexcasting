@@ -164,8 +164,6 @@ function base64.decode(b64, decoder, usecaching)
 	return concat(t)
 end
 
-return base64
-
 --[[
 ------------------------------------------------------------------------------
 This software is available under 2 licenses -- choose whichever you prefer.
@@ -213,7 +211,7 @@ WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 -- ============================  GITHUB DOWNLOADER   ==========================
 -- ============================================================================
 
-local path = fs.getDir(shell.getRunningProgram()).."/"
+local path = fs.getDir(shell.getRunningProgram()) .. "/"
 local programName = fs.getName(shell.getRunningProgram())
 local github = {
 	cache = {}
@@ -232,6 +230,7 @@ function github.convert_url(url)
 		:gsub("https://github.com/", "https://api.github.com/repos/")
 		:gsub("https://raw.githubusercontent.com/", "https://api.github.com/repos/")
 		:gsub("blob/.-/", "contents/")
+		:gsub("tree/.-/", "contents/")
 		:gsub("refs/heads/.-/", "contents/")
 	return url
 end
@@ -251,7 +250,12 @@ function github:api_response(url)
 		return self.cache[apiurl]
 	end
 
-	local response = http.get(apiurl).readAll()
+	local response = http.get(apiurl)
+	if response then
+		response = response.readAll()
+	else
+		return
+	end
 	local content = self.get_json_value(response, "content"):gsub("\\n", "\n")
 	local name = self.get_json_value(response, "name"):gsub(" ", "_")
 	local data = base64.decode(content)
@@ -265,7 +269,7 @@ function github:api_response(url)
 end
 
 function github.api(url, name)
-	local response = github.api_response(url)
+	local response = github:api_response(url)
 	if response ~= nil then
 		local file = fs.open(path .. (response.name), "w")
 		file.write(response.content)
@@ -281,7 +285,7 @@ end
 -- ============================================================================
 
 local installer = {
-	githubBasePath = "https://github.com/akneroth/Hexcasting/tree/master/CC/ae2/new/",
+	githubBasePath = "https://github.com/akneroth/Hexcasting/tree/master/CC/ae2/",
 	files = {
 		base = {
 			"libs/base.lua",
@@ -298,16 +302,38 @@ local installer = {
 	},
 }
 
+function installer:setupStartup(alias, file)
+	local exist = fs.exist("/startup.lua")
+	local f, setupDone
+	local r = ""
+	local aliasStr = "shell.setAlias(\"" .. alias .. "\", \"" .. file .. "\")"
+	print("Setting alias", alias)
+	print(aliasStr)
+	if true then return end
+	if exist then
+		f = fs.open("/startup.lua", "r")
+		r = f.readAll()
+		setupDone = string.find(r, aliasStr, nil, true) ~= nil
+	else
+		f = fs.open("/startup.lua", "w")
+	end
+	f.write(aliasStr .. "\n" .. r)
+	f.close()
+end
 
 function installer:install()
 	if arg[1] == "" or arg[1] == nil then
 		print("Usage: ", programName, "manager|monitor")
 		return self
 	else
-		for _, v in ipairs(self.files.base) do github.api(self.githubBasePath..v, v) end
+		for _, v in ipairs(self.files.base) do github.api(self.githubBasePath .. v, v) end
 	end
-	if arg[1] == "manager" then for _, v in ipairs(self.files.manager) do github.api(self.githubBasePath..v, v) end end
-	if arg[1] == "monitor" then for _, v in ipairs(self.files.monitor) do github.api(self.githubBasePath..v, v) end end
+	if arg[1] == "manager" then
+		for _, v in ipairs(self.files.manager) do github.api(self.githubBasePath .. v, v) end
+	end
+	if arg[1] == "monitor" then
+		for _, v in ipairs(self.files.monitor) do github.api(self.githubBasePath .. v, v) end
+	end
 end
 
 installer:install()
