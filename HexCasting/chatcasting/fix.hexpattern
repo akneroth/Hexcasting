@@ -175,6 +175,16 @@ $foreach(
         {@item_type(minecraft:amethyst_shard, true)} >>
         Equality Distillation
     )(
+        Gemini Decomposition
+        Sorter's Purification
+        Stocktake Purification
+        Numerical Reflection: 0
+        Selection Distillation
+        Gemini Decomposition
+        Augur's Purification
+        $fastif()(
+            Bookkeeper's Gambit: v
+        )
         Mediafy Item
     )()
 )
