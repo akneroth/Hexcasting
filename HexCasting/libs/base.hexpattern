@@ -18,6 +18,10 @@
     @pattern(SOUTH_EAST,awd)
 )
 
+#def(personal_property)(
+    @pattern(SOUTH_WEST,wwwwwaqwwewwqwqqwwaeawqawwwwawwwwawwwqawwdww)
+)
+
 #def(dump)(
     Flock's Reflection
     Flock's Gambit
@@ -27,6 +31,12 @@
     Speaker's Decomposition
     Bookkeeper's Gambit: v
     Flock's Disintegration
+)
+
+#def(indexof)(
+    Gemini Decomposition
+    { @str(<1>) } >>
+    Locator's Distillation
 )
 
 // 6 + var patterns
