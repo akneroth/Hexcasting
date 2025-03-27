@@ -1,0 +1,8 @@
+#git(/HexCasting/libs/base.hexpattern)
+
+{$personal_property}>>
+Congruence Distillation
+$fastif(
+    {@str(property)} >>
+    Observation Purification
+)()
