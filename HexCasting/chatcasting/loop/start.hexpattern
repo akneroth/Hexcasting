@@ -1,15 +1,5 @@
 #git(/HexCasting/libs/base.hexpattern)
 
-{@str(Loop)} >>
-Program Purification
-Augur's Purification
-$fastif()(
-    {}
-    Numerical Reflection: 100
-    {@str(Loop)} >>
-    Enqueue
-)
-
 // stack: [params], first in list is spell name which i want to cad
 
 Gemini Decomposition
