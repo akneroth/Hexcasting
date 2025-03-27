@@ -296,29 +296,35 @@ local installer = {
 			"ae2crafting.lua",
 		},
 		monitor = {
-			"libs/ccui.lua",
 			"ae2monitor.lua",
+			"libs/ccui.lua",
 		},
 	},
 }
 
 function installer:setupStartup(alias, file)
-	local exist = fs.exist("/startup.lua")
-	local f, setupDone
+	local exist = fs.exists("/startup.lua")
+	local f
+	local aliasDone, autorunDone = false, false
 	local r = ""
-	local aliasStr = "shell.setAlias(\"" .. alias .. "\", \"" .. file .. "\")"
-	print("Setting alias", alias)
-	print(aliasStr)
-	if true then return end
+	local aliasStr = "shell.setAlias(\"" .. alias .. "\", \"/" .. file .. "\")"
+	local autorunStr = "shell.run(\"" .. alias .. "\")"
 	if exist then
 		f = fs.open("/startup.lua", "r")
 		r = f.readAll()
-		setupDone = string.find(r, aliasStr, nil, true) ~= nil
-	else
-		f = fs.open("/startup.lua", "w")
+		f.close()
+		aliasDone = string.find(r, aliasStr, nil, true) ~= nil
+		autorunDone = string.find(r, autorunStr, nil, true) ~= nil
 	end
-	f.write(aliasStr .. "\n" .. r)
-	f.close()
+
+	if not aliasDone or not autorunDone then
+		f = fs.open("/startup.lua", "w")
+		f.write(r)
+		f.writeLine("")
+		if not aliasDone then f.writeLine(aliasStr) end
+		if not autorunDone then f.writeLine(autorunStr) end
+		f.close()
+	end
 end
 
 function installer:install()
@@ -330,9 +336,11 @@ function installer:install()
 	end
 	if arg[1] == "manager" then
 		for _, v in ipairs(self.files.manager) do github.api(self.githubBasePath .. v, v) end
+		self:setupStartup("ae2manager", path .. self.files.manager[1])
 	end
 	if arg[1] == "monitor" then
 		for _, v in ipairs(self.files.monitor) do github.api(self.githubBasePath .. v, v) end
+		self:setupStartup("ae2monitor", path .. self.files.monitor[1])
 	end
 end
 
