@@ -46,7 +46,7 @@ Additive Distillation
     Inequality Distillation
     {
         Leaping Reflection
-        Numerical Reflection: 10
+        Numerical Reflection: 5
         Maximus Distillation II
         $fastif(
             Mind's Reflection
@@ -101,7 +101,7 @@ Additive Distillation
     )
     Scrivener's Purification
     Additive Distillation
-    {@str(/10)}>>
+    {@str(/5)}>>
     Additive Distillation
     Single's Purification
     Additive Distillation
