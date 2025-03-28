@@ -45,15 +45,37 @@ Additive Distillation
     Numerical Reflection: -1
     Inequality Distillation
     {
+        // SPELL Elytra
         Leaping Reflection
         Numerical Reflection: 5
         Maximus Distillation II
+        Leaping Reflection
+        Numerical Reflection: 5
+        Modulus Distillation
+        Numerical Reflection: 0
+        Equality Distillation
+        Conjunction Distillation
         $fastif(
             Mind's Reflection
             Altiora
         )()
 
+        // SPELL Breath
+        {
+            Gemini Decomposition
+            Numerical Reflection: 30
+            Minimus Distillation
+            Gasp
+        }
+        Mind's Reflection
+        Compass' Purification II
+        Numerical Reflection: 32
+        Zone Distillation: Player
+        Thoth's Gambit
+        Bookkeeper's Gambit: v
 
+
+        // SPELL aCAD
         $rightclick
         Numerical Reflection: 1
         Equality Distillation
@@ -102,6 +124,21 @@ Additive Distillation
     Scrivener's Purification
     Additive Distillation
     {@str(/5)}>>
+    Additive Distillation
+    Single's Purification
+    Additive Distillation
+    
+    // HUD Breathing (and spell)
+    {@str(Breathing: )}>>
+    Mind's Reflection
+    Diver's Purification
+    Numerical Reflection: 300
+    Minimus Distillation
+    $fastif(
+        {@str(ON)}>>
+    )(
+        {@str(OFF)}>>
+    )
     Additive Distillation
     Single's Purification
     Additive Distillation
