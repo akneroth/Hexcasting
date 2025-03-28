@@ -90,19 +90,14 @@ Additive Distillation
     Additive Distillation
 
     // HUD Altiora
+    {@str(Elytra: )}>>
     Leaping Reflection
-    Numerical Reflection: -1
-    Equality Distillation
-    $fastif()(
-        {@str(Altiora: )}>>
-        Leaping Reflection
-        Scrivener's Purification
-        Additive Distillation
-        {@str(/20)}>>
-        Additive Distillation
-        Single's Purification
-        Additive Distillation
-    )
+    Scrivener's Purification
+    Additive Distillation
+    {@str(/20)}>>
+    Additive Distillation
+    Single's Purification
+    Additive Distillation
     
 
     Send Thought
