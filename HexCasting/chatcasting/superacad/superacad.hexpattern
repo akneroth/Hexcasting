@@ -1,0 +1,139 @@
+#git(/HexCasting/libs/base.hexpattern)
+
+// stack: [params], first in list is spell name which i want to cad
+
+Gemini Decomposition
+Huginn's Gambit
+Numerical Reflection: 0
+Selection Distillation
+@str(to hexicon)
+
+{@vec(375, 53, 2484)} >>
+Jester's Gambit
+Akasha's Distillation
+Gemini Decomposition
+Augur's Purification
+$fastif()(
+    // quit if no pattern for passed name
+    Janus' Gambit
+)
+// stack: [spell]
+{
+    {
+        Nullary Reflection
+    }
+    Flock's Disintegration
+}
+Numerical Reflection: 1
+Muninn's Reflection
+Speaker's Decomposition
+Bookkeeper's Gambit: v
+Surgeon's Exaltation
+Jester's Gambit
+Additive Distillation
+// stack: [{[params]}>>, spell]
+
+
+{
+    {@str(Akasha CAD)} >>
+    Program Purification
+    Numerical Reflection: 1
+    {@str(Akasha CAD)} >>
+    Enqueue
+
+    Telepathic Reflection
+    Numerical Reflection: -1
+    Inequality Distillation
+    {
+        Leaping Reflection
+        Numerical Reflection: 20
+        Maximus Distillation II
+        $fastif(
+            Mind's Reflection
+            Altiora
+        )()
+
+
+        $rightclick
+        Numerical Reflection: 1
+        Equality Distillation
+        {
+            {@str(spell to cast)} >>
+            Hermes' Gambit
+            // Athena's Gambit
+            // Bookkeeper's Gambit: v
+            // Athena's Revelation
+        }
+        {}
+        Augur's Exaltation
+        Hermes' Gambit
+
+
+
+    }
+    {}
+    Augur's Exaltation
+    Hermes' Gambit
+
+    // HUD Spell info
+    {@str(spell info)}
+    Additive Distillation
+    {@str(Media: )}>>
+
+    // HUD Media
+    Mind's Reflection
+    Media Purification
+    Numerical Reflection: -20
+    Additive Distillation
+    Scrivener's Purification
+    Additive Distillation
+    Single's Purification
+    Additive Distillation
+
+    // HUD Altiora
+    Leaping Reflection
+    Numerical Reflection: -1
+    Equality Distillation
+    $fastif()(
+        {@str(Altiora: )}>>
+        Leaping Reflection
+        Scrivener's Purification
+        Additive Distillation
+        {@str(/20)}>>
+        Additive Distillation
+        Single's Purification
+        Additive Distillation
+    )
+    
+
+    Send Thought
+}
+
+// insert spell info into cassette hud
+$indexof(spell info)
+Muninn's Reflection
+Speaker's Decomposition
+Huginn's Gambit
+{
+    Muninn's Reflection
+    Spacing Reflection
+    Additive Distillation
+    Jester's Gambit
+    Additive Distillation
+    Huginn's Gambit
+}
+Jester's Gambit
+Thoth's Gambit
+Bookkeeper's Gambit: v
+
+Muninn's Reflection
+Surgeon's Exaltation
+
+// insert spell into cassette
+$indexof(spell to cast)
+Rotation Gambit
+Surgeon's Exaltation
+
+Numerical Reflection: 1
+{@str(Akasha CAD)} >>
+Enqueue

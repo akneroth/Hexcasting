@@ -1,3 +1,8 @@
+// ==============================================================================
+// ==============================================================================
+// ==========================         PATTERNS         ==========================
+// ==============================================================================
+// ==============================================================================
 #def(true)(
     True Reflection
 )
@@ -22,6 +27,16 @@
     @pattern(SOUTH_WEST,wwwwwaqwwewwqwqqwwaeawqawwwwawwwwawwwqawwdww)
 )
 
+// ==============================================================================
+// ==============================================================================
+// ==========================           MISC           ==========================
+// ==============================================================================
+// ==============================================================================
+
+#def(akasha)(
+    {@vec(375, 53, 2484)} >>
+)
+
 #def(dump)(
     Flock's Reflection
     Flock's Gambit
@@ -33,25 +48,20 @@
     Flock's Disintegration
 )
 
+// ==============================================================================
+// ==============================================================================
+// ==========================        FUNCTIONS         ==========================
+// ==============================================================================
+// ==============================================================================
+
+// ==============================================================================
+// ==========================         BASE FUNC        ==========================
+// ==============================================================================
+
 #def(indexof)(
     Gemini Decomposition
     { @str(<1>) } >>
     Locator's Distillation
-)
-
-// 6 + var patterns
-// if (bool) do (patterns) else (patterns)
-// Evaluates the second arg if true, evaluates the third if false
-#def(if)(
-    <1>
-    {
-        <2>
-    }
-    {
-        <3>
-    }
-    Augur's Exaltation
-    Hermes' Gambit
 )
 
 // 6 + var patterns
@@ -69,14 +79,17 @@
 )
 
 // 6 + var patterns
+// if (bool) do (patterns) else (patterns)
+// Evaluates the second arg if true, evaluates the third if false
+#def(if)(
+    <1>
+    $fastif(<2>)(<3>)
+)
+
+// 6 + var patterns
 #def(runif)(
     <1>
-    {
-        <2>
-    }
-    {}
-    Augur's Exaltation
-    Hermes' Gambit
+    $fastif(<2>)()
 )
 
 // for_each in (list) do (patterns)
@@ -95,6 +108,88 @@
     Reveal
     Bookkeeper's Gambit: v
 )
+
+#def(akashacast)(
+    $akasha
+    Jester's Gambit
+    Akasha's Distillation
+    Gemini Decomposition
+    Augur's Purification
+    $fastif(
+        Hermes' Gambit
+    )(
+        Bookkeeper's Gambit: v
+    )
+)
+
+// ==============================================================================
+// ==========================        DICTIONARY        ==========================
+// ==============================================================================
+
+// stack: name, [names], [values]
+#def(dictread)(
+    Reflecting Gambit
+    Locator's Distillation
+    Selection Distillation
+    // stack: value
+)
+
+// stack: value, name, [names], [values]
+#def(dictsave)(
+    Reflecting Gambit
+    Dioscuri Gambit
+    // stack: value, [values], [names], name, [names], name
+    Locator's Distillation
+    // stack: value, [values], [names], name, index
+    Numerical Reflection: -1
+    Equality Distillation
+    // stack: value, [values], [names], name
+    $fastif(
+        Single's Purification
+        Additive Distillation
+        Reflecting Gambit
+        Single's Purification
+        Additive Distillation
+        // stack: [names..., name], [values..., value]
+    )(
+        // stack: value, [values], [names], name
+        Dioscuri Gambit
+        Locator's Distillation
+        Bookkeeper's Gambit: v-
+        Rotation Gambit II
+        // stack: value, index, [values], [names]
+        Numerical Reflection: 4
+        Flock's Gambit
+        Retrograde Purification
+        Flock's Disintegration
+        // stack: [names], [values], index, value
+        Surgeon's Exaltation
+        // stack: [names], [values..., value]
+    )
+)
+
+// stack: ... , varname
+#def(varread)(
+    $personal_property
+    Observation Purification
+    >>
+    $dictread
+    // stack: ... , varvalue
+)
+
+// stack: ... ,value, varname
+#def(varsave)(
+    $personal_property
+    Observation Purification
+    >>
+    $dictsave
+    // stack: ... , varvalue
+)
+
+
+// ==============================================================================
+// ==========================         RAYCASTS         ==========================
+// ==============================================================================
 
 // return vector of the targeted block
 #def(target_block)(
@@ -129,6 +224,11 @@
     Alidade's Purification
     Scout's Distillation
 )
+
+
+// ==============================================================================
+// ==========================         CASSETTES        ==========================
+// ==============================================================================
 
 // checks if there is a free cassette or if cassette under the same name is running, if not, terminates the hex
 #def(check_for_free_cassette)(
