@@ -46,7 +46,7 @@ Additive Distillation
     Inequality Distillation
     {
         Leaping Reflection
-        Numerical Reflection: 20
+        Numerical Reflection: 10
         Maximus Distillation II
         $fastif(
             Mind's Reflection
@@ -92,9 +92,16 @@ Additive Distillation
     // HUD Altiora
     {@str(Elytra: )}>>
     Leaping Reflection
+    Numerical Reflection: -1
+    Equality Distillation
+    $fastif(
+        Numerical Reflection: 0
+    )(
+        Leaping Reflection
+    )
     Scrivener's Purification
     Additive Distillation
-    {@str(/20)}>>
+    {@str(/10)}>>
     Additive Distillation
     Single's Purification
     Additive Distillation
