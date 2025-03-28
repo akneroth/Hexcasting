@@ -1,3 +1,6 @@
+-- Made with copious amount of insomnia
+-- Author: JustASnowflake (akneroth)
+
 local CCpretty = require "cc.pretty"
 
 local __path = fs.getDir(shell.getRunningProgram())
