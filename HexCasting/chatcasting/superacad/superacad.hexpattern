@@ -77,10 +77,9 @@ Additive Distillation
 
     // HUD Spell info
     {@str(spell info)}
-    Additive Distillation
-    {@str(Media: )}>>
 
     // HUD Media
+    {@str(Media: )}>>
     Mind's Reflection
     Media Purification
     Numerical Reflection: -20
