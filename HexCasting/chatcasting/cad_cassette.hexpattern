@@ -50,7 +50,7 @@ Additive Distillation
         Equality Distillation
         {
             {
-                Nullary Reflection
+                {@str(spell to cast)} >>
             } >>
             Hermes' Gambit
             // Athena's Gambit
@@ -64,41 +64,10 @@ Additive Distillation
     {}
     Augur's Exaltation
     Hermes' Gambit
-
-    {
-        Nullary Reflection
-    } >>
-    {@str( | )}>>
-    Additive Distillation
-    Mind's Reflection
-    Media Purification
-    Scrivener's Purification
-    Additive Distillation
-    Send Thought
 }
-
-// insert spell info into cassette hud
-Numerical Reflection: 35
-Muninn's Reflection
-Speaker's Decomposition
-Huginn's Gambit
-{
-    Muninn's Reflection
-    Spacing Reflection
-    Additive Distillation
-    Jester's Gambit
-    Additive Distillation
-    Huginn's Gambit
-}
-Jester's Gambit
-Thoth's Gambit
-Bookkeeper's Gambit: v
-
-Muninn's Reflection
-Surgeon's Exaltation
 
 // insert spell into cassette
-Numerical Reflection: 20
+$indexof(spell to cast)
 Rotation Gambit
 Surgeon's Exaltation
 
