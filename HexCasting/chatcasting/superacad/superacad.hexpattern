@@ -168,7 +168,7 @@ Additive Distillation
     Additive Distillation
     
     // HUD Autoregen
-        {@str(Breathing: )}>>
+    {@str(Autoregen: )}>>
     Mind's Reflection
     Media Purification
     Numerical Reflection: 100
