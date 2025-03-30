@@ -101,6 +101,30 @@ Additive Distillation
     Thoth's Gambit
     Bookkeeper's Gambit: v
 
+    // SPELL Autoregen
+    Mind's Reflection
+    Media Purification
+    Numerical Reflection: 10000
+    Maximus Distillation II
+    Mind's Reflection
+    Vitality Purification
+    Mind's Reflection
+    Fitness Purification
+    Minimus Distillation
+    Conjunction Distillation
+    $fastif(
+        Mind's Reflection
+        Numerical Reflection: 30
+        Numerical Reflection: 1
+        White Sun's Zenith
+    )()
+    
+
+    
+
+    
+    
+
     // HUD Spell info
     {@str(spell info)}
 
