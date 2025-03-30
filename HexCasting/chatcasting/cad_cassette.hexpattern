@@ -49,9 +49,7 @@ Additive Distillation
         Numerical Reflection: 1
         Equality Distillation
         {
-            {
-                {@str(spell to cast)} >>
-            } >>
+            {@str(spell to cast)} >>
             Hermes' Gambit
             // Athena's Gambit
             // Bookkeeper's Gambit: v
