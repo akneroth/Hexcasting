@@ -104,7 +104,9 @@ Additive Distillation
     // SPELL Autoregen
     Mind's Reflection
     Media Purification
-    Numerical Reflection: 10000
+    Numerical Reflection: 100
+    Numerical Reflection: 100
+    Multiplicative Distillation
     Maximus Distillation II
     Mind's Reflection
     Vitality Purification
@@ -118,12 +120,6 @@ Additive Distillation
         Numerical Reflection: 1
         White Sun's Zenith
     )()
-    
-
-    
-
-    
-    
 
     // HUD Spell info
     {@str(spell info)}
@@ -171,6 +167,22 @@ Additive Distillation
     Single's Purification
     Additive Distillation
     
+    // HUD Autoregen
+        {@str(Breathing: )}>>
+    Mind's Reflection
+    Media Purification
+    Numerical Reflection: 100
+    Numerical Reflection: 100
+    Multiplicative Distillation
+    Maximus Distillation II
+    $fastif(
+        {@str(ON)}>>
+    )(
+        {@str(OFF)}>>
+    )
+    Additive Distillation
+    Single's Purification
+    Additive Distillation
 
     Send Thought
 }
