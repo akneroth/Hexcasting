@@ -24,6 +24,10 @@
     @pattern(SOUTH_EAST,awd)
 )
 
+#def(exposeMind)(
+    @pattern(NORTH_EAST,eqeeedqadqqqqqdeewewewe)
+)
+
 #def(personal_property)(
     @pattern(SOUTH_WEST,wwwwwaqwwewwqwqqwwaeawqawwwwawwwwawwwqawwdww)
 )
@@ -133,6 +137,34 @@
     Locator's Distillation
     Selection Distillation
     // stack: value
+)
+
+// stack: value, name, [names], [values]
+#def(dictadd)(
+    Reflecting Gambit
+    Single's Purification
+    Additive Distillation
+    Reflecting Gambit
+    Single's Purification
+    Additive Distillation
+)
+
+// stack: value, name, [names], [values]
+#def(dictedit)(
+    Reflecting Gambit
+    Dioscuri Gambit
+    Locator's Distillation
+    Bookkeeper's Gambit: v-
+    Rotation Gambit II
+    Numerical Reflection: 4
+    Flock's Gambit
+    Retrograde Purification
+    Flock's Disintegration
+    // stack: [names], [values], index, value
+    
+    
+
+    
 )
 
 // stack: value, name, [names], [values]
