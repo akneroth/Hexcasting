@@ -131,16 +131,16 @@
 // ==========================        DICTIONARY        ==========================
 // ==============================================================================
 
+// stack: name, list_of_names, list_of_values
 #def(dictread)(
-// stack: name, [names], [values]
     Reflecting Gambit
     Locator's Distillation
     Selection Distillation
     // stack: value
 )
 
+// stack: value, name, list_of_names, list_of_values
 #def(dictadd)(
-// stack: value, name, [names], [values]
     Reflecting Gambit
     Single's Purification
     Additive Distillation
@@ -149,8 +149,8 @@
     Additive Distillation
 )
 
+// stack: value, name, list_of_names, list_of_values
 #def(dictedit)(
-// stack: value, name, [names], [values]
     Reflecting Gambit
     Dioscuri Gambit
     Locator's Distillation
@@ -160,44 +160,44 @@
     Flock's Gambit
     Retrograde Purification
     Flock's Disintegration
-    // stack: [names], [values], index, value
+    // stack: list_of_names, list_of_values, index, value
     
     
 
     
 )
 
+// stack: value, name, list_of_names, list_of_values
 #def(dictsave)(
-// stack: value, name, [names], [values]
     Reflecting Gambit
     Dioscuri Gambit
-    // stack: value, [values], [names], name, [names], name
+    // stack: value, list_of_values, list_of_names, name, list_of_names, name
     Locator's Distillation
-    // stack: value, [values], [names], name, index
+    // stack: value, list_of_values, list_of_names, name, index
     Numerical Reflection: -1
     Equality Distillation
-    // stack: value, [values], [names], name
+    // stack: value, list_of_values, list_of_names, name
     $fastif(
         Single's Purification
         Additive Distillation
         Reflecting Gambit
         Single's Purification
         Additive Distillation
-        // stack: [names..., name], [values..., value]
+        // stack: list_of_names, list_of_values
     )(
-        // stack: value, [values], [names], name
+        // stack: value, list_of_values, list_of_names, name
         Dioscuri Gambit
         Locator's Distillation
         Bookkeeper's Gambit: v-
         Rotation Gambit II
-        // stack: value, index, [values], [names]
+        // stack: value, index, list_of_values, list_of_names
         Numerical Reflection: 4
         Flock's Gambit
         Retrograde Purification
         Flock's Disintegration
-        // stack: [names], [values], index, value
+        // stack: list_of_names, list_of_values, index, value
         Surgeon's Exaltation
-        // stack: [names], [values..., value]
+        // stack: list_of_names, list_of_values
     )
 )
 
