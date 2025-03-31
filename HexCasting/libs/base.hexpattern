@@ -131,16 +131,16 @@
 // ==========================        DICTIONARY        ==========================
 // ==============================================================================
 
-// stack: name, [names], [values]
 #def(dictread)(
+// stack: name, [names], [values]
     Reflecting Gambit
     Locator's Distillation
     Selection Distillation
     // stack: value
 )
 
-// stack: value, name, [names], [values]
 #def(dictadd)(
+// stack: value, name, [names], [values]
     Reflecting Gambit
     Single's Purification
     Additive Distillation
@@ -149,8 +149,8 @@
     Additive Distillation
 )
 
-// stack: value, name, [names], [values]
 #def(dictedit)(
+// stack: value, name, [names], [values]
     Reflecting Gambit
     Dioscuri Gambit
     Locator's Distillation
@@ -167,8 +167,8 @@
     
 )
 
-// stack: value, name, [names], [values]
 #def(dictsave)(
+// stack: value, name, [names], [values]
     Reflecting Gambit
     Dioscuri Gambit
     // stack: value, [values], [names], name, [names], name
