@@ -25,10 +25,10 @@ Zone Exaltation: Type
 
 {
     Gemini Decomposition
-    // $exposeMind
+    $exposeMind
     Compass' Purification
     Gemini Decomposition
-    // $iotatype
+    $iotatype
     {@iota_type(hexcasting:vec3)}>>
     Equality Distillation
     $fastif(
