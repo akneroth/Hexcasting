@@ -34,7 +34,7 @@ Zone Exaltation: Type
     Dioscuri Gambit
     Bookkeeper's Gambit: v
     Sorter's Purification
-    @item_type(minecraft:air,false)
+    {@item_type(minecraft:air,false)}>>
     Equality Distillation
     Conjunction Distillation
     $fastif(
