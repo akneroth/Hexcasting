@@ -1,10 +1,4 @@
 {
-    "todo": [
-        {
-            "desc": "akashic scarab detection",
-            "done": false
-        }
-    ],
     "spells": [
         {
             "desc": "testing 1, 2...",
@@ -128,26 +122,6 @@
             "name": "fuck_phantoms",
             "desc": "targets all phantoms in radius and explodes them once",
             "params": "<radius>"
-        }
-    ],
-    "requested": [
-        {
-            "desc": "conjure volatile block (when one block is destroyed, all conected blocks are destroyed)",
-            "name": "scaffold"
-        },
-        {
-            "desc": "edify sapling on top of targeted block face",
-            "name": "edify"
-        },
-        {
-            "name": "tp",
-            "desc": "teleport to gate with selected name",
-            "params": "<gate>"
-        },
-        {
-            "name": "list",
-            "desc": "lists values of dictionaries (pigments, gates etc.)",
-            "params": "<name>"
         }
     ]
 }
