@@ -26,11 +26,17 @@ Zone Exaltation: Type
 {
     Gemini Decomposition
     $exposeMind
-    Compass' Purification
+    Compass' Purification II
     Gemini Decomposition
     $iotatype
     {@iota_type(hexcasting:vec3)}>>
     Equality Distillation
+    Dioscuri Gambit
+    Bookkeeper's Gambit: v
+    Sorter's Purification
+    @item_type(minecraft:air,false)
+    Equality Distillation
+    Conjunction Distillation
     $fastif(
         Gemini Decomposition
         Create Water
