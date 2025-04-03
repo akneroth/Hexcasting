@@ -1,12 +1,9 @@
 #git(/HexCasting/libs/base.hexpattern)
 
-// just cast this hexpattern to save the list into targeted shelf
-
-// write_shelf stuff
-$target_block
+// pattern to save the list as
 $target_monster_list
 
-{
+[
     @entity_type(minecraft:phantom)
     @entity_type(minecraft:zombie)
     @entity_type(minecraft:zombie_villager)
@@ -27,7 +24,4 @@ $target_monster_list
     @entity_type(minecraft:evoker)
     @entity_type(minecraft:ravager)
     @entity_type(minecraft:vex)
-}
-
-// write_shelf stuff
-Librarian's Gambit
+]
