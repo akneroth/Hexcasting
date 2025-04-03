@@ -42,7 +42,15 @@ Zone Distillation: Monster
     Inequality Distillation
     $fastif(
         Gemini Decomposition
-        $exposeMind
+        Gemini Decomposition
+        Apothecary's Purification
+        {@str(exposed mind status)} >>
+        Locator's Distillation
+        Numerical Reflection: -1
+        $fastif(
+            $exposeMind
+        )()
+        
         Compass' Purification II
         Gemini Decomposition
         $iotatype
