@@ -85,7 +85,7 @@ Additive Distillation
 
 
     // SPELL Breath
-    $check_in_world
+    $isInWorldBounds
     $fastif(
         {
             Gemini Decomposition
@@ -158,7 +158,7 @@ Additive Distillation
     
     // HUD Breathing (and spell)
     {@str(Breathing: )}>>
-    $check_in_world
+    $isInWorldBounds
     $fastif(
         {@str(ON)}>>
     )(

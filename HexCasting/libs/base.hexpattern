@@ -166,7 +166,7 @@
     )()
 )
 
-#def(check_in_world)(
+#def(isInWorldBounds)(
     Mind's Reflection
     Compass' Purification II
     Vector Disintegration
@@ -181,6 +181,8 @@
     Conjunction Distillation
     // stack: bool
 )
+
+
 
 // ==============================================================================
 // ==========================        DICTIONARY        ==========================

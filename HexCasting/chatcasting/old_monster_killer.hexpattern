@@ -18,7 +18,7 @@ $fastif(
 Mind's Reflection
 Compass' Purification II
 
-$check_in_world
+$isInWorldBounds
 $fastif()(
     Janus' Gambit
 )
