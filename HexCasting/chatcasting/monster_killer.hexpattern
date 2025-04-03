@@ -27,6 +27,7 @@ Zone Distillation: Monster
     {
         @entity_type(minecraft:phantom)
         @entity_type(minecraft:zombie)
+        @entity_type(minecraft:zombie_villager)
         @entity_type(minecraft:skeleton)
         @entity_type(minecraft:creeper)
         @entity_type(minecraft:blaze)
