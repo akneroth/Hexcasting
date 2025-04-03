@@ -8,18 +8,23 @@ Compass' Purification II
     $bettersurgeon
 }
 Conjure Hextito
-@entity_type(hexical:hextito)
 Mind's Reflection
 Compass' Purification II
-Entity Distillation: Type
-Gemini Decomposition
-Augur's Purification
-$fastif(
-    Sleight
-    Mage Mouth
-)(
-    Bookkeeper's Gambit: v
-)
+Numerical Reflection: 1
+Zone Distillation: Item
+{
+    Gemini Decomposition
+    Sorter's Purification
+    {@item_type(hexical:hextito,true)}>>
+    Equality Distillation
+    $fastif(
+        Sleight
+        Mage Mouth
+        Janus' Gambit
+    )(
+        Bookkeeper's Gambit: v
+    )   
+}
 
 
 
