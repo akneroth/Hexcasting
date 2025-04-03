@@ -124,7 +124,9 @@
     Akasha's Distillation
     Gemini Decomposition
     Augur's Purification
-    $fastif()(
+    $fastif(
+        Single's Purification
+    )(
         Bookkeeper's Gambit: v
     )
 )
