@@ -17,6 +17,12 @@ $fastif(
 )
 Mind's Reflection
 Compass' Purification II
+
+$check_in_world
+$fastif()(
+    Janus' Gambit
+)
+
 Jester's Gambit
 
 Zone Distillation: Monster

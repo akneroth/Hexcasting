@@ -166,6 +166,22 @@
     )()
 )
 
+#def(check_in_world)(
+    Mind's Reflection
+    Compass' Purification II
+    Vector Disintegration
+    Bookkeeper's Gambit: v-v
+    Gemini Decomposition
+    Spatial Reflection
+    Atlas' Decomposition
+    Reflecting Gambit
+    Maximus Distillation II
+    Reflecting Gambit
+    Minimus Distillation II
+    Conjunction Distillation
+    // stack: bool
+)
+
 // ==============================================================================
 // ==========================        DICTIONARY        ==========================
 // ==============================================================================
