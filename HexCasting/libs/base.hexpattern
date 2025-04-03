@@ -33,7 +33,7 @@
 )
 
 #def(target_monster_list)(
-    @pattern(EAST,sswwdeqwedwad)
+    @pattern(NORTH_EAST,ewwdeqwedwad)
 )
 
 // ==============================================================================
