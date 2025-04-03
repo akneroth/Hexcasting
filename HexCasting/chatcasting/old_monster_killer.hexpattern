@@ -1,0 +1,91 @@
+#git(/HexCasting/libs/base.hexpattern)
+
+Numerical Reflection: 0
+Selection Distillation
+Gemini Decomposition
+Augur's Purification
+$fastif(
+    Input Purification
+    Gemini Decomposition
+    Augur's Purification
+    $fastif()(
+        $print(Passed param is not a number)
+        Janus' Gambit
+    )
+)(
+    Numerical Reflection: 28
+)
+Mind's Reflection
+Compass' Purification II
+Jester's Gambit
+
+Zone Distillation: Monster
+
+{
+    Gemini Decomposition
+    Physician's Purification
+    {
+        @entity_type(minecraft:phantom)
+        @entity_type(minecraft:zombie)
+        @entity_type(minecraft:zombie_villager)
+        @entity_type(minecraft:skeleton)
+        @entity_type(minecraft:creeper)
+        @entity_type(minecraft:blaze)
+        @entity_type(minecraft:wither_skeleton)
+        @entity_type(minecraft:pillager)
+        @entity_type(minecraft:evoker)
+        @entity_type(minecraft:ravager)
+        @entity_type(minecraft:vex)
+    }
+    Jester's Gambit
+    Locator's Distillation
+    Numerical Reflection: -1
+    Inequality Distillation
+    $fastif(
+        Gemini Decomposition
+        Gemini Decomposition
+        Apothecary's Purification
+        {@str(exposed mind status)} >>
+        Locator's Distillation
+        Numerical Reflection: -1
+        Equality Distillation
+        $fastif(
+            $exposeMind
+        )()
+        
+        Compass' Purification II
+        Gemini Decomposition
+        $iotatype
+        {@iota_type(hexcasting:vec3)}>>
+        Equality Distillation
+        Dioscuri Gambit
+        Bookkeeper's Gambit: v
+        Sorter's Purification
+        {@item_type(minecraft:air,false)}>>
+        Equality Distillation
+        Conjunction Distillation
+        $fastif(
+            Gemini Decomposition
+            Spatial Reflection
+            {@str(netherdim imprint)} >>
+            Equality Distillation
+            $fastif(
+                Create Lava
+            )(
+                Create Water
+            )
+
+            Gemini Decomposition
+            Numerical Reflection: 1
+            Explosion
+            Gemini Decomposition
+            Conjure Block
+            Gemini Decomposition
+            Break Block
+            Numerical Reflection: 2
+            Confetti
+        )() 
+    )()
+}
+Jester's Gambit
+Thoth's Gambit
