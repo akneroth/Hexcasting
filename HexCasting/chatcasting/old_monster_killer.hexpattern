@@ -45,7 +45,7 @@ Zone Distillation: Monster
         Gemini Decomposition
         Gemini Decomposition
         Apothecary's Purification
-        {@str(exposed mind status)} >>
+        {@str(var exposed)} >>
         Locator's Distillation
         Numerical Reflection: -1
         Equality Distillation
@@ -67,7 +67,7 @@ Zone Distillation: Monster
         $fastif(
             Gemini Decomposition
             Spatial Reflection
-            {@str(netherdim imprint)} >>
+            {@str(var nether)} >>
             Equality Distillation
             $fastif(
                 Create Lava
