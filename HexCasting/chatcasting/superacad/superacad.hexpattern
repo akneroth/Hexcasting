@@ -85,21 +85,25 @@ Additive Distillation
 
 
     // SPELL Breath
-    {
-        Gemini Decomposition
-        Diver's Purification
-        Numerical Reflection: 30
-        Minimus Distillation
-        $fastif(
-            Gasp
-        )()
-    }
-    Mind's Reflection
-    Compass' Purification II
-    Numerical Reflection: 32
-    Zone Distillation: Player
-    Thoth's Gambit
-    Bookkeeper's Gambit: v
+    $check_in_world
+    $fastif(
+        {
+            Gemini Decomposition
+            Diver's Purification
+            Numerical Reflection: 30
+            Minimus Distillation
+            $fastif(
+                Gasp
+            )()
+        }
+        Mind's Reflection
+        Compass' Purification II
+        Numerical Reflection: 28
+        Zone Distillation: Player
+        Thoth's Gambit
+        Bookkeeper's Gambit: v
+    )()
+    
 
     // SPELL Autoregen
     Mind's Reflection
@@ -154,10 +158,7 @@ Additive Distillation
     
     // HUD Breathing (and spell)
     {@str(Breathing: )}>>
-    Mind's Reflection
-    Diver's Purification
-    Numerical Reflection: 300
-    Minimus Distillation
+    $check_in_world
     $fastif(
         {@str(ON)}>>
     )(
