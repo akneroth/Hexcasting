@@ -24,19 +24,8 @@ Zone Distillation: Monster
 {
     Gemini Decomposition
     Physician's Purification
-    {
-        @entity_type(minecraft:phantom)
-        @entity_type(minecraft:zombie)
-        @entity_type(minecraft:zombie_villager)
-        @entity_type(minecraft:skeleton)
-        @entity_type(minecraft:creeper)
-        @entity_type(minecraft:blaze)
-        @entity_type(minecraft:wither_skeleton)
-        @entity_type(minecraft:pillager)
-        @entity_type(minecraft:evoker)
-        @entity_type(minecraft:ravager)
-        @entity_type(minecraft:vex)
-    }
+    $target_monster_list
+    $akasharead
     Jester's Gambit
     Locator's Distillation
     Numerical Reflection: -1

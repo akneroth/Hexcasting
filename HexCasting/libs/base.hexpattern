@@ -32,6 +32,10 @@
     @pattern(SOUTH_WEST,wwwwwaqwwewwqwqqwwaeawqawwwwawwwwawwwqawwdww)
 )
 
+#def(target_monster_list)(
+    @pattern(EAST,sswwdeqwedwad)
+)
+
 // ==============================================================================
 // ==============================================================================
 // ==========================           MISC           ==========================
@@ -112,6 +116,17 @@
     {@str(<1>)} >>
     Reveal
     Bookkeeper's Gambit: v
+)
+
+#def(akasharead)(
+    $akasha
+    Jester's Gambit
+    Akasha's Distillation
+    Gemini Decomposition
+    Augur's Purification
+    $fastif()(
+        Bookkeeper's Gambit: v
+    )
 )
 
 #def(akashacast)(
