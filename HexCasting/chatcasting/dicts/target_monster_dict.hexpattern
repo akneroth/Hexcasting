@@ -8,7 +8,6 @@ $target_monster_list
     @entity_type(minecraft:zombie)
     @entity_type(minecraft:zombie_villager)
     @entity_type(minecraft:witch)
-    @entity_type(minecraft:piglin)
     @entity_type(minecraft:magmacube)
     @entity_type(minecraft:husk)
     @entity_type(minecraft:hoglin)
