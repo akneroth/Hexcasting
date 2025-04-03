@@ -24,6 +24,10 @@
     @pattern(SOUTH_EAST,awd)
 )
 
+#def(bettersurgeon)(
+    @pattern(EAST,dedqdewqaeaq)
+)
+
 #def(exposeMind)(
     @pattern(NORTH_EAST,eqeeedqadqqqqqdeewewewe)
 )
@@ -142,6 +146,24 @@
     )(
         Bookkeeper's Gambit: v
     )
+)
+
+// ==============================================================================
+// ==========================           MISC           ==========================
+// ==============================================================================
+
+#def(saferead)(
+    Auditor's Reflection
+    $fastif(
+        Scribe's Reflection
+    )()
+)
+
+#def(safewrite)(
+    Assessor's Reflection
+    $fastif(
+        Scribe's Gambit
+    )()
 )
 
 // ==============================================================================

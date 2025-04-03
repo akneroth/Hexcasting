@@ -1,0 +1,25 @@
+#git(/HexCasting/libs/base.hexpattern)
+
+Mind's Reflection
+Compass' Purification II
+{
+    Whisper Reflection
+    $saferead
+    $bettersurgeon
+}
+Conjure Hextito
+@entity_type(hexical:hextito)
+Mind's Reflection
+Compass' Purification II
+Entity Distillation: Type
+Gemini Decomposition
+Augur's Purification
+$fastif(
+    Sleight
+    Mage Mouth
+)(
+    Bookkeeper's Gambit: v
+)
+
+
+
