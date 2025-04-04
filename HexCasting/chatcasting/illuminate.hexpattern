@@ -1,0 +1,22 @@
+#git(/HexCasting/libs/base.hexpattern)
+
+Numerical Reflection: 0
+Selection Distillation
+Gemini Decomposition
+Augur's Purification
+$fastif(
+    Input Purification
+    Gemini Decomposition
+    Augur's Purification
+    $fastif()(
+        $print(Usage: illuminate [1 - 15])
+        Janus' Gambit
+    )
+)(
+    $print(Using default light strength: 15)
+    Numerical Reflection: 15
+)
+$target_block_on_block_face
+Jester's Gambit
+$illuminate
+$print(Illuminate placed)
