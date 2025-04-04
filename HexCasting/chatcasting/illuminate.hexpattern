@@ -9,7 +9,7 @@ $fastif(
     Gemini Decomposition
     Augur's Purification
     $fastif()(
-        $print(Usage: illuminate [1 - 15])
+        $print(Usage: illuminate <1 - 15>)
         Janus' Gambit
     )
 )(
