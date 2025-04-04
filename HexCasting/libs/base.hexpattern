@@ -32,8 +32,16 @@
     @pattern(NORTH_EAST,eqeeedqadqqqqqdeewewewe)
 )
 
+#def(illuminate)(
+    @pattern(SOUTH_EAST,aeaeaeaeaeawqqqqq)
+)
+
 #def(personal_property)(
     @pattern(SOUTH_WEST,wwwwwaqwwewwqwqqwwaeawqawwwwawwwwawwwqawwdww)
+)
+
+#def(personal_gate)(
+    @pattern(SOUTH_WEST,wwwwwaqwwewwqwqqwwaeawqawwwqwwwawwwqa)
 )
 
 #def(target_monster_list)(
@@ -182,6 +190,14 @@
     // stack: bool
 )
 
+#def(hasMinMedia)(
+    Mind's Reflection
+    Media Purification
+    Numerical Reflection: 20
+    Subtractive Distillation
+    Numerical Reflection: <1>
+    Maximus Distillation II
+)
 
 
 // ==============================================================================
