@@ -13,7 +13,6 @@ $fastif(
         Janus' Gambit
     )
 )(
-    $print(Using default light strength: 15)
     Numerical Reflection: 15
 )
 $target_block_on_block_face
