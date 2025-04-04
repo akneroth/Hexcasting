@@ -50,6 +50,7 @@ Zone Distillation: Monster
         @entity_type(minecraft:pillager)
         @entity_type(minecraft:evoker)
         @entity_type(minecraft:ravager)
+        @entity_type(minecraft:vindicator)
         @entity_type(minecraft:vex)
     }
     Jester's Gambit
