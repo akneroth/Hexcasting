@@ -1,0 +1,17 @@
+public motes
+{
+  {
+    {
+      moteUuid = "9edbd419-fd25-4c1f-8642-4529366e40a8",
+      itemID = "pseudoamethyst_shard",
+      nexusUuid = "12c34b86-7ded-46c7-b000-2398c879fb92",
+    },
+  },
+  {
+    {
+      moteUuid = "d40fe249-7523-4286-8e25-9422eca3977c",
+      itemID = "orb_of_origin",
+      nexusUuid = "12c34b86-7ded-46c7-b000-2398c879fb92",
+    },
+  },
+}

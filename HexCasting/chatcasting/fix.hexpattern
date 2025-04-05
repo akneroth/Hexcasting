@@ -1,5 +1,9 @@
 #git(/HexCasting/libs/base.hexpattern)
 
+#def(publicMote)(
+    {@mote(9edbd419-fd25-4c1f-8642-4529366e40a8,pseudoamethyst_shard)} >>
+)
+
 // get amount from param
 $runif(
     Flock's Reflection
@@ -121,18 +125,13 @@ Mind's Reflection
 Compass' Purification II
 
 // get mote
-$if(
-    {@vec(-18.50, 71.50, 3.50)}>>
-    Bind Storage - Temporary
-    {@item_type(oneironaut:pseudoamethyst_shard, true)} >>
-    Stocktake Purification
-    Gemini Decomposition
-    Augur's Purification
-)(
-    Numerical Reflection: 0
-    Selection Distillation
-)(
-    $print(No amethyst shards in binded mote nexus)
+
+$publicMote
+Gemini Decomposition
+Length Purification
+Augur's Purification
+$fastif()(
+    $print(No pseudoamethyst shards in public mote nexus)
     Janus' Gambit
 )
 
@@ -185,16 +184,7 @@ $foreach(
         {@item_type(oneironaut:pseudoamethyst_shard, true)} >>
         Equality Distillation
     )(
-        Gemini Decomposition
-        Sorter's Purification
-        Stocktake Purification
-        Numerical Reflection: 0
-        Selection Distillation
-        Gemini Decomposition
-        Augur's Purification
-        $fastif()(
-            Bookkeeper's Gambit: v
-        )
+        $publicMote
         Mediafy Item
     )()
 )
