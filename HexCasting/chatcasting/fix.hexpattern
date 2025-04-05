@@ -111,7 +111,7 @@ Reveal
 
 
 // get amount
-Numerical Reflection: 5
+Numerical Reflection: 7.5
 Division Distillation
 Ceiling Purification
 
@@ -122,7 +122,9 @@ Compass' Purification II
 
 // get mote
 $if(
-    {@item_type(minecraft:amethyst_shard, true)} >>
+    {@vec(-18.50, 71.50, 3.50)}>>
+    Bind Storage - Temporary
+    {@item_type(oneironaut:pseudoamethyst_shard, true)} >>
     Stocktake Purification
     Gemini Decomposition
     Augur's Purification
@@ -149,7 +151,7 @@ $foreach(
     $if(
         Gemini Decomposition
         Sorter's Purification
-        {@item_type(minecraft:amethyst_shard, true)} >>
+        {@item_type(oneironaut:pseudoamethyst_shard, true)} >>
         Equality Distillation
     )(
         {
@@ -180,7 +182,7 @@ $foreach(
     $if(
         Gemini Decomposition
         Sorter's Purification
-        {@item_type(minecraft:amethyst_shard, true)} >>
+        {@item_type(oneironaut:pseudoamethyst_shard, true)} >>
         Equality Distillation
     )(
         Gemini Decomposition
