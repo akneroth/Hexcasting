@@ -1,7 +1,7 @@
 #git(/HexCasting/libs/base.hexpattern)
 
 #def(publicMote)(
-    {@mote(9edbd419-fd25-4c1f-8642-4529366e40a8,pseudoamethyst_shard)} >>
+    {@mote(9edbd419-fd25-4c1f-8642-4529366e40a8,pseudoamethyst_shard,12c34b86-7ded-46c7-b000-2398c879fb92)} >>
 )
 
 // get amount from param
