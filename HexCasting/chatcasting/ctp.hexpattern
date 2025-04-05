@@ -1,0 +1,38 @@
+#git(/HexCasting/libs/base.hexpattern)
+
+{
+    [
+        @str(minecraft:overworld)
+        @str(minecraft:the_end)
+        @str(minecraft:the_nether)
+        @str(spacecube:space_cube_dimension)
+        @str(oneironaut:noosphere)
+        @str(spectrum:deeper_down)
+    ]
+    [
+        @str(imprint minecraft:overworld)
+        @str(imprint minecraft:the_end)
+        @str(imprint minecraft:the_nether)
+        @str(imprint spacecube:space_cube_dimension)
+        @str(imprint oneironaut:noosphere)
+        @str(imprint spectrum:deeper_down)
+    ]
+}
+Reflecting Gambit
+Locator's Distillation
+Selection Distillation
+Gemini Decomposition
+Spatial Reflection
+Equality Distillation
+$fastif(
+    Bookkeeper's Gambit: v
+)(
+    $hasMinMedia(200)
+    $fastif()(
+        $print(Not enough media to use dimensional teleport)
+    )
+    
+    Mind's Reflection
+    Jester's Gambit
+    Noetic Gateway
+)
