@@ -98,62 +98,12 @@ Additive Distillation
         }
         Mind's Reflection
         Compass' Purification II
-        Numerical Reflection: 28
+        Numerical Reflection: 4
         Zone Distillation: Player
         Thoth's Gambit
         Bookkeeper's Gambit: v
     )()
     
-
-    // SPELL Pill Eater
-    // Mind's Reflection
-    // Apothecary's Purification
-    // {@str(status)} >>
-    // Locator's Distillation
-    // Numerical Reflection: -1
-    // Equality Distillation
-    // $fastif(
-    //     True Reflection
-    // )(
-    //     Mind's Reflection
-    //     {@str(status)} >>
-
-    // )
-    
-
-    // Pocket Reflection
-    // Augur's Purification
-    // Conjunction Distillation
-    // $fastif()(
-    //     // eat pill
-    // )
-    
-
-    // {
-        
-    //     {@vec(-999.5, 31.5, -133.5)}>>
-    //     Undertaker's Gambit
-    //     Entity Purification: Item
-    //     Gemini Decomposition
-    //     Augur's Purification
-    //     $fastif(
-    //         Sleight
-    //         Mage Mouth
-    //         Augur's Purification
-    //         {
-    //             Entity Purification: Item
-    //             Sleight
-    //         }
-    //         {
-    //             Sleight
-    //         }
-    //         Augur's Exaltation
-    //         Hermes' Gambit 
-    //     )()
-    // }
-    // {}
-    // Augur's Exaltation
-    // Hermes' Gambit
 
     // SPELL Autoregen
     Mind's Reflection

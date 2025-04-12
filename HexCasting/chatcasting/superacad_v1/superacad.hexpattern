@@ -1,0 +1,268 @@
+#git(/HexCasting/libs/base.hexpattern)
+
+// stack: [params], first in list is spell name which i want to cad
+
+Gemini Decomposition
+Huginn's Gambit
+Numerical Reflection: 0
+Selection Distillation
+@str(to hexicon)
+
+{@vec(375, 53, 2484)} >>
+Jester's Gambit
+Akasha's Distillation
+Gemini Decomposition
+Augur's Purification
+$fastif()(
+    // quit if no pattern for passed name
+    Janus' Gambit
+)
+// stack: [spell]
+{
+    {
+        Nullary Reflection
+    }
+    Flock's Disintegration
+}
+Numerical Reflection: 1
+Muninn's Reflection
+Speaker's Decomposition
+Bookkeeper's Gambit: v
+Surgeon's Exaltation
+Jester's Gambit
+Additive Distillation
+// stack: [{[params]}>>, spell]
+
+
+{
+    {@str(Akasha CAD)} >>
+    Program Purification
+    Numerical Reflection: 1
+    {@str(Akasha CAD)} >>
+    Enqueue
+
+    Telepathic Reflection
+    Numerical Reflection: -1
+    Inequality Distillation
+    {
+        // SPELL Elytra
+        Leaping Reflection
+        Numerical Reflection: 5
+        Maximus Distillation II
+        Leaping Reflection
+        Numerical Reflection: 5
+        Modulus Distillation
+        Numerical Reflection: 0
+        Equality Distillation
+        Conjunction Distillation
+        $fastif(
+            Mind's Reflection
+            Altiora
+        )()
+
+
+        // SPELL aCAD
+        $rightclick
+        Numerical Reflection: 1
+        Equality Distillation
+        {
+            {@str(spell to cast)} >>
+            Hermes' Gambit
+            // Athena's Gambit
+            // Bookkeeper's Gambit: v
+            // Athena's Revelation
+        }
+        {}
+        Augur's Exaltation
+        Hermes' Gambit
+
+
+
+    }
+    {}
+    Augur's Exaltation
+    Hermes' Gambit
+
+
+    // SPELL Breath
+    $isInWorldBounds
+    $fastif(
+        {
+            Gemini Decomposition
+            Diver's Purification
+            Numerical Reflection: 30
+            Minimus Distillation
+            $fastif(
+                Gasp
+            )()
+        }
+        Mind's Reflection
+        Compass' Purification II
+        Numerical Reflection: 4
+        Zone Distillation: Player
+        Thoth's Gambit
+        Bookkeeper's Gambit: v
+    )()
+    
+
+    // SPELL Pill Eater
+    // Mind's Reflection
+    // Apothecary's Purification
+    // {@str(status)} >>
+    // Locator's Distillation
+    // Numerical Reflection: -1
+    // Equality Distillation
+    // $fastif(
+    //     True Reflection
+    // )(
+    //     Mind's Reflection
+    //     {@str(status)} >>
+
+    // )
+    
+
+    // Pocket Reflection
+    // Augur's Purification
+    // Conjunction Distillation
+    // $fastif()(
+    //     // eat pill
+    // )
+    
+
+    // {
+        
+    //     {@vec(-999.5, 31.5, -133.5)}>>
+    //     Undertaker's Gambit
+    //     Entity Purification: Item
+    //     Gemini Decomposition
+    //     Augur's Purification
+    //     $fastif(
+    //         Sleight
+    //         Mage Mouth
+    //         Augur's Purification
+    //         {
+    //             Entity Purification: Item
+    //             Sleight
+    //         }
+    //         {
+    //             Sleight
+    //         }
+    //         Augur's Exaltation
+    //         Hermes' Gambit 
+    //     )()
+    // }
+    // {}
+    // Augur's Exaltation
+    // Hermes' Gambit
+
+    // SPELL Autoregen
+    Mind's Reflection
+    Media Purification
+    Numerical Reflection: 100
+    Numerical Reflection: 100
+    Multiplicative Distillation
+    Maximus Distillation II
+    Mind's Reflection
+    Vitality Purification
+    Mind's Reflection
+    Fitness Purification
+    Minimus Distillation
+    Conjunction Distillation
+    $fastif(
+        Mind's Reflection
+        Numerical Reflection: 30
+        Numerical Reflection: 1
+        White Sun's Zenith
+    )()
+
+    // HUD Spell info
+    {@str(spell info)}
+
+    // HUD Media
+    {@str(Media: )}>>
+    Mind's Reflection
+    Media Purification
+    Numerical Reflection: -20
+    Additive Distillation
+    Scrivener's Purification
+    Additive Distillation
+    Single's Purification
+    Additive Distillation
+
+    // HUD Altiora
+    {@str(Elytra: )}>>
+    Leaping Reflection
+    Numerical Reflection: -1
+    Equality Distillation
+    $fastif(
+        Numerical Reflection: 0
+    )(
+        Leaping Reflection
+    )
+    Scrivener's Purification
+    Additive Distillation
+    {@str(/5)}>>
+    Additive Distillation
+    Single's Purification
+    Additive Distillation
+    
+    // HUD Breathing (and spell)
+    {@str(Breathing: )}>>
+    $isInWorldBounds
+    $fastif(
+        {@str(ON)}>>
+    )(
+        {@str(OFF)}>>
+    )
+    Additive Distillation
+    Single's Purification
+    Additive Distillation
+    
+    // HUD Autoregen
+    {@str(Autoregen: )}>>
+    Mind's Reflection
+    Media Purification
+    Numerical Reflection: 100
+    Numerical Reflection: 100
+    Multiplicative Distillation
+    Maximus Distillation II
+    $fastif(
+        {@str(ON)}>>
+    )(
+        {@str(OFF)}>>
+    )
+    Additive Distillation
+    Single's Purification
+    Additive Distillation
+
+    Send Thought
+}
+
+// insert spell info into cassette hud
+$indexof(spell info)
+Muninn's Reflection
+Speaker's Decomposition
+Huginn's Gambit
+{
+    Muninn's Reflection
+    Spacing Reflection
+    Additive Distillation
+    Jester's Gambit
+    Additive Distillation
+    Huginn's Gambit
+}
+Jester's Gambit
+Thoth's Gambit
+Bookkeeper's Gambit: v
+
+Muninn's Reflection
+Surgeon's Exaltation
+
+// insert spell into cassette
+$indexof(spell to cast)
+Rotation Gambit
+Surgeon's Exaltation
+
+Numerical Reflection: 1
+{@str(Akasha CAD)} >>
+Enqueue
