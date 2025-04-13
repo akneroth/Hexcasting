@@ -64,15 +64,10 @@
 // )
 
 $target_block_on_block_face
-{@vec(0,1,0)}>>
+{@vec(0,0.5,0)}>>
 Additive Distillation
 Mind's Reflection
 Compass' Purification II
-Vector Disintegration
-Jester's Gambit
-Floor Purification
-Jester's Gambit
-Vector Exaltation
 Subtractive Distillation
 $transpose
 Reveal
