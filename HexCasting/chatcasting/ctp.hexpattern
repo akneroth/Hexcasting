@@ -6,41 +6,23 @@
     Additive Distillation
 )
 
-// vec -> vec (rotated right by Y)
-#def(rotateRight)(
-    Transformation Purification
-    {@matrix(3, 3, <0,0,1,0,1,0,-1,0,0>)}>>
-    Jester's Gambit
-    Multiplicative Distillation
-    Restoration Purification
-)
-
-// vec -> vec (rotated up by X)
-#def(rotateUp)(
-    Transformation Purification
-    {@matrix(3, 3, <1,0,0,0,0,1,0,-1,0>)}>>
-    Jester's Gambit
-    Multiplicative Distillation
-    Restoration Purification
-)
-
 // -> vec x, vec y, vec z
 #def(getCasterBasisMatrix)(
     Mind's Reflection
     Alidade's Purification
-    Gemini Decomposition
-    Gemini Decomposition
-    $rotateRight
-    Jester's Gambit
-    $rotateUp
-    Rotation Gambit
+    Mind's Reflection
+    Theodolite's Purification
+    Dioscuri Gambit
+    Division Distillation
+    Reflecting Gambit
+    
     
     Numerical Reflection: 3
     Flock's Gambit
-    Reveal
     Transformation Purification
     Inverse Purification
 )
+
 
 // vec -> vec (transposed)
 #def(transpose)(
@@ -83,9 +65,10 @@ Compass' Purification II
 Subtractive Distillation
 
 $transpose
+
 Gemini Decomposition
 Length Purification
-Numerical Reflection: 128
+Numerical Reflection: 2
 Minimus Distillation II
 $fastif(
     Greater Blink

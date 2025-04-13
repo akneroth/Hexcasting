@@ -1,13 +1,4 @@
 #git(/HexCasting/libs/base.hexpattern)
-// vec -> vec (rotated right by Y)
-// vec -> vec (rotated right by Y)
-#def(rotateRight)(
-    Transformation Purification
-    {@matrix(3, 3, <0,0,1,0,1,0,-1,0,0>)}>>
-    Jester's Gambit
-    Multiplicative Distillation
-    Restoration Purification
-)
 
 // -> vec x, vec y, vec z
 #def(getCasterBasisMatrix)(
@@ -22,13 +13,6 @@
     
     Numerical Reflection: 3
     Flock's Gambit
-    {
-        Axial Purification
-        Bookkeeper's Gambit: v-
-    }
-    Jester's Gambit
-    Thoth's Gambit
-    Reveal
     Transformation Purification
     Inverse Purification
 )
