@@ -1,5 +1,11 @@
 #git(/HexCasting/libs/base.hexpattern)
 
+#def(centerVec)(
+    Floor Purification
+    {@vec(0.5,0.5,0.5)}>>
+    Additive Distillation
+)
+
 // vec -> vec (rotated right by Y)
 #def(rotateRight)(
     Transformation Purification
@@ -64,13 +70,14 @@
 // )
 
 $target_block_on_block_face
-Floor Purification
-{@vec(0.5,0.5,0.5)}>>
-Additive Distillation
+$centerVec
+
 Mind's Reflection
 Compass' Purification II
-Floor Purification
+$centerVec
+
 Subtractive Distillation
+
 $transpose
 Reveal
 Greater Blink
