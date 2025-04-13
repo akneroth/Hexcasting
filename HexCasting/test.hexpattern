@@ -3,7 +3,7 @@
 // vec -> vec (rotated right by Y)
 #def(rotateRight)(
     Transformation Purification
-    @matrix(3, 3, <0,0,-1,0,1,0,1,0,0>)
+    {@matrix(3, 3, <0,0,-1,0,1,0,1,0,0>)}>>
     Multiplicative Distillation
     Restoration Purification
 )
