@@ -1,24 +1,67 @@
 #git(/HexCasting/libs/base.hexpattern)
 
-// check if in the same dim
-{
-    @str(dimtable)
-}
-Reflecting Gambit
-Locator's Distillation
-Selection Distillation
-Gemini Decomposition
-Spatial Reflection
-Equality Distillation
-$fastif(
-    Bookkeeper's Gambit: v
-)(
-    $hasMinMedia(200)
-    $fastif()(
-        $print(Not enough media to use dimensional teleport)
-    )
-    
-    Mind's Reflection
+// vec -> vec (rotated right by Y)
+#def(rotateRight)(
+    Transformation Purification
+    {@matrix(3, 3, <0,0,1,0,1,0,-1,0,0>)}>>
     Jester's Gambit
-    Noetic Gateway
+    Multiplicative Distillation
+    Restoration Purification
 )
+
+// -> vec x, vec y, vec z
+#def(getCasterBasisMatrix)(
+    Vector Reflection +Y
+    Mind's Reflection
+    Alidade's Purification
+    Vector Disintegration
+    Bookkeeper's Gambit: -v-
+    Numerical Reflection: 0
+    Jester's Gambit
+    Vector Exaltation
+    Gemini Decomposition
+    Length Purification
+    Division Distillation
+    Dioscuri Gambit II
+    $rotateRight
+    Rotation Gambit II
+    Numerical Reflection: 3
+    Flock's Gambit
+    Transformation Purification
+    Inverse Purification
+)
+
+// vec -> vec (transposed)
+#def(transpose)(
+    Transformation Purification
+    $getCasterBasisMatrix
+    Jester's Gambit
+    Multiplicative Distillation
+)
+
+// check if in the same dim
+// {
+//     @str(dimtable)
+// }
+// Reflecting Gambit
+// Locator's Distillation
+// Selection Distillation
+// Gemini Decomposition
+// Spatial Reflection
+// Equality Distillation
+// $fastif(
+//     Bookkeeper's Gambit: v
+// )(
+//     $hasMinMedia(200)
+//     $fastif()(
+//         $print(Not enough media to use dimensional teleport)
+//     )
+    
+//     Mind's Reflection
+//     Jester's Gambit
+//     Noetic Gateway
+// )
+
+$target_block_on_block_face
+$transpose
+
