@@ -44,7 +44,7 @@ local data = {
     },
 }
 
-local ae2 = peripheral.find("fulleng:crafting_terminal")
+local ae2 = peripheral.find("ae2:1k_crafting_storage")
 local modem = peripheral.find("modem")
 local monitor = peripheral.find("monitor")
 if monitor ~= nil then
@@ -134,15 +134,19 @@ function data:getItemInfo(key)
 end
 
 function data:getData()
+    -- local itemsRaw = {}
     local itemsRaw = ae2.items()
     while #itemsRaw == 0 do
         print("AE2 Item data empty!!! Reseting connection...")
         redstone.setOutput("bottom", true)
-        sleep(15)
+        sleep(1)
         redstone.setOutput("bottom", false)
         sleep(10)
         print("Connection reset, requesting item data...")
-        itemsRaw = ae2.items()
+        ae2 = peripheral.find("ae2:1k_crafting_storage")
+        if ae2 then
+            itemsRaw = ae2.items()
+        end
         if #itemsRaw > 0 then
             print("AE2 Item data correct, proceeding.")
         end
