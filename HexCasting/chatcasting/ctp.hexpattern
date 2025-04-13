@@ -23,11 +23,9 @@
     Inverse Purification
 )
 
-// vec -> vec (transposed)
+// mat, vec -> vec (transposed)
 #def(transpose)(
     Transformation Purification
-    $getCasterBasisMatrix
-    Jester's Gambit
     Multiplicative Distillation
     Restoration Purification
 )
@@ -89,22 +87,40 @@ Thoth's Gambit
 Flock's Disintegration
 Vector Exaltation
 $centerVec
-
-Mind's Reflection
-Compass' Purification II
-
-Subtractive Distillation
-$transpose
-Reveal
+Single's Purification
 
 
-Gemini Decomposition
-Length Purification
-Numerical Reflection: 5
-Minimus Distillation II
-$fastif(
+{
+    Gemini Decomposition
+    Mind's Reflection
+    Compass' Purification II
+    Dioscuri Gambit
+    Subtractive Distillation
+    Length Purification
+    Numerical Reflection: 125
+    Minimus Distillation II
+    $fastif(
+        //move to dest
+        Subtractive Distillation
+    )(
+        // move 125 and queue dest
+        Prospector's Gambit
+        Castor's Gambit
+        Subtractive Distillation
+        Gemini Decomposition
+        Length Purification
+        Division Distillation
+        Numerical Reflection: 125
+        Multiplicative Distillation
+    )
+    {@str(basis)}>>
+    Jester's Gambit
+    Multiplicative Distillation
     Greater Blink
-)()
-
-
+}
+$indexof(basis)
+$getCasterBasisMatrix
+Surgeon's Exaltation
+Jester's Gambit
+Thoth's Gambit
 
