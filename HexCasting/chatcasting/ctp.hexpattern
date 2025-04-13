@@ -15,9 +15,17 @@
     Restoration Purification
 )
 
+// vec -> vec (rotated up by X)
+#def(rotateUp)(
+    Transformation Purification
+    {@matrix(3, 3, <1,0,0,0,0,-1,0,1,0>)}>>
+    Jester's Gambit
+    Multiplicative Distillation
+    Restoration Purification
+)
+
 // -> vec x, vec y, vec z
 #def(getCasterBasisMatrix)(
-    {@vec(0,1,0)}>>
     Mind's Reflection
     Alidade's Purification
     Vector Disintegration
@@ -29,8 +37,12 @@
     Length Purification
     Division Distillation
     Gemini Decomposition
+    Gemini Decomposition
     $rotateRight
-    Rotation Gambit II
+    Jester's Gambit
+    $rotateUp
+    Rotation Gambit
+    
     Numerical Reflection: 3
     Flock's Gambit
     Transformation Purification
