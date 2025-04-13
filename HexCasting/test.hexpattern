@@ -12,7 +12,7 @@
 // vec -> vec (rotated up by X)
 #def(rotateUp)(
     Transformation Purification
-    {@matrix(3, 3, <1,0,0,0,0,1,0,-1,0>)}>>
+    {@matrix(3, 3, <1,0,0,0,0,-1,0,1,0>)}>>
     Jester's Gambit
     Multiplicative Distillation
     Restoration Purification
@@ -33,6 +33,7 @@
     Flock's Gambit
     {
         Axial Purification
+        Bookkeeper's Gambit: v-
     }
     Jester's Gambit
     Thoth's Gambit
