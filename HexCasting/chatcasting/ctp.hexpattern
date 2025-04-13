@@ -35,6 +35,7 @@
 #def(transpose)(
     Transformation Purification
     $getCasterBasisMatrix
+    $print(got here)
     Jester's Gambit
     Multiplicative Distillation
 )
