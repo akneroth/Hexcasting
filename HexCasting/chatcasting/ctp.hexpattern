@@ -71,6 +71,8 @@
 
 $target_block_on_block_face
 $centerVec
+{@vec(0,2,0)}>>
+Additive Distillation
 
 Mind's Reflection
 Compass' Purification II
