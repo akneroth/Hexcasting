@@ -1,12 +1,17 @@
 #git(/HexCasting/libs/base.hexpattern)
 
-// vec -> vec (rotated right by Y)
-#def(rotateRight)(
-    Transformation Purification
-    {@matrix(3, 3, <0,0,1,0,1,0,-1,0,0>)}>>
-    Jester's Gambit
-    Multiplicative Distillation
-    Restoration Purification
-)
 
-$rotateRight
+    Vector Reflection +Y
+    Mind's Reflection
+    Alidade's Purification
+    Vector Disintegration
+    Bookkeeper's Gambit: -v-
+    Numerical Reflection: 0
+    Jester's Gambit
+    Vector Exaltation
+    Gemini Decomposition
+    Length Purification
+    Division Distillation
+    Dioscuri Gambit II
+    $rotateRight
+    Rotation Gambit II
