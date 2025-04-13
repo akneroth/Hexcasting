@@ -38,6 +38,7 @@
     $print(got here)
     Jester's Gambit
     Multiplicative Distillation
+    Restoration Purification
 )
 
 // check if in the same dim
@@ -64,5 +65,10 @@
 // )
 
 $target_block_on_block_face
+Mind's Reflection
+Compass' Purification II
+Subtractive Distillation
 $transpose
+Greater Blink
+
 
