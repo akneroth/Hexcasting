@@ -64,10 +64,12 @@
 // )
 
 $target_block_on_block_face
-{@vec(0,0.5,0)}>>
+Floor Purification
+{@vec(0.5,0.5,0.5)}>>
 Additive Distillation
 Mind's Reflection
 Compass' Purification II
+Floor Purification
 Subtractive Distillation
 $transpose
 Reveal
