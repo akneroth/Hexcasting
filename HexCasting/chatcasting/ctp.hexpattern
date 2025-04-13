@@ -115,7 +115,7 @@ Single's Purification
     )
     {@str(basis)}>>
     Jester's Gambit
-    Multiplicative Distillation
+    $transpose
     Greater Blink
 }
 $indexof(basis)
