@@ -11,7 +11,7 @@
 
 // -> vec x, vec y, vec z
 #def(getCasterBasisMatrix)(
-    Vector Reflection +Y
+    {@vec(0,1,0)}>>
     Mind's Reflection
     Alidade's Purification
     Vector Disintegration
