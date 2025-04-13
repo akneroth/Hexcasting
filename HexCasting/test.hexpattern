@@ -4,6 +4,7 @@
 #def(rotateRight)(
     Transformation Purification
     {@matrix(3, 3, <0,0,-1,0,1,0,1,0,0>)}>>
+    Jester's Gambit
     Multiplicative Distillation
     Restoration Purification
 )
