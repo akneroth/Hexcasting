@@ -35,7 +35,6 @@
 #def(transpose)(
     Transformation Purification
     $getCasterBasisMatrix
-    $print(got here)
     Jester's Gambit
     Multiplicative Distillation
     Restoration Purification
@@ -65,10 +64,13 @@
 // )
 
 $target_block_on_block_face
+{@vec(0,1,0)}>>
+Additive Distillation
 Mind's Reflection
 Compass' Purification II
 Subtractive Distillation
 $transpose
+Reveal
 Greater Blink
 
 
