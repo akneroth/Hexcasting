@@ -24,8 +24,7 @@ Zone Distillation: Monster
 {
     Gemini Decomposition
     Physician's Purification
-    $target_monster_list
-    $akasharead
+    @str(target_monsters)
     Jester's Gambit
     Locator's Distillation
     Numerical Reflection: -1
@@ -39,7 +38,7 @@ Zone Distillation: Monster
         Numerical Reflection: -1
         Equality Distillation
         $fastif(
-            $exposeMind
+            @str(status_exposed)
         )()
         
         Compass' Purification II
@@ -76,5 +75,15 @@ Zone Distillation: Monster
         )() 
     )()
 }
+$indexof(target_monsters)
+@hexicon(target_monsters)
+$akasharead
+Surgeon's Exaltation
+
+$indexof(status_exposed)
+@hexicon(status_exposed)
+$akasharead
+Surgeon's Exaltation
+
 Jester's Gambit
 Thoth's Gambit
