@@ -1,10 +1,5 @@
 #git(/HexCasting/libs/base.hexpattern)
 
-#def(centerVec)(
-    Floor Purification
-    {@vec(0.5,0.5,0.5)}>>
-    Additive Distillation
-)
 
 // -> vec x, vec y, vec z
 #def(getCasterBasisMatrix)(
