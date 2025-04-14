@@ -54,9 +54,8 @@ Zone Distillation: Monster
 Jester's Gambit
 Thoth's Gambit
 // remove all nulls
-{
-    Nullary Reflection 
-}
+Nullary Reflection 
+Single's Purification
 Exclusion Distillation
 
 {@entity_type(botania:doppleganger)}>>
