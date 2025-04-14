@@ -1,31 +1,15 @@
 #git(/HexCasting/libs/base.hexpattern)
 
 // get amount from param
-$runif(
-    Flock's Reflection
-    Augur's Purification
+Whisper Reflection
+Input Purification
+Gemini Decomposition
+Augur's Purification
+$fastif(
+    $print(Using last number sent to chat via hex whisper)
+    // use passed number
 )(
-    $if(
-        Gemini Decomposition
-        Length Purification
-        Numerical Reflection: 1
-        Equality Distillation
-    )(
-        // if exactly 1 parameter was passed
-        $if(
-            Flock's Disintegration
-            Input Purification
-            Gemini Decomposition
-            // check if it is a proper number
-            Augur's Purification
-        )(
-            // use passed number
-        )(
-            Bookkeeper's Gambit: v
-        )
-    )(
-        Bookkeeper's Gambit: v
-    )
+    Bookkeeper's Gambit: v
 )
 
 // main hand
