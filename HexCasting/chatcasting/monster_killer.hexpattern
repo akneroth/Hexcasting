@@ -5,29 +5,12 @@ $fastif()(
     Janus' Gambit
 )
 
-Numerical Reflection: 0
-Selection Distillation
-Gemini Decomposition
-Augur's Purification
-$fastif(
-    Input Purification
-    Gemini Decomposition
-    Augur's Purification
-    $fastif()(
-        $print(Passed param is not a number)
-        Janus' Gambit
-    )
-)(
-    Bookkeeper's Gambit: v
-    Numerical Reflection: 28
-)
+
+
 
 Mind's Reflection
 Compass' Purification II
-Jester's Gambit
-
-
-Dioscuri Gambit
+Numerical Reflection: 28
 Zone Distillation: Monster
 {
     Gemini Decomposition
@@ -71,24 +54,25 @@ Zone Distillation: Monster
 Jester's Gambit
 Thoth's Gambit
 // remove all nulls
-// {
-//     Nullary Reflection 
-// }
-// Exclusion Distillation
-// Rotation Gambit II
+{
+    Nullary Reflection 
+}
+Exclusion Distillation
 
-// Dioscuri Gambit
-// {@entity_type(botania:doppleganger)}>>
-// Rotation Gambit II
-// Zone Exaltation: Type
-// Rotation Gambit II
+{@entity_type(botania:doppleganger)}>>
+Mind's Reflection
+Compass' Purification II
+Numerical Reflection: 28
+Zone Exaltation: Type
 
-// {@entity_type(botania:pixie)}>>
-// Rotation Gambit II
-// Zone Exaltation: Type
+{@entity_type(botania:pixie)}>>
+Mind's Reflection
+Compass' Purification II
+Numerical Reflection: 28
+Zone Exaltation: Type
 
-// Additive Distillation
-// Additive Distillation
+Additive Distillation
+Additive Distillation
 
 // {
 //     // add expose mind if it does not have it
