@@ -77,100 +77,100 @@ Exclusion Distillation
 Rotation Gambit II
 
 Dioscuri Gambit
-@entity_type(botania:doppleganger)
+{@entity_type(botania:doppleganger)}>>
 Rotation Gambit II
 Zone Exaltation: Type
 Rotation Gambit II
 
-@entity_type(botania:pixie)
+{@entity_type(botania:pixie)}>>
 Rotation Gambit II
 Zone Exaltation: Type
 
 Additive Distillation
 Additive Distillation
 
-{
-    // add expose mind if it does not have it
-    Gemini Decomposition
-    Gemini Decomposition
-    Apothecary's Purification
-    {@str(status/exposed)} >>
-    Locator's Distillation
-    Numerical Reflection: -1
-    Equality Distillation
-    $fastif(
-        $exposeMind
-    )()
+// {
+//     // add expose mind if it does not have it
+//     Gemini Decomposition
+//     Gemini Decomposition
+//     Apothecary's Purification
+//     {@str(status/exposed)} >>
+//     Locator's Distillation
+//     Numerical Reflection: -1
+//     Equality Distillation
+//     $fastif(
+//         $exposeMind
+//     )()
 
-    // get the position for explode and center it for the block
-    Compass' Purification II
-    $centerVec
-}
-Jester's Gambit
-Thoth's Gambit
-Uniqueness Purification
+//     // get the position for explode and center it for the block
+//     Compass' Purification II
+//     $centerVec
+// }
+// Jester's Gambit
+// Thoth's Gambit
+// Uniqueness Purification
 
-{
-    Gemini Decomposition
-    $iotatype
-    {@iota_type(hexcasting:vec3)}>>
-    Inequality Distillation
-    $fastif(
-        Atalanta's Gambit
-    )()
+// {
+//     Gemini Decomposition
+//     $iotatype
+//     {@iota_type(hexcasting:vec3)}>>
+//     Inequality Distillation
+//     $fastif(
+//         Atalanta's Gambit
+//     )()
     
-    Prospector's Gambit
-    Sorter's Purification
+//     Prospector's Gambit
+//     Sorter's Purification
     
-    // if in air or gras, explode with liquid
-    {
-        @item_type(minecraft:air,false)
-        @item_type(minecraft:grass,false)
-        @item_type(minecraft:tall_grass,false)
-    }
-    Prospector's Gambit
-    Locator's Distillation
-    Numerical Reflection: -1
-    Inequality Distillation
-    // Conjunction Distillation
-    $fastif(
-        Gemini Decomposition
-        Spatial Reflection
-        {@str(dim/nether)} >>
-        Equality Distillation
-        $fastif(
-            Create Lava
-        )(
-            Create Water
-        )
+//     // if in air or gras, explode with liquid
+//     {
+//         @item_type(minecraft:air,false)
+//         @item_type(minecraft:grass,false)
+//         @item_type(minecraft:tall_grass,false)
+//     }
+//     Prospector's Gambit
+//     Locator's Distillation
+//     Numerical Reflection: -1
+//     Inequality Distillation
+//     // Conjunction Distillation
+//     $fastif(
+//         Gemini Decomposition
+//         Spatial Reflection
+//         {@str(dim/nether)} >>
+//         Equality Distillation
+//         $fastif(
+//             Create Lava
+//         )(
+//             Create Water
+//         )
 
-        Gemini Decomposition
-        Numerical Reflection: 1
-        Explosion
-        Gemini Decomposition
-        Conjure Block
-        Gemini Decomposition
-        Break Block
-        Numerical Reflection: 2
-        Confetti
-    )() 
+//         Gemini Decomposition
+//         Numerical Reflection: 1
+//         Explosion
+//         Gemini Decomposition
+//         Conjure Block
+//         Gemini Decomposition
+//         Break Block
+//         Numerical Reflection: 2
+//         Confetti
+//     )() 
 
-    // if in liquid, only explode
-    {
-        @item_type(minecraft:water,false)
-        @item_type(minecraft:lava,false)
-    }
-    Prospector's Gambit
-    Locator's Distillation
-    Numerical Reflection: -1
-    Inequality Distillation
-    $fastif(
-        Gemini Decomposition
-        Numerical Reflection: 1
-        Explosion
-        Numerical Reflection: 2
-        Confetti
-    )() 
-}
-Jester's Gambit
-Thoth's Gambit
+//     // if in liquid, only explode
+//     {
+//         @item_type(minecraft:water,false)
+//         @item_type(minecraft:lava,false)
+//     }
+//     Prospector's Gambit
+//     Locator's Distillation
+//     Numerical Reflection: -1
+//     Inequality Distillation
+//     $fastif(
+//         Gemini Decomposition
+//         Numerical Reflection: 1
+//         Explosion
+//         Numerical Reflection: 2
+//         Confetti
+//     )() 
+// }
+// Jester's Gambit
+// Thoth's Gambit
