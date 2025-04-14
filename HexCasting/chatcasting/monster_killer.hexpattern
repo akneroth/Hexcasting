@@ -52,12 +52,16 @@ Zone Distillation: Monster
 Jester's Gambit
 Thoth's Gambit
 
+$dump(after monster)
+
 {@entity_type(botania:doppleganger)}>>
 Mind's Reflection
 Compass' Purification II
 Numerical Reflection: 28
 Zone Exaltation: Type
 Additive Distillation
+
+$dump(after gaia)
 
 {@entity_type(botania:pixie)}>>
 Mind's Reflection
@@ -66,13 +70,14 @@ Numerical Reflection: 28
 Zone Exaltation: Type
 Additive Distillation
 
+$dump(after pixie)
+
 // remove all nulls
 Nullary Reflection 
 Single's Purification
 Exclusion Distillation
 
-Reveal
-
+$dump(after remove nulls)
 
 {
     // add expose mind if it does not have it
