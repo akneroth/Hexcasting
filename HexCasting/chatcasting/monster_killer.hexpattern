@@ -147,24 +147,25 @@ Uniqueness Purification
         Break Block
         Numerical Reflection: 2
         Confetti
-    )() 
-
-    // if in liquid, only explode
-    {
-        @item_type(minecraft:water,false)
-        @item_type(minecraft:lava,false)
-    }
-    Prospector's Gambit
-    Locator's Distillation
-    Numerical Reflection: -1
-    Inequality Distillation
-    $fastif(
-        Gemini Decomposition
-        Numerical Reflection: 1
-        Explosion
-        Numerical Reflection: 2
-        Confetti
-    )() 
+    )(
+        // if in liquid, only explode
+        {
+            @item_type(minecraft:water,false)
+            @item_type(minecraft:lava,false)
+        }
+        Prospector's Gambit
+        Sorter's Purification
+        Locator's Distillation
+        Numerical Reflection: -1
+        Inequality Distillation
+        $fastif(
+            Gemini Decomposition
+            Numerical Reflection: 1
+            Explosion
+            Numerical Reflection: 2
+            Confetti
+        )() 
+    ) 
 }
 Jester's Gambit
 Thoth's Gambit
