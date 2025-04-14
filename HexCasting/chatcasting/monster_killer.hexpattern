@@ -103,10 +103,7 @@ $fastif()(
 }
 Jester's Gambit
 Thoth's Gambit
-$dump(after expose)
-
 Uniqueness Purification
-$dump(after uniq)
 
 {
     Sekhmet's Gambit: 1
