@@ -53,7 +53,7 @@ Zone Distillation: Monster
         @entity_type(minecraft:ravager)
         @entity_type(minecraft:vindicator)
         @entity_type(minecraft:vex)
-        @entity_type(botania:gaia_guardian)
+        @entity_type(botania:doppelganger)
     }
     Jester's Gambit
     Locator's Distillation
