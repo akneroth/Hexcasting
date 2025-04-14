@@ -197,6 +197,12 @@
     // stack: bool
 )
 
+#def(casterInWorldBounds)(
+    Mind's Reflection
+    Compass' Purification II
+    $isInWorldBounds
+)
+
 #def(hasMinMedia)(
     Mind's Reflection
     Media Purification
