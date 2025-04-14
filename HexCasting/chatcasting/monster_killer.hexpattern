@@ -70,99 +70,90 @@ Numerical Reflection: 28
 Zone Exaltation: Type
 Additive Distillation
 
-// Gemini Decomposition
-// Length Purification
-// Augur's Purification
-// $fastif(
-//     Reveal
-// )(
-//     $print(no enemies)
-//     Janus' Gambit
-// )
+{
+    // add expose mind if it does not have it
+    Sekhmet's Gambit: 1
+    Gemini Decomposition
+    Gemini Decomposition
+    Apothecary's Purification
+    {@str(status/exposed)} >>
+    Locator's Distillation
+    Numerical Reflection: -1
+    Equality Distillation
+    $fastif(
+        $exposeMind
+    )()
 
+    // get the position for explode and center it for the block
+    Compass' Purification II
+    $centerVec
+}
+Jester's Gambit
+Thoth's Gambit
+Uniqueness Purification
 
-// {
-//     // add expose mind if it does not have it
-//     Gemini Decomposition
-//     Gemini Decomposition
-//     Apothecary's Purification
-//     {@str(status/exposed)} >>
-//     Locator's Distillation
-//     Numerical Reflection: -1
-//     Equality Distillation
-//     $fastif(
-//         $exposeMind
-//     )()
-
-//     // get the position for explode and center it for the block
-//     Compass' Purification II
-//     $centerVec
-// }
-// Jester's Gambit
-// Thoth's Gambit
-// Uniqueness Purification
-
-// {
-//     Gemini Decomposition
-//     $iotatype
-//     {@iota_type(hexcasting:vec3)}>>
-//     Inequality Distillation
-//     $fastif(
-//         Atalanta's Gambit
-//     )()
+{
+    Sekhmet's Gambit: 1
+    Gemini Decomposition
+    $iotatype
+    {@iota_type(hexcasting:vec3)}>>
+    Inequality Distillation
+    $fastif(
+        Atalanta's Gambit
+    )()
     
-//     Prospector's Gambit
-//     Sorter's Purification
+    Prospector's Gambit
+    Sorter's Purification
     
-//     // if in air or gras, explode with liquid
-//     {
-//         @item_type(minecraft:air,false)
-//         @item_type(minecraft:grass,false)
-//         @item_type(minecraft:tall_grass,false)
-//     }
-//     Prospector's Gambit
-//     Locator's Distillation
-//     Numerical Reflection: -1
-//     Inequality Distillation
-//     // Conjunction Distillation
-//     $fastif(
-//         Gemini Decomposition
-//         Spatial Reflection
-//         {@str(dim/nether)} >>
-//         Equality Distillation
-//         $fastif(
-//             Create Lava
-//         )(
-//             Create Water
-//         )
+    // if in air or gras, explode with liquid
+    {
+        @item_type(minecraft:air,false)
+        @item_type(minecraft:grass,false)
+        @item_type(minecraft:tall_grass,false)
+    }
+    Prospector's Gambit
+    Locator's Distillation
+    Numerical Reflection: -1
+    Inequality Distillation
+    // Conjunction Distillation
+    $fastif(
+        Gemini Decomposition
+        Spatial Reflection
+        {@str(dim/nether)} >>
+        Equality Distillation
+        $fastif(
+            Create Lava
+        )(
+            Create Water
+        )
 
-//         Gemini Decomposition
-//         Numerical Reflection: 1
-//         Explosion
-//         Gemini Decomposition
-//         Conjure Block
-//         Gemini Decomposition
-//         Break Block
-//         Numerical Reflection: 2
-//         Confetti
-//     )() 
+        Gemini Decomposition
+        Numerical Reflection: 1
+        Explosion
+        Gemini Decomposition
+        Conjure Block
+        Gemini Decomposition
+        Break Block
+        Numerical Reflection: 2
+        Confetti
+    )() 
 
-//     // if in liquid, only explode
-//     {
-//         @item_type(minecraft:water,false)
-//         @item_type(minecraft:lava,false)
-//     }
-//     Prospector's Gambit
-//     Locator's Distillation
-//     Numerical Reflection: -1
-//     Inequality Distillation
-//     $fastif(
-//         Gemini Decomposition
-//         Numerical Reflection: 1
-//         Explosion
-//         Numerical Reflection: 2
-//         Confetti
-//     )() 
-// }
-// Jester's Gambit
-// Thoth's Gambit
+    // if in liquid, only explode
+    {
+        @item_type(minecraft:water,false)
+        @item_type(minecraft:lava,false)
+    }
+    Prospector's Gambit
+    Locator's Distillation
+    Numerical Reflection: -1
+    Inequality Distillation
+    $fastif(
+        Gemini Decomposition
+        Numerical Reflection: 1
+        Explosion
+        Numerical Reflection: 2
+        Confetti
+    )() 
+}
+Jester's Gambit
+Thoth's Gambit
