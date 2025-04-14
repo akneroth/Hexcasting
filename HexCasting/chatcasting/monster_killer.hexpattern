@@ -73,6 +73,17 @@ Zone Exaltation: Type
 Additive Distillation
 Additive Distillation
 
+Gemini Decomposition
+Length Purification
+Augur's Purification
+$fastif(
+    Reveal
+)(
+    $print(no enemies)
+    Janus' Gambit
+)
+
+
 {
     // add expose mind if it does not have it
     Gemini Decomposition
