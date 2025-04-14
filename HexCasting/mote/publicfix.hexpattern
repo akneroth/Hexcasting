@@ -9,12 +9,12 @@ $fastif(
     $print(Using last number sent to chat via hex whisper)
     // use passed number
 )(
-    Bookkeeper's Gambit: v
+    $print(No number sent to chat to read with whisper reflection)
 )
 
 // main hand
 $if(
-    Flock's Reflection
+    Gemini Decomposition
     Augur's Purification
 )()(
     $if(
@@ -48,7 +48,7 @@ $if(
 
 // off hand
 $if(
-    Flock's Reflection
+    Gemini Decomposition
     Augur's Purification
 )()(
     $if(
@@ -82,7 +82,7 @@ $if(
 
 // no durability items
 $if(
-    Flock's Reflection
+    Gemini Decomposition
     Augur's Purification
 )()(
     $print(Using default amount of media)
@@ -95,7 +95,9 @@ Reveal
 
 
 // get amount
-Numerical Reflection: 7.5
+Numerical Reflection: 15
+Numerical Reflection: 2
+Division Distillation
 Division Distillation
 Ceiling Purification
 
