@@ -87,6 +87,7 @@ Thoth's Gambit
 Flock's Disintegration
 Vector Exaltation
 $centerVec
+Gemini Decomposition
 $isInWorldBounds
 $fastif()(
     $print(Destination out of world bounds)

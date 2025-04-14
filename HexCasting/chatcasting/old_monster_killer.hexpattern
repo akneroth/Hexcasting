@@ -15,17 +15,26 @@ $fastif(
 )(
     Numerical Reflection: 28
 )
+
 Mind's Reflection
 Compass' Purification II
 
-$isInWorldBounds
+$casterInWorldBounds
 $fastif()(
     Janus' Gambit
 )
 
-Jester's Gambit
 
+Dioscuri Gambit
+Jester's Gambit
 Zone Distillation: Monster
+Rotation Gambit II
+
+Dioscuri Gambit
+
+
+@entity_type(botania:doppleganger)
+@entity_type(botania:pixie)
 
 {
     Gemini Decomposition
@@ -53,8 +62,6 @@ Zone Distillation: Monster
         @entity_type(minecraft:ravager)
         @entity_type(minecraft:vindicator)
         @entity_type(minecraft:vex)
-        @entity_type(botania:doppleganger)
-        @entity_type(botania:pixie)
     }
     Jester's Gambit
     Locator's Distillation
