@@ -182,8 +182,6 @@
 )
 
 #def(isInWorldBounds)(
-    Mind's Reflection
-    Compass' Purification II
     Vector Disintegration
     Bookkeeper's Gambit: v-v
     Gemini Decomposition
@@ -195,6 +193,12 @@
     Maximus Distillation II
     Conjunction Distillation
     // stack: bool
+)
+
+#def(casterInWorldBounds)(
+    Mind's Reflection
+    Compass' Purification II
+    $isInWorldBounds
 )
 
 #def(hasMinMedia)(
