@@ -87,6 +87,12 @@ Thoth's Gambit
 Flock's Disintegration
 Vector Exaltation
 $centerVec
+$isInWorldBounds
+$fastif()(
+    $print(Destination out of world bounds)
+    Janus' Gambit
+)
+
 Single's Purification
 
 
