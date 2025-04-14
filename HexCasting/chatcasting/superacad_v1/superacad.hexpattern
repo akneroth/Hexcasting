@@ -156,24 +156,53 @@ Additive Distillation
     // Hermes' Gambit
 
     // SPELL Autoregen
+
     Mind's Reflection
     Media Purification
+    Numerical Reflection: 10
     Numerical Reflection: 100
     Numerical Reflection: 100
     Multiplicative Distillation
+    Multiplicative Distillation
     Maximus Distillation II
-    Mind's Reflection
-    Vitality Purification
-    Mind's Reflection
-    Fitness Purification
-    Minimus Distillation
-    Conjunction Distillation
     $fastif(
+        {
+            Gemini Decomposition
+            Vitality Purification
+            Jester's Gambit
+            Gemini Decomposition
+            Fitness Purification
+            Bubbling Gambit
+            // stack: player, currHP, maxHP, 
+            Minimus Distillation
+            Numerical Reflection: 30
+            Numerical Reflection: 1
+            White Sun's Zenith
+        }
         Mind's Reflection
-        Numerical Reflection: 30
-        Numerical Reflection: 1
-        White Sun's Zenith
-    )()
+        Numerical Reflection: 20
+        Zone Distillation: Player
+        Thoth's Gambit
+    )(
+        Mind's Reflection
+        Media Purification
+        Numerical Reflection: 100
+        Numerical Reflection: 100
+        Multiplicative Distillation
+        Maximus Distillation II
+        Mind's Reflection
+        Vitality Purification
+        Mind's Reflection
+        Fitness Purification
+        Minimus Distillation
+        Conjunction Distillation
+        $fastif(
+            Mind's Reflection
+            Numerical Reflection: 30
+            Numerical Reflection: 1
+            White Sun's Zenith
+        )()
+    )
 
     // HUD Spell info
     {@str(spell info)}
@@ -227,7 +256,18 @@ Additive Distillation
     Multiplicative Distillation
     Maximus Distillation II
     $fastif(
-        {@str(ON)}>>
+        Mind's Reflection
+        Media Purification
+        Numerical Reflection: 10
+        Numerical Reflection: 100
+        Numerical Reflection: 100
+        Multiplicative Distillation
+        Maximus Distillation II
+        $fastif(
+            {@str(AURA)}>>  
+        )(
+            {@str(ON)}>>
+        )
     )(
         {@str(OFF)}>>
     )
