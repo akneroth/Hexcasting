@@ -70,24 +70,24 @@ Zone Distillation: Monster
 Jester's Gambit
 Thoth's Gambit
 // remove all nulls
-{
-    Nullary Reflection 
-}
-Exclusion Distillation
-Rotation Gambit II
+// {
+//     Nullary Reflection 
+// }
+// Exclusion Distillation
+// Rotation Gambit II
 
-Dioscuri Gambit
-{@entity_type(botania:doppleganger)}>>
-Rotation Gambit II
-Zone Exaltation: Type
-Rotation Gambit II
+// Dioscuri Gambit
+// {@entity_type(botania:doppleganger)}>>
+// Rotation Gambit II
+// Zone Exaltation: Type
+// Rotation Gambit II
 
-{@entity_type(botania:pixie)}>>
-Rotation Gambit II
-Zone Exaltation: Type
+// {@entity_type(botania:pixie)}>>
+// Rotation Gambit II
+// Zone Exaltation: Type
 
-Additive Distillation
-Additive Distillation
+// Additive Distillation
+// Additive Distillation
 
 // {
 //     // add expose mind if it does not have it
