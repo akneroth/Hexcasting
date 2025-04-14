@@ -5,14 +5,12 @@ $fastif()(
     Janus' Gambit
 )
 
-
-
-
 Mind's Reflection
 Compass' Purification II
 Numerical Reflection: 28
 Zone Distillation: Monster
 {
+    Sekhmet's Gambit: 1
     Gemini Decomposition
     Physician's Purification
     {
@@ -65,12 +63,12 @@ Numerical Reflection: 28
 Zone Exaltation: Type
 Additive Distillation
 
-// {@entity_type(botania:pixie)}>>
-// Mind's Reflection
-// Compass' Purification II
-// Numerical Reflection: 28
-// Zone Exaltation: Type
-// Additive Distillation
+{@entity_type(botania:pixie)}>>
+Mind's Reflection
+Compass' Purification II
+Numerical Reflection: 28
+Zone Exaltation: Type
+Additive Distillation
 
 // Gemini Decomposition
 // Length Purification
