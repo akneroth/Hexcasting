@@ -177,9 +177,11 @@ Additive Distillation
             Bubbling Gambit
             // stack: player, currHP, maxHP, 
             Minimus Distillation
-            Numerical Reflection: 30
-            Numerical Reflection: 1
-            White Sun's Zenith
+            $fastif(
+                Numerical Reflection: 30
+                Numerical Reflection: 1
+                White Sun's Zenith 
+            )()
         }
         Mind's Reflection
         Compass' Purification II
