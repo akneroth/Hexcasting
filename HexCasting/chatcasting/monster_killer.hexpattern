@@ -92,8 +92,10 @@ $fastif()(
     Numerical Reflection: -1
     Equality Distillation
     $fastif(
-        $exposeMind
-    )()
+        Expose Mind
+    )(
+        Bookkeeper's Gambit: v
+    )
 
     // get the position for explode and center it for the block
     Compass' Purification II
@@ -116,8 +118,6 @@ $dump(after uniq)
         Atalanta's Gambit
     )()
     
-    Prospector's Gambit
-    Sorter's Purification
     
     // if in air or gras, explode with liquid
     {
@@ -126,10 +126,10 @@ $dump(after uniq)
         @item_type(minecraft:tall_grass,false)
     }
     Prospector's Gambit
+    Sorter's Purification
     Locator's Distillation
     Numerical Reflection: -1
     Inequality Distillation
-    // Conjunction Distillation
     $fastif(
         Gemini Decomposition
         Spatial Reflection
