@@ -104,14 +104,6 @@ Single's Purification
     $fastif(
         //move to dest
         Subtractive Distillation
-        {@str(basis)}>>
-        Jester's Gambit
-        $transpose
-        Greater Blink
-        Mind's Reflection
-        Compass' Purification
-        Numerical Reflection: 1
-        Confetti
     )(
         // move 125 and queue dest
         Prospector's Gambit
@@ -122,11 +114,11 @@ Single's Purification
         Division Distillation
         Numerical Reflection: 125
         Multiplicative Distillation
-        {@str(basis)}>>
-        Jester's Gambit
-        $transpose
-        Greater Blink
     )
+    {@str(basis)}>>
+    Jester's Gambit
+    $transpose
+    Greater Blink
 }
 $indexof(basis)
 $getCasterBasisMatrix
@@ -134,3 +126,7 @@ Surgeon's Exaltation
 Jester's Gambit
 Thoth's Gambit
 
+Mind's Reflection
+Compass' Purification
+Numerical Reflection: 1
+Confetti
