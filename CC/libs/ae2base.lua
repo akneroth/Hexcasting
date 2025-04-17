@@ -81,7 +81,7 @@ end
 function initAE2(verbose)
     CCexpect.expect(1, verbose, "boolean")
     local allowed = {
-        "fulleng:crafting_terminal",
+        -- "fulleng:crafting_terminal",
         "ae2:energy_cell",
         "ae2:dense_energy_cell",
         "ae2:1k_crafting_storage",

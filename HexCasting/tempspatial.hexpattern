@@ -1,0 +1,42 @@
+#git(/HexCasting/libs/base.hexpattern)
+
+// vec, vec -> lower vec, higher vec
+#def(normalizeForSpatial)(
+    Dioscuri Gambit
+    Subtractive Distillation
+    Vector Disintegration
+    Numerical Reflection: 3
+    Flock's Gambit
+    {
+        Length Purification
+    }
+    Jester's Gambit
+    Thoth's Gambit
+    Flock's Disintegration
+    Vector Exaltation
+
+    Reflecting Gambit
+    Numerical Reflection: 2
+    Flock's Gambit
+    Transformation Purification
+    Retrograde Purification
+    Restoration Purification II
+    {
+        Flock's Disintegration
+        Dioscuri Gambit
+        Minimus Distillation II
+        $fastif(
+            Bookkeeper's Gambit: -v
+        )(
+            Bookkeeper's Gambit: v-
+        )
+    }
+    Jester's Gambit
+    Thoth's Gambit
+    Flock's Disintegration
+    Vector Exaltation
+    Undertaker's Gambit
+    Additive Distillation
+)
+
+$normalizeForSpatial
