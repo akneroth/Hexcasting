@@ -1,6 +1,6 @@
 #git(/HexCasting/libs/base.hexpattern)
 
-// vec, vec -> lower vec, higher vec
+// vec, vec -> sizeVec, lowerVec, higherVec
 #def(normalizeForSpatial)(
     Dioscuri Gambit
     Subtractive Distillation
@@ -36,9 +36,52 @@
     Jester's Gambit
     Thoth's Gambit
     Flock's Disintegration
-    Vector Exaltation
-    Undertaker's Gambit
+    Vector Exaltation 
+    Dioscuri Gambit
     Additive Distillation
+    Numerical Reflection: 2
+    Flock's Gambit
+    Jester's Gambit
+    // stack: lowerVec, higherVec, sizeVec
+)
+
+Auditor's Reflection
+$fastif(
+    {
+        Sekhmet's Gambit: 1
+        $iotatype
+        {@iota_type(hexcasting:vec3)}>>
+        Equality Distillation
+    }
+    Scribe's Reflection
+    Gemini Decomposition
+    Length Purification
+    Numerical Reflection: 2
+    Equality Distillation
+    $fastif()(
+        $print(there should be 2 vectors in offhand focus)
+        Janus' Gambit
+    )
+    Thoth's Gambit
+    Flock's Disintegration
+    Conjunction Distillation
+    $fastif(
+        Scribe's Reflection
+        Flock's Disintegration
+    )(
+        $print(there should be 2 vectors in offhand focus)
+    )
+)(
+    $print(no focus in offhand)
 )
 
 $normalizeForSpatial
+
+{@vec(-1820.5, 12.5, -380.5)}>>
+Undertaker's Gambit
+Additive Distillation
+Numerical Reflection: 2
+Flock's Gambit
+{@str(dim/noosphere)}>>
+Spatial Interchange
+
