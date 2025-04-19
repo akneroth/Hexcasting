@@ -23,7 +23,7 @@ if reinstall then
     fs.delete("/install_ae2.lua")
     shell.execute("wget", getGitPath(branch).."ae2/install_ae2.lua", "/install_ae2.lua")
     shell.run("/install_ae2.lua")
-    shell.exit()
+    return
 end
 
 local raw_url = getGitPath(branch)
