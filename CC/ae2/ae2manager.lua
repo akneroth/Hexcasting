@@ -1,15 +1,18 @@
 -- Variables
+CCpretty = require "cc.pretty"
+CCexpect = require "cc.expect"
+CCcompletion = require "cc.completion"
+
 local config = ""
 if fs.exists("/.config/ae2.json") then
     for line in io.lines("/rom/help/intro.txt") do config = config.." "..line end
     config = textutils.unserialiseJSON(config)
+    CCexpect.expect(1, config, "table")
 else
     printError("No config file found: /.config/ae2.json")
+    return
 end
 
-CCpretty = require "cc.pretty"
-CCexpect = require "cc.expect"
-CCcompletion = require "cc.completion"
 base = require (config.lib_path.."base")
 ae2base = require (config.lib_path.."ae2base")
 craftingModule = require (config.lib_path.."ae2crafting")
