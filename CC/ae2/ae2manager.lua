@@ -12,7 +12,6 @@ if fs.exists("/.config/ae2.json") then
     end
 else
     printError("No config file found: /.config/ae2.json")
-    return
 end
 
 base = require (config.lib_path.."base")
