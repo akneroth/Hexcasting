@@ -1,6 +1,8 @@
 local expect = require "cc.expect"
 local args = {...}
 
+local ts = 1234
+
 local function getGitPath(branch)
     expect(1, branch, "string", "nil")
     if not branch or branch == "master" then branch = "master" end
