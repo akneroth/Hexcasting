@@ -115,10 +115,21 @@ end
 ---@return table|nil
 function resetAE2(redstoneOutput)
     mprint("AE2 Item data empty!!! Reseting connection...")
-    redstone.setOutput(redstoneOutput, true)
-    sleep(5)
-    redstone.setOutput(redstoneOutput, false)
-    sleep(5)
+    local kinetic = peripheral.find("plethora:kinetic")
+    if kinetic then
+        turtle.select(1)
+        while turtle.inspect() do
+            kinetic.swing()
+        end
+        turtle.select(2)
+        turtle.place()
+        sleep(2)
+    else
+        redstone.setOutput(redstoneOutput, true)
+        sleep(1)
+        redstone.setOutput(redstoneOutput, false)
+        sleep(10)
+    end
     return initAE2(false)
 end
 
