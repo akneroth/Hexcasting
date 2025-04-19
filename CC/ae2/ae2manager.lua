@@ -3,15 +3,19 @@ CCpretty = require "cc.pretty"
 CCexpect = require "cc.expect"
 CCcompletion = require "cc.completion"
 
+local configPath = "/.config/ae2.json"
 local config = ""
-if fs.exists("/.config/ae2.json") then
-    for line in io.lines("/.config/ae2.json") do config = config.." "..line end
+print("Looking for config", configPath)
+if fs.exists(configPath) then
+    for line in io.lines(configPath) do config = config.." "..line end
     config = textutils.unserialiseJSON(config)
     if type(config) ~= "table" then
-        printError("Can't read /.config/ae2.json")
+        printError("Can't read "..configPath)
+    else
+        print("Config", configPath, "read properly.")
     end
 else
-    printError("No config file found: /.config/ae2.json")
+    printError("No config file found: "..configPath)
 end
 
 base = require (config.lib_path.."base")
