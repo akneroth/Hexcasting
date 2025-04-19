@@ -7,7 +7,9 @@ local config = ""
 if fs.exists("/.config/ae2.json") then
     for line in io.lines("/rom/help/intro.txt") do config = config.." "..line end
     config = textutils.unserialiseJSON(config)
-    CCexpect.expect(1, config, "table")
+    if type(config) ~= "table" then
+        printError("Can't read /.config/ae2.json")
+    end
 else
     printError("No config file found: /.config/ae2.json")
     return
