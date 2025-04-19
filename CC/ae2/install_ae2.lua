@@ -68,4 +68,4 @@ file.write(string.format([[
 ]], install_path, lib_path))
 file.close()
 print("Downloaded! Starting...")
-shell.execute("ae2manager")
+shell.run("ae2manager")
