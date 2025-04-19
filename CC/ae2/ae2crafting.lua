@@ -3,6 +3,7 @@ local ae2crafting = {
     items = {},
     watches = {},
     craftings = {},
+    active = {},
     failedCraftings = {},
 }
 
@@ -90,9 +91,9 @@ function ae2crafting:scheduleCrafting(key)
 
         -- print(CCpretty.pretty(craftConfig), currentAmount, minAmount, rawName, type)
         if currentAmount < minAmount and type ~= "none" then
-            local prequisitesMet, missing = checkPrequisites(key, config.batchAmount)
+            -- local prequisitesMet, missing = checkPrequisites(key, config.batchAmount)
             local success, response = false, "Prequisites not met\n  " .. table.concat(missing or {}, "\n  ")
-            if prequisitesMet then
+            if true then
                 success = self.ae2.scheduleCrafting(type, key, config.batchAmount)
             end
             if success then
@@ -110,7 +111,7 @@ end
 
 function ae2crafting:iteration(getDataFunction)
     ae2crafting.updateData = getDataFunction
-    self.ae2, self.items, self.watches, self.craftings = self.updateData()
+    self.ae2, self.items, self.watches, self.craftings, self.active = self.updateData()
     if isAnyEmpty(self.ae2, self.items, self.watches, self.craftings) then return end
     for key, _ in pairs(self.watches) do
         self:scheduleCrafting(key)

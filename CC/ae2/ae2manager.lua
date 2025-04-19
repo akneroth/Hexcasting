@@ -117,10 +117,16 @@ function data:getItemInfo(key)
 end
 
 function data:getData()
+    local function checkAE2() ae2.items(false) end
+    local ae2isFine = pcall(checkAE2)
+
+    if not ae2isFine then ae2 = resetAE2("bottom") end
+
     local itemsRaw = ae2.items() or {}
     local craftingsRaw = ae2.getCraftableItems() or {}
     local activeCraftingRaw = ae2.getActiveCraftings() or {}
-    while #itemsRaw == 0 and #craftingsRaw == 0 and #activeCraftingRaw == 0 do
+    
+    while #itemsRaw == 0 do
         ae2 = resetAE2("bottom")
         if ae2 ~= nil then
             itemsRaw = ae2.items() or {}
@@ -319,7 +325,7 @@ local function craftingThread()
         return
     end
 
-    local function getDataForCraftingModule() return ae2, data.items, data.watched, data.craftings end
+    local function getDataForCraftingModule() return ae2, data.items, data.watched, data.craftings, data.active end
     while true do
         craftingModule:iteration(getDataForCraftingModule)
         priority.low()
