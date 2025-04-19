@@ -1,10 +1,3 @@
-CCpretty = require "cc.pretty"
-CCexpect = require "cc.expect"
-CCcompletion = require "cc.completion"
-require "base"
-
-local _config = __path .. "/config.json"
-
 base = {
     monitor = nil
 }

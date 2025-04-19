@@ -1,5 +1,20 @@
 -- Variables
-require "ae2base"
+local config = ""
+if fs.exists("/.config/ae2.json") then
+    for line in io.lines("/rom/help/intro.txt") do config = config.." "..line end
+    config = textutils.unserialiseJSON(config)
+else
+    printError("No config file found: /.config/ae2.json")
+end
+
+CCpretty = require "cc.pretty"
+CCexpect = require "cc.expect"
+CCcompletion = require "cc.completion"
+base = require (config.lib_path.."base")
+ae2base = require (config.lib_path.."ae2base")
+craftingModule = require (config.lib_path.."ae2crafting")
+itemsModule = require (config.lib_path.."ae2items")
+
 
 local data = {
     items = {},
@@ -291,7 +306,6 @@ end
 -- ============================       CRAFTING       ==========================
 -- ============================================================================
 local function craftingThread()
-    local craftingModule = require "ae2crafting"
     if craftingModule == nil then
         mprint("Can't initialise crafting module")
         return

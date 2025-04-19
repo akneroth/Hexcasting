@@ -36,6 +36,7 @@ shell.execute("wget", raw_url.."ae2/ae2manager.lua", install_path.."ae2manager.l
 shell.execute("wget", raw_url.."ae2/ae2crafting.lua", lib_path.."ae2crafting.lua")
 shell.execute("wget", raw_url.."ae2/ae2items.lua", lib_path.."ae2items.lua")
 shell.execute("wget", raw_url.."libs/ae2base.lua", lib_path.."ae2base.lua")
+shell.execute("wget", raw_url.."libs/base.lua", lib_path.."base.lua")
 shell.execute("wget", raw_url.."libs/basalt.lua", lib_path.."basalt.lua")
 
 local startup = fs.open("startup.lua", "w")
@@ -57,4 +58,12 @@ startup.close()
 local file = fs.open("/.startup/ae2.lua","w")
 file.write(string.format('shell.setAlias("ae2manager", "%sae2manager.lua") shell.run("ae2manager")', install_path))
 file.close()
-os.reboot()
+file = fs.open("/.config/ae2.json","w")
+file.write(string.format([[
+{
+    "install_path": "%s",
+    "lib_path": "%s"
+}
+]], install_path, lib_path))
+file.close()
+shell.execute("ae2manager")
