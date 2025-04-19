@@ -28,7 +28,7 @@ end
 
 local raw_url = getGitPath(branch)
 local install_path = "/programfiles/ae2/"
-local lib_path = install_path..".libs/"
+local lib_path = install_path.."libs/"
 
 shell.execute("delete", install_path)
 

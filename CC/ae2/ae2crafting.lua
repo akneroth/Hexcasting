@@ -1,5 +1,3 @@
-require "ae2base"
-
 local ae2crafting = {
     ae2 = {},
     items = {},
