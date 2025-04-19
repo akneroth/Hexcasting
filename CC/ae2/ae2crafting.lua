@@ -63,9 +63,9 @@ local function checkPrequisites(key, amount)
         )
         local missing = {}
         for k, v in pairs(inputNeeded) do
-            local neededItem = ae2crafting.items[k] or { displayName = "Error",amount = 0 }
+            local neededItem = ae2crafting.items[k] or { displayName = "Error", amount = 0 }
             if neededItem.amount < v then
-                table.insert(missing, neededItem.displayName.." "..neededItem.amount.."/"..v)
+                table.insert(missing, neededItem.displayName .. " " .. neededItem.amount .. "/" .. v)
                 break
             end
         end
@@ -87,11 +87,11 @@ function ae2crafting:scheduleCrafting(key)
         local minAmount = config.minAmount
         local rawName = self.craftings[key].rawName
         local type = toScheduleCraftingType(rawNameType(rawName) or "item")
-        
+
         -- print(CCpretty.pretty(craftConfig), currentAmount, minAmount, rawName, type)
         if currentAmount < minAmount and type ~= "none" then
             local prequisitesMet, missing = checkPrequisites(key, config.batchAmount)
-            local success, response = false, "Prequisites not met\n  "..table.concat(missing or {}, "\n  ")
+            local success, response = false, "Prequisites not met\n  " .. table.concat(missing or {}, "\n  ")
             if prequisitesMet then
                 success = self.ae2.scheduleCrafting(type, key, config.batchAmount)
             end
@@ -108,15 +108,12 @@ function ae2crafting:scheduleCrafting(key)
     end
 end
 
-function ae2crafting:start(getDataFunction)
+function ae2crafting:iteration(getDataFunction)
     ae2crafting.updateData = getDataFunction
-    while true do
-        self.ae2, self.items, self.watches, self.craftings = self.updateData()
-        if isAnyEmpty(self.ae2, self.items, self.watches, self.craftings) then return end
-        for key, _ in pairs(self.watches) do
-            self:scheduleCrafting(key)
-        end
-        priority.low()
+    self.ae2, self.items, self.watches, self.craftings = self.updateData()
+    if isAnyEmpty(self.ae2, self.items, self.watches, self.craftings) then return end
+    for key, _ in pairs(self.watches) do
+        self:scheduleCrafting(key)
     end
 end
 

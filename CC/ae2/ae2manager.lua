@@ -7,20 +7,20 @@ local configPath = "/.config/ae2.json"
 local config = ""
 print("Looking for config", configPath)
 if fs.exists(configPath) then
-    for line in io.lines(configPath) do config = config.." "..line end
+    for line in io.lines(configPath) do config = config .. " " .. line end
     config = textutils.unserialiseJSON(config)
     if type(config) ~= "table" then
-        printError("Can't read "..configPath)
+        printError("Can't read " .. configPath)
     else
         print("Config", configPath, "read properly.")
     end
 else
-    printError("No config file found: "..configPath)
+    printError("No config file found: " .. configPath)
 end
 
-base = require (config.lib_path.."base")
-ae2base = require (config.lib_path.."ae2base")
-craftingModule = require (config.lib_path.."ae2crafting")
+base = require(config.lib_path .. "base")
+ae2base = require(config.lib_path .. "ae2base")
+craftingModule = require(config.lib_path .. "ae2crafting")
 -- itemsModule = require (config.lib_path.."ae2items")
 
 
@@ -320,8 +320,10 @@ local function craftingThread()
     end
 
     local function getDataForCraftingModule() return ae2, data.items, data.watched, data.craftings end
-
-    craftingModule:start(getDataForCraftingModule)
+    while true do
+        craftingModule:iteration(getDataForCraftingModule)
+        priority.low()
+    end
 end
 
 -- ============================================================================
@@ -388,15 +390,15 @@ local commands = {
 ---@++
 local commands_v2 = {
     watch = {
-            add = function(...) return data:editWatch(...) end,
-            edit = function(...) return data:editWatch(...) end,
-            remove = function(...) return data:editWatch(...) end,
-            list = function(...) return true, data.watched end,
-            __default = {}
-        },
+        add = function(...) return data:editWatch(...) end,
+        edit = function(...) return data:editWatch(...) end,
+        remove = function(...) return data:editWatch(...) end,
+        list = function(...) return true, data.watched end,
+        __default = {}
+    },
     items = {
-            info = function(...) return data:getItemInfo(table.unpack({ table.unpack(..., 2, #... - 1) })) end
-        },
+        info = function(...) return data:getItemInfo(table.unpack({ table.unpack(..., 2, #... - 1) })) end
+    },
     __default = function(...)
         if ... == nil then return false, "no passed args", {} end
         mprint(...)
