@@ -1,7 +1,7 @@
 local expect = require "cc.expect"
 local args = {...}
 
-local ts = 12344555
+local ts = 123445556
 
 local function getGitPath(branch)
     expect(1, branch, "string", "nil")
