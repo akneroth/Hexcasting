@@ -17,7 +17,7 @@ end
 base = require (config.lib_path.."base")
 ae2base = require (config.lib_path.."ae2base")
 craftingModule = require (config.lib_path.."ae2crafting")
-itemsModule = require (config.lib_path.."ae2items")
+-- itemsModule = require (config.lib_path.."ae2items")
 
 
 local data = {
