@@ -18,8 +18,8 @@ else
     printError("No config file found: "..configPath)
 end
 
-base = require (config.lib_path.."base")
-ae2base = require (config.lib_path.."ae2base")
+require (config.lib_path.."base")
+require (config.lib_path.."ae2base")
 craftingModule = require (config.lib_path.."ae2crafting")
 -- itemsModule = require (config.lib_path.."ae2items")
 
