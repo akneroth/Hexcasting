@@ -3,6 +3,10 @@ local args = {...}
 
 local ts = 1234455566
 
+local function download(file, name)
+    shell.execute("wget", file.."?token=$("..tostring(os.epoch("local")).." +%s)", name)
+end
+
 local function getGitPath(branch)
     expect(1, branch, "string", "nil")
     if not branch or branch == "master" then branch = "master" end
@@ -23,7 +27,7 @@ end
 
 if reinstall then
     fs.delete("/install_ae2.lua")
-    shell.execute("wget", getGitPath(branch).."ae2/install_ae2.lua", "/install_ae2.lua")
+    download(getGitPath(branch).."ae2/install_ae2.lua", "/install_ae2.lua")
     shell.run("/install_ae2.lua")
     shell.exit()
 end
@@ -34,16 +38,15 @@ local lib_path = install_path.."libs/"
 
 shell.execute("delete", install_path)
 
-shell.execute("wget", "https://raw.githubusercontent.com/Vizoee/HexLator/main/github.lua", lib_path.."ae2crafting.lua")
-shell.execute("wget", "https://raw.githubusercontent.com/Vizoee/HexLator/main/base64.lua", lib_path.."ae2crafting.lua")
+-- shell.execute("wget", "https://raw.githubusercontent.com/Vizoee/HexLator/main/github.lua", lib_path.."github.lua")
+-- shell.execute("wget", "https://raw.githubusercontent.com/Vizoee/HexLator/main/base64.lua", lib_path.."base64.lua")
 
-
-shell.execute("wget", raw_url.."ae2/ae2manager.lua", install_path.."ae2manager.lua")
-shell.execute("wget", raw_url.."ae2/ae2crafting.lua", lib_path.."ae2crafting.lua")
-shell.execute("wget", raw_url.."ae2/ae2items.lua", lib_path.."ae2items.lua")
-shell.execute("wget", raw_url.."libs/ae2base.lua", lib_path.."ae2base.lua")
-shell.execute("wget", raw_url.."libs/base.lua", lib_path.."base.lua")
-shell.execute("wget", raw_url.."libs/basalt.lua", lib_path.."basalt.lua")
+download(raw_url.."ae2/ae2manager.lua", install_path.."ae2manager.lua")
+download(raw_url.."ae2/ae2crafting.lua", lib_path.."ae2crafting.lua")
+download(raw_url.."ae2/ae2items.lua", lib_path.."ae2items.lua")
+download(raw_url.."libs/ae2base.lua", lib_path.."ae2base.lua")
+download(raw_url.."libs/base.lua", lib_path.."base.lua")
+download(raw_url.."libs/basalt.lua", lib_path.."basalt.lua")
 
 local startup = fs.open("startup.lua", "w")
 startup.write([[
