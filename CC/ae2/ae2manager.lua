@@ -5,7 +5,7 @@ CCcompletion = require "cc.completion"
 
 local config = ""
 if fs.exists("/.config/ae2.json") then
-    for line in io.lines("/rom/help/intro.txt") do config = config.." "..line end
+    for line in io.lines("/.config/ae2.json") do config = config.." "..line end
     config = textutils.unserialiseJSON(config)
     if type(config) ~= "table" then
         printError("Can't read /.config/ae2.json")
