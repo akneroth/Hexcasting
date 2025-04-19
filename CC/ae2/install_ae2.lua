@@ -1,10 +1,8 @@
 local expect = require "cc.expect"
 local args = {...}
 
-local ts = 12344555666
-
 local function download(file, name)
-    shell.execute("wget", file.."?token=$("..tostring(os.epoch("local")).." +%s)", name)
+    shell.execute("wget", file.."?ts="..tostring(os.epoch("local")), name)
 end
 
 local function getGitPath(branch)
