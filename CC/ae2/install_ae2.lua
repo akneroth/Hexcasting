@@ -23,7 +23,7 @@ if reinstall then
     fs.delete("/install_ae2.lua")
     shell.execute("wget", getGitPath(branch).."ae2/install_ae2.lua", "/install_ae2.lua")
     shell.run("/install_ae2.lua")
-    return
+    shell.exit()
 end
 
 local raw_url = getGitPath(branch)
@@ -67,5 +67,4 @@ file.write(string.format([[
 }
 ]], install_path, lib_path))
 file.close()
-print("Downloaded! Starting...")
-shell.run("ae2manager")
+os.reboot()
