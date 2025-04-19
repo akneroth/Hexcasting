@@ -526,5 +526,5 @@ local function terminalThread()
     end
 end
 
-
+print("Started!")
 parallel.waitForAny(craftingThread, senderThread, dataThread, recieverThread, terminalThread)
