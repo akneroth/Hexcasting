@@ -535,5 +535,5 @@ local function terminalThread()
 end
 
 print("Started!")
-parallel.waitForAny(craftingThread, senderThread, dataThread, recieverThread, terminalThread)
+parallel.waitForAll(craftingThread, senderThread, dataThread, recieverThread, terminalThread)
 print("Finished!")
