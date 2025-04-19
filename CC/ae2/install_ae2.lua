@@ -60,8 +60,6 @@ file.write(string.format('shell.setAlias("ae2manager", "%sae2manager.lua") shell
 file.close()
 if not fs.exists(".config") then fs.makeDir(".config") end
 file = fs.open("/.config/ae2.json","w")
-install_path = string.sub(install_path, 1, -2)
-lib_path = string.sub(lib_path, 1, -2)
 file.write(string.format([[
 {
     "install_path": "%s",
