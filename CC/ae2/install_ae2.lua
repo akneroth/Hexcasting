@@ -58,6 +58,7 @@ startup.close()
 local file = fs.open("/.startup/ae2.lua","w")
 file.write(string.format('shell.setAlias("ae2manager", "%sae2manager.lua") shell.run("ae2manager")', install_path))
 file.close()
+if not fs.exists(".config") then fs.makeDir(".config") end
 file = fs.open("/.config/ae2.json","w")
 file.write(string.format([[
 {
