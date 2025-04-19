@@ -18,8 +18,8 @@ else
     printError("No config file found: "..configPath)
 end
 
-require (config.lib_path.."base")
-require (config.lib_path.."ae2base")
+base = require (config.lib_path.."base")
+ae2base = require (config.lib_path.."ae2base")
 craftingModule = require (config.lib_path.."ae2crafting")
 -- itemsModule = require (config.lib_path.."ae2items")
 
@@ -302,7 +302,6 @@ end
 
 local function dataThread()
     while true do
-        print("Data thread!")
         data:getData()
         data:saveWatches()
         data:updateWatches()
@@ -337,7 +336,6 @@ local function senderThread()
     mprint("-- Sending to protocol:" .. data.protocols.sendItems)
     mprint("-- Sending to protocol:" .. data.protocols.sendActiveCrafting)
     while true do
-        print("Sender thread!")
         priority.low()
     end
 end
@@ -442,7 +440,6 @@ local function recieverThread()
     rednet.host(data.protocols.recieve, data.systemName)
     mprint("-- Receiving from protocol:" .. data.protocols.recieve)
     while true do
-        print("Reciever thread!")
         -- data:recieveCommands()
         priority.tick()
     end
@@ -528,12 +525,11 @@ end
 
 local function terminalThread()
     while true do
-        print("Terminal thread!")
         data:recieveFromTerminal()
         priority.tick()
     end
 end
 
 print("Started!")
-parallel.waitForAll(craftingThread, senderThread, dataThread, recieverThread, terminalThread)
+parallel.waitForAny(craftingThread, senderThread, dataThread, recieverThread, terminalThread)
 print("Finished!")
