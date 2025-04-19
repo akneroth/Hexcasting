@@ -1,7 +1,7 @@
 local expect = require "cc.expect"
 local args = {...}
 
-local ts = 12344
+local ts = 123445
 
 local function getGitPath(branch)
     expect(1, branch, "string", "nil")
@@ -33,6 +33,10 @@ local install_path = "/programfiles/ae2/"
 local lib_path = install_path.."libs/"
 
 shell.execute("delete", install_path)
+
+shell.execute("wget", "https://raw.githubusercontent.com/Vizoee/HexLator/main/github.lua", lib_path.."ae2crafting.lua")
+shell.execute("wget", "https://raw.githubusercontent.com/Vizoee/HexLator/main/base64.lua", lib_path.."ae2crafting.lua")
+
 
 shell.execute("wget", raw_url.."ae2/ae2manager.lua", install_path.."ae2manager.lua")
 shell.execute("wget", raw_url.."ae2/ae2crafting.lua", lib_path.."ae2crafting.lua")
