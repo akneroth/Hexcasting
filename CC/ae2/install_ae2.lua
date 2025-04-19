@@ -1,7 +1,7 @@
 local expect = require "cc.expect"
 local args = {...}
 
-local ts = 1234455566
+local ts = 12344555666
 
 local function download(file, name)
     shell.execute("wget", file.."?token=$("..tostring(os.epoch("local")).." +%s)", name)
