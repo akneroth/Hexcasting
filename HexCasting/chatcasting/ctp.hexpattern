@@ -26,10 +26,15 @@
 )
 
 
+Gemini Decomposition
 Numerical Reflection: 0
-// Numerical Reflection: 3
+Numerical Reflection: 3
+Selection Exaltation
+Jester's Gambit
+Numerical Reflection: 3
 Numerical Reflection: 4      // commented out untill tests with gblink after noetic
 Selection Exaltation
+Flock's Disintegration
 // stack: list of strX, strY, strZ, strDim
 
 // ====================== dim change code goes here =========================
