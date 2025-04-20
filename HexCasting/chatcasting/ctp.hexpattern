@@ -34,8 +34,7 @@ Selection Exaltation
 
 // ====================== dim change code goes here =========================
 // check if in the same dim
-@hexicon(dim/table)
-$akashasaferead
+@str(dim/table)
 Reflecting Gambit
 Locator's Distillation
 Selection Distillation
@@ -48,6 +47,7 @@ $fastif(
     $hasMinMedia(200)
     $fastif()(
         $print(Not enough media to use dimensional teleport)
+        Janus' Gambit
     )
     
     Mind's Reflection
