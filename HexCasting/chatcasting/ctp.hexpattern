@@ -27,44 +27,34 @@
 
 
 Numerical Reflection: 0
-Numerical Reflection: 3
-// Numerical Reflection: 4      // commented out untill tests with gblink after noetic
+// Numerical Reflection: 3
+Numerical Reflection: 4      // commented out untill tests with gblink after noetic
 Selection Exaltation
-// stack: list of strX, strY, strZ
+// stack: list of strX, strY, strZ, strDim
 
 // ====================== dim change code goes here =========================
 // check if in the same dim
-// {@str(dimtable)}>>
-// Reflecting Gambit
-// Locator's Distillation
-// Selection Distillation
-// Gemini Decomposition
-// Spatial Reflection
-// Equality Distillation
-// $print(cast before noetic)
-
-// $fastif(
-//     Bookkeeper's Gambit: v
-// )(
-//     $hasMinMedia(200)
-//     $fastif()(
-//         $print(Not enough media to use dimensional teleport)
-//     )
+@hexicon(dim/table)
+$akashasaferead
+Reflecting Gambit
+Locator's Distillation
+Selection Distillation
+Gemini Decomposition
+Spatial Reflection
+Equality Distillation
+$fastif(
+    Bookkeeper's Gambit: v
+)(
+    $hasMinMedia(200)
+    $fastif()(
+        $print(Not enough media to use dimensional teleport)
+    )
     
-//     Mind's Reflection
-//     Jester's Gambit
+    Mind's Reflection
+    Jester's Gambit
     
-//     $print(noetic)
-//     Noetic Gateway
-//     $print(after noetic)
-// )
-
-// Mind's Reflection
-// Compass' Purification
-// {@vec(0,2,0)}>>
-// Additive Distillation
-// Conjure Block
-// $print(cast finished after noetic)
+    Noetic Gateway
+)
 // ====================== end of dim change code =========================
 
 {

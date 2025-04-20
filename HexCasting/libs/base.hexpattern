@@ -147,19 +147,19 @@
     $akasha
     Jester's Gambit
     Akasha's Distillation
+)
+
+#def(akashasaferead)(
+    $akasharead
     Gemini Decomposition
     Augur's Purification
-    $fastif(
-        Single's Purification
-    )(
+    $fastif()(
         Bookkeeper's Gambit: v
     )
 )
 
 #def(akashacast)(
-    $akasha
-    Jester's Gambit
-    Akasha's Distillation
+    $akasharead
     Gemini Decomposition
     Augur's Purification
     $fastif(
