@@ -1,0 +1,9 @@
+[[
+    @str(minecraft:overworld)
+    @str(oneironaut:noosphere)
+    @str(minecraft:the_nether)
+    @str(spectrum:deeper_down)
+    @str(minecraft:the_end)
+    @str(spacecube:space_cube_dimension)
+    @str(ae2:spatial_storage)
+]]
