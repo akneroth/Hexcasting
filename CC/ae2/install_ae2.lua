@@ -31,6 +31,7 @@ if reinstall then
 end
 
 local raw_url = getGitPath(branch)
+local config_path = "/programfiles/.ae2config/"
 local install_path = "/programfiles/ae2/"
 local lib_path = install_path.."libs/"
 
@@ -38,6 +39,10 @@ shell.execute("delete", install_path)
 
 -- shell.execute("wget", "https://raw.githubusercontent.com/Vizoee/HexLator/main/github.lua", lib_path.."github.lua")
 -- shell.execute("wget", "https://raw.githubusercontent.com/Vizoee/HexLator/main/base64.lua", lib_path.."base64.lua")
+
+if not fs.exists(config_path.."watchedItems.json") then
+    download(raw_url.."ae2/watchedItems.json", config_path.."watchedItems.json")
+end
 
 download(raw_url.."ae2/ae2manager.lua", install_path.."ae2manager.lua")
 download(raw_url.."ae2/ae2crafting.lua", lib_path.."ae2crafting.lua")

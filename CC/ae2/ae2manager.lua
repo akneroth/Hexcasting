@@ -75,8 +75,7 @@ end
 
 
 
-
-local watchedItemsFile = __path .. "/watchedItems.json"
+local watchedItemsFile = fs.getDir(__path).."/.ae2config/watchedItems.json"
 
 if arg[1] == "help" then
     mprint("Usage: " .. __programName .. " <systemName> [verbose]")

@@ -2,16 +2,11 @@ local watchdog = {
     lastEventTimestamp = 0
 }
 
-if type(arg[1]) == "string" then
-    watchdog.event = arg[1]
-    watchdog:run()
-end
+function watchdog.start(event)
+    event = event .. "_watchdog"
+    shell.execute("bg", "watchdog", event)
 
-function watchdog.start(watchdog_path, event)
-    event = event.."_watchdog"
-    shell.execute("bg", watchdog_path, event)
-
-    return function ()
+    return function()
         while true do
             os.queueEvent(event)
             sleep(1)
@@ -28,6 +23,7 @@ function watchdog.theDoggo()
         if time() - watchdog.lastEventTimestamp > 5000 then
             shell.run("reboot")
         end
+        sleep(.2)
     end
 end
 
@@ -36,6 +32,7 @@ function watchdog.eventListener()
     while true do
         os.pullEvent(watchdog.event)
         watchdog.lastEventTimestamp = time()
+        print(os.date("%F %T", watchdog.lastEventTimestamp / 1000), "Event", watchdog.event, "recieved.")
     end
 end
 
@@ -43,7 +40,10 @@ function watchdog:run()
     parallel.waitForAny(watchdog.eventListener, watchdog.theDoggo)
 end
 
-
+if type(arg[1]) == "string" then
+    watchdog.event = arg[1]
+    watchdog:run()
+end
 
 
 return watchdog
