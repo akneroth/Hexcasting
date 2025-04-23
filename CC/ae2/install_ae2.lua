@@ -44,6 +44,7 @@ download(raw_url.."ae2/ae2crafting.lua", lib_path.."ae2crafting.lua")
 download(raw_url.."ae2/ae2items.lua", lib_path.."ae2items.lua")
 download(raw_url.."libs/ae2base.lua", lib_path.."ae2base.lua")
 download(raw_url.."libs/base.lua", lib_path.."base.lua")
+download(raw_url.."libs/watchdog.lua", lib_path.."watchdog.lua")
 download(raw_url.."libs/basalt.lua", lib_path.."basalt.lua")
 
 local startup = fs.open("startup.lua", "w")
@@ -63,7 +64,7 @@ end
 startup.close()
 
 local file = fs.open("/.startup/ae2.lua","w")
-file.write(string.format('shell.setAlias("ae2manager", "%sae2manager.lua") shell.run("ae2manager")', install_path))
+file.write(string.format('shell.setAlias("ae2manager", "%sae2manager.lua") shell.setAlias("watchdog", "%swatchdog.lua") shell.run("ae2manager")', install_path, lib_path))
 file.close()
 if not fs.exists(".config") then fs.makeDir(".config") end
 file = fs.open("/.config/ae2.json","w")

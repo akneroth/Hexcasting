@@ -19,6 +19,7 @@ else
 end
 
 base = require(config.lib_path .. "base")
+watchdog = require(config.lib_path .. "watchdog")
 ae2base = require(config.lib_path .. "ae2base")
 craftingModule = require(config.lib_path .. "ae2crafting")
 -- itemsModule = require (config.lib_path.."ae2items")
@@ -98,11 +99,14 @@ if ae2 == nil then return end
 
 
 
+
 -- ============================================================================
 -- ============================================================================
 -- ============================       THREADS        ==========================
 -- ============================================================================
 -- ============================================================================
+
+local watchdogThread = watchdog.start("ae2manager")
 
 -- ============================================================================
 -- ============================         DATA         ==========================
@@ -367,7 +371,7 @@ local commands = {
         if f ~= nil then return f(...) end
         if f == nil and ... ~= nil then
             return false,
-                "No such sub command" .. data.errorMessages.watchAddEditMessage .. data.errorMessages.watchRemoveMessage
+                "No such sub command" .. data.errorMessages.watchAddEditMessage .. data.errorMessages.watchRemoveMessage1
         end
         return true,
             "Watches management" .. data.errorMessages.watchAddEditMessage .. data.errorMessages.watchRemoveMessage
@@ -539,5 +543,5 @@ local function terminalThread()
 end
 
 print("Started!")
-parallel.waitForAny(craftingThread, senderThread, dataThread, recieverThread, terminalThread)
+parallel.waitForAny(craftingThread, senderThread, dataThread, recieverThread, terminalThread, watchdogThread)
 print("Finished!")
