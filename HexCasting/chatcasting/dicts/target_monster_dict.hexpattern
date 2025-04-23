@@ -20,5 +20,5 @@
 @entity_type(minecraft:ravager)
 @entity_type(minecraft:vindicator)
 @entity_type(minecraft:vex)
-@entity_type(botania:doppleganger)
-@entity_type(botania:pixie)
+@entity_type(minecraft:enderman)
+@entity_type(minecraft:shulker)
