@@ -16,7 +16,11 @@ Mind's Reflection
 Compass' Purification II
 $toImprintCoordinates
 
-{@vec(-1830.5, 14.5, -389.5)}>>
+{@str(workshop)}>>
+Hermes' Gambit
+Observation Purification
+Jester's Gambit
+$dictread
 $toImprintCoordinates
 
 
