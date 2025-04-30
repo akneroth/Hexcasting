@@ -22,3 +22,4 @@
 @entity_type(minecraft:vex)
 @entity_type(minecraft:enderman)
 @entity_type(minecraft:shulker)
+@entity_type(minecraft:wither)
