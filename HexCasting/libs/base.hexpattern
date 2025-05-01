@@ -237,9 +237,9 @@
     Reflecting Gambit
     Single's Purification
     Additive Distillation
+    // stack: list_of_names, list_of_values
 )
 
-// stack: value, name, list_of_names, list_of_values
 #def(dictedit)(
     Reflecting Gambit
     Dioscuri Gambit
@@ -250,11 +250,8 @@
     Flock's Gambit
     Retrograde Purification
     Flock's Disintegration
-    // stack: list_of_names, list_of_values, index, value
-    
-    
-
-    
+    Surgeon's Exaltation
+    // stack: list_of_names, list_of_values
 )
 
 // stack: value, name, list_of_names, list_of_values
@@ -295,7 +292,7 @@
 #def(varread)(
     $personal_property
     Observation Purification
-    >>
+    Flock's Disintegration
     $dictread
     // stack: ... , varvalue
 )
@@ -304,9 +301,14 @@
 #def(varsave)(
     $personal_property
     Observation Purification
-    >>
+    Flock's Disintegration
     $dictsave
-    // stack: ... , varvalue
+    Numerical Reflection: 2
+    Flock's Gambit
+    $personal_property
+    Jester's Gambit
+    Schrödinger's Gambit
+    // stack: ... , 
 )
 
 
