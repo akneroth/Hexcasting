@@ -94,6 +94,7 @@ end
 
 initRednet()
 ae2 = initAE2(true)
+ae2Crafter = initAE2Crafter(true)
 if ae2 == nil then return end
 
 
@@ -328,7 +329,7 @@ local function craftingThread()
         return
     end
 
-    local function getDataForCraftingModule() return ae2, data.items, data.watched, data.craftings, data.active end
+    local function getDataForCraftingModule() return (ae2Crafter or ae2), data.items, data.watched, data.craftings, data.active end
     while true do
         craftingModule:iteration(getDataForCraftingModule)
         priority.low()

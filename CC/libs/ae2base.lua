@@ -103,6 +103,34 @@ function initAE2(verbose)
     return ae2
 end
 
+---Initialise ae2 connection via any correct block, returns table wit ae2 functions or nil if there is no ae2 block that can be used.
+---@param verbose boolean
+---@return table|nil
+function initAE2Crafter(verbose)
+    CCexpect.expect(1, verbose, "boolean")
+    local allowed = {
+        "ae2cc_adapter",
+    }
+    local ae2 = nil
+    for _, p in ipairs(allowed) do
+        ae2 = peripheral.find(p)
+        if ae2 ~= nil then break end
+    end
+
+    if verbose then
+        if ae2 == nil then
+            mprint("No AE2 Crafter connection attached. Please attach one of the blocks:")
+            for _, value in ipairs(allowed) do
+                mprint("  " .. value)
+            end
+        else
+            mprint("AE2 Crafter connection established...")
+        end
+    end
+
+    return ae2
+end
+
 ---@alias side
 ---| "top"
 ---| "bottom"
