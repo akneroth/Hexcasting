@@ -1,0 +1,158 @@
+{
+    "ae2:tiny_tnt": {
+        "minAmount": 2048,
+        "batchAmount": 512
+    },
+    "ae2:certus_quartz_dust": {
+        "minAmount": 2048,
+        "batchAmount": 512
+    },
+    "ae2:silicon": {
+        "minAmount": 256,
+        "batchAmount": 64
+    },
+    "ae2:interface": {
+        "minAmount": 64,
+        "batchAmount": 16
+    },
+    "ae2:fluix_glass_cable": {
+        "batchAmount": 16,
+        "minAmount": 64
+    },
+    "ae2:storage_bus": {
+        "batchAmount": 16,
+        "minAmount": 64
+    },
+    "ae2:engineering_processor": {
+        "batchAmount": 16,
+        "minAmount": 64
+    },
+    "ae2:fluix_crystal": {
+        "minAmount": 512,
+        "batchAmount": 128
+    },
+    "ae2:printed_silicon": {
+        "batchAmount": 64,
+        "minAmount": 256
+    },
+    "minecraft:gravel": {
+        "batchAmount": 512,
+        "minAmount": 2048
+    },
+    "ae2:export_bus": {
+        "batchAmount": 16,
+        "minAmount": 64
+    },
+    "spectrum:black_pigment": {
+        "batchAmount": 800,
+        "minAmount": 3200
+    },
+    "spectrum:gray_pigment": {
+        "batchAmount": 800,
+        "minAmount": 3200
+    },
+    "spectrum:light_gray_pigment": {
+        "batchAmount": 800,
+        "minAmount": 3200
+    },
+    "spectrum:white_pigment": {
+        "batchAmount": 800,
+        "minAmount": 3200
+    },
+    "spectrum:brown_pigment": {
+        "batchAmount": 800,
+        "minAmount": 3200
+    },
+    "spectrum:green_pigment": {
+        "batchAmount": 800,
+        "minAmount": 3200
+    },
+    "spectrum:red_pigment": {
+        "batchAmount": 800,
+        "minAmount": 3200
+    },
+    "spectrum:orange_pigment": {
+        "batchAmount": 800,
+        "minAmount": 3200
+    },
+    "spectrum:lime_pigment": {
+        "batchAmount": 800,
+        "minAmount": 3200
+    },
+    "spectrum:yellow_pigment": {
+        "batchAmount": 800,
+        "minAmount": 3200
+    },
+    "spectrum:pink_pigment": {
+        "batchAmount": 800,
+        "minAmount": 3200
+    },
+    "spectrum:purple_pigment": {
+        "batchAmount": 800,
+        "minAmount": 3200
+    },
+    "spectrum:blue_pigment": {
+        "batchAmount": 800,
+        "minAmount": 3200
+    },
+    "spectrum:light_blue_pigment": {
+        "batchAmount": 800,
+        "minAmount": 3200
+    },
+    "spectrum:magenta_pigment": {
+        "batchAmount": 800,
+        "minAmount": 3200
+    },
+    "spectrum:cyan_pigment": {
+        "batchAmount": 800,
+        "minAmount": 3200
+    },
+    "create:large_cogwheel": {
+        "batchAmount": 32,
+        "minAmount": 128
+    },
+    "ae2:calculation_processor": {
+        "minAmount": 64,
+        "batchAmount": 16
+    },
+    "create:cogwheel": {
+        "minAmount": 128,
+        "batchAmount": 32
+    },
+    "minecraft:sand": {
+        "minAmount": 2048,
+        "batchAmount": 512
+    },
+    "minecraft:iron_nugget": {
+        "batchAmount": 64,
+        "minAmount": 256
+    },
+    "minecraft:glass_bottle": {
+        "minAmount": 256,
+        "batchAmount": 63
+    },
+    "ae2:logic_processor": {
+        "minAmount": 64,
+        "batchAmount": 16
+    },
+    "ae2:import_bus": {
+        "minAmount": 64,
+        "batchAmount": 16
+    },
+    "create:cinder_flour": {
+        "batchAmount": 64,
+        "minAmount": 256
+    },
+    "minecraft:glass": {
+        "minAmount": 2048,
+        "batchAmount": 1024
+    },
+    "minecraft:sugar": {
+        "minAmount": 256,
+        "batchAmount": 64
+    },
+    "minecraft:gunpowder": {
+        "minAmount": 2048,
+        "batchAmount": 512
+    }
+}
