@@ -36,6 +36,7 @@ Zone Distillation: Monster
         @entity_type(minecraft:ravager)
         @entity_type(minecraft:vindicator)
         @entity_type(minecraft:vex)
+        @entity_type(minecraft:wither)
     }
     Jester's Gambit
     Locator's Distillation
@@ -142,8 +143,8 @@ Uniqueness Purification
         Numerical Reflection: 1
         Explosion
         Gemini Decomposition
-        Conjure Block
         Gemini Decomposition
+        Conjure Block
         Break Block
         Numerical Reflection: 2
         Confetti
