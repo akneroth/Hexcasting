@@ -53,19 +53,21 @@ Zone Distillation: Monster
 Jester's Gambit
 Thoth's Gambit
 
-{@entity_type(botania:doppleganger)}>>
-Mind's Reflection
-Compass' Purification II
-Numerical Reflection: 28
-Zone Exaltation: Type
-Additive Distillation
+// Special entities handling (non monster and such)
 
-{@entity_type(botania:pixie)}>>
-Mind's Reflection
-Compass' Purification II
-Numerical Reflection: 28
-Zone Exaltation: Type
-Additive Distillation
+// {@entity_type(botania:doppleganger)}>>
+// Mind's Reflection
+// Compass' Purification II
+// Numerical Reflection: 28
+// Zone Exaltation: Type
+// Additive Distillation
+
+// {@entity_type(botania:pixie)}>>
+// Mind's Reflection
+// Compass' Purification II
+// Numerical Reflection: 28
+// Zone Exaltation: Type
+// Additive Distillation
 
 // remove all nulls
 Nullary Reflection 
