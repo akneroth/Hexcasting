@@ -1,4 +1,4 @@
-#git(/HexCasting/libs/base.hexpattern)
+#git(/Hexxy3/HexCasting/libs/base.hexpattern)
 
 $if(
     $target_block_on_block_face
